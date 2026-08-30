@@ -84,13 +84,13 @@
 	(net 2 "Net-(D1-K)")
 	(net 3 "+5V")
 	(net 4 "~{RESET}")
-	(net 5 "Net-(U16-XTAL1)")
-	(net 6 "Net-(U17-C1-)")
-	(net 7 "Net-(U17-C1+)")
-	(net 8 "Net-(U17-VS-)")
-	(net 9 "Net-(U17-C2-)")
-	(net 10 "Net-(U17-C2+)")
-	(net 11 "Net-(U17-VS+)")
+	(net 5 "Net-(U15-XTAL1)")
+	(net 6 "Net-(U16-C1-)")
+	(net 7 "Net-(U16-C1+)")
+	(net 8 "Net-(U16-VS-)")
+	(net 9 "Net-(U16-C2-)")
+	(net 10 "Net-(U16-C2+)")
+	(net 11 "Net-(U16-VS+)")
 	(net 12 "VDD")
 	(net 13 "Net-(D2-A)")
 	(net 14 "Net-(D3-K)")
@@ -121,14 +121,14 @@
 	(net 39 "Net-(J3-Pin_16)")
 	(net 40 "unconnected-(J4-PAD-Pad0)")
 	(net 41 "unconnected-(J4-Pad7)")
-	(net 42 "Net-(U17-T1OUT)")
+	(net 42 "Net-(U16-T1OUT)")
 	(net 43 "unconnected-(J4-Pad9)")
-	(net 44 "Net-(U17-T2OUT)")
+	(net 44 "Net-(U16-T2OUT)")
 	(net 45 "unconnected-(J4-Pad4)")
 	(net 46 "unconnected-(J4-PAD-Pad0)_1")
 	(net 47 "unconnected-(J4-Pad6)")
 	(net 48 "unconnected-(J4-Pad1)")
-	(net 49 "Net-(U17-R1IN)")
+	(net 49 "Net-(U16-R1IN)")
 	(net 50 "D1")
 	(net 51 "~{IO_4_CS}")
 	(net 52 "unconnected-(J5-Pin_75-Pad75)")
@@ -158,7 +158,7 @@
 	(net 76 "~{IO_6_CS}")
 	(net 77 "unconnected-(J5-Pin_61-Pad61)")
 	(net 78 "A14")
-	(net 79 "SYNC")
+	(net 79 "unconnected-(J5-Pin_47-Pad47)")
 	(net 80 "unconnected-(J5-Pin_49-Pad49)")
 	(net 81 "A15")
 	(net 82 "unconnected-(J5-Pin_71-Pad71)")
@@ -193,7 +193,7 @@
 	(net 111 "A11")
 	(net 112 "unconnected-(J5-Pin_52-Pad52)")
 	(net 113 "unconnected-(J5-Pin_72-Pad72)")
-	(net 114 "~{VP}")
+	(net 114 "unconnected-(J5-Pin_48-Pad48)")
 	(net 115 "unconnected-(J5-Pin_54-Pad54)")
 	(net 116 "A0")
 	(net 117 "Net-(J5-Pin_62)")
@@ -201,7 +201,7 @@
 	(net 119 "A3")
 	(net 120 "CPU1_CLK")
 	(net 121 "D3")
-	(net 122 "Net-(U16-XTAL2)")
+	(net 122 "Net-(U15-XTAL2)")
 	(net 123 "unconnected-(SW1-C-Pad3)")
 	(net 124 "~{CPU1_ML}")
 	(net 125 "CPU1_SYNC")
@@ -209,56 +209,53 @@
 	(net 127 "CPU1_BUSEN")
 	(net 128 "Net-(U2-RDY)")
 	(net 129 "unconnected-(U2-ϕ1-Pad3)")
-	(net 130 "CPU1_R{slash}~{W}")
+	(net 130 "unconnected-(U3-ϕ1-Pad3)")
 	(net 131 "~{CPU1_VP}")
 	(net 132 "unconnected-(U2-nc-Pad35)")
-	(net 133 "CPU_ID")
-	(net 134 "CPU2_R{slash}~{W}")
+	(net 133 "unconnected-(U3-nc-Pad35)")
+	(net 134 "unconnected-(U3-ϕ2-Pad39)")
 	(net 135 "CPU2_SYNC")
 	(net 136 "~{CPU2_VP}")
 	(net 137 "CPU2_BUSEN")
-	(net 138 "unconnected-(U4-ϕ1-Pad3)")
-	(net 139 "unconnected-(U4-nc-Pad35)")
-	(net 140 "unconnected-(U4-ϕ2-Pad39)")
+	(net 138 "Net-(U3-RDY)")
+	(net 139 "Net-(U4-Pad11)")
+	(net 140 "unconnected-(U4-Pad6)")
 	(net 141 "~{CPU2_ML}")
-	(net 142 "Net-(U4-RDY)")
+	(net 142 "Net-(U4-Pad8)")
 	(net 143 "BUSEN_RESET")
-	(net 144 "Net-(U5-Pad11)")
+	(net 144 "Net-(U11-Pad6)")
 	(net 145 "IO_CS")
 	(net 146 "BUSEN_SET")
-	(net 147 "unconnected-(U5-Pad6)")
+	(net 147 "Net-(U5-Pad13)")
 	(net 148 "CPU1_RDY")
 	(net 149 "CPU2_RDY")
-	(net 150 "Net-(U5-Pad8)")
-	(net 151 "Net-(U12-Pad6)")
-	(net 152 "Net-(U6-Pad13)")
+	(net 150 "Net-(U13-Cp)")
+	(net 151 "Net-(U13-OE)")
+	(net 152 "unconnected-(U7-Q2-Pad4)")
 	(net 153 "~{MUTEX_CS}")
-	(net 154 "Net-(U14-Cp)")
-	(net 155 "Net-(U14-OE)")
-	(net 156 "unconnected-(U8-Q2-Pad4)")
-	(net 157 "Net-(U8-Q6)")
-	(net 158 "unconnected-(U8-Q7-Pad6)")
-	(net 159 "unconnected-(U8-Q9-Pad11)")
-	(net 160 "unconnected-(U8-Q8-Pad9)")
-	(net 161 "unconnected-(U8-Q5-Pad1)")
-	(net 162 "unconnected-(U8-Cout-Pad12)")
-	(net 163 "Net-(U8-CLK)")
-	(net 164 "unconnected-(U9-Pad6)")
-	(net 165 "unconnected-(U9-Pad3)")
-	(net 166 "Net-(U10-A14)")
-	(net 167 "unconnected-(U9-Pad8)")
+	(net 154 "Net-(U7-Q6)")
+	(net 155 "unconnected-(U7-Q7-Pad6)")
+	(net 156 "unconnected-(U7-Q9-Pad11)")
+	(net 157 "unconnected-(U7-Q8-Pad9)")
+	(net 158 "unconnected-(U7-Q5-Pad1)")
+	(net 159 "unconnected-(U7-Cout-Pad12)")
+	(net 160 "Net-(U7-CLK)")
+	(net 161 "unconnected-(U8-Pad6)")
+	(net 162 "unconnected-(U8-Pad3)")
+	(net 163 "Net-(U9-A14)")
+	(net 164 "unconnected-(U8-Pad8)")
+	(net 165 "Net-(U11-Pad10)")
+	(net 166 "unconnected-(U15-RxC-Pad5)")
+	(net 167 "unconnected-(U15-~{DTR}-Pad11)")
 	(net 168 "~{RAM_CS}")
 	(net 169 "~{ROM_CS}")
-	(net 170 "Net-(U12-Pad10)")
-	(net 171 "unconnected-(U16-RxC-Pad5)")
-	(net 172 "unconnected-(U16-~{DTR}-Pad11)")
-	(net 173 "Net-(U16-~{RTS})")
-	(net 174 "Net-(U16-RxD)")
-	(net 175 "Net-(U16-TxD)")
-	(net 176 "unconnected-(U17-R2OUT-Pad9)")
-	(net 177 "unconnected-(U17-R2IN-Pad8)")
-	(net 178 "Net-(U18-Pad11)")
-	(net 179 "unconnected-(Y1-EN-Pad1)")
+	(net 170 "Net-(U15-~{RTS})")
+	(net 171 "Net-(U15-RxD)")
+	(net 172 "Net-(U15-TxD)")
+	(net 173 "unconnected-(U16-R2OUT-Pad9)")
+	(net 174 "unconnected-(U16-R2IN-Pad8)")
+	(net 175 "Net-(U17-Pad11)")
+	(net 176 "unconnected-(Y1-EN-Pad1)")
 	(footprint "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal"
 		(layer "F.Cu")
 		(uuid "0341f1e4-f14e-44a7-a5d1-6cb716658374")
@@ -815,7 +812,7 @@
 		(at 318.52 91.54)
 		(descr "C, Disc series, Radial, pin pitch=5.00mm, , diameter*width=5*2.5mm^2, Capacitor, http://cdn-reichelt.de/documents/datenblatt/B300/DS_KERKO_TC.pdf")
 		(tags "C Disc series Radial pin pitch 5.00mm  diameter 5mm width 2.5mm Capacitor")
-		(property "Reference" "C6"
+		(property "Reference" "C5"
 			(at 2.5 -2.5 0)
 			(layer "F.SilkS")
 			(uuid "ea649351-9e27-4c8c-920c-80657c05fad5")
@@ -1345,7 +1342,7 @@
 		(at 277.26 157.24)
 		(descr "C, Disc series, Radial, pin pitch=5.00mm, , diameter*width=5*2.5mm^2, Capacitor, http://cdn-reichelt.de/documents/datenblatt/B300/DS_KERKO_TC.pdf")
 		(tags "C Disc series Radial pin pitch 5.00mm  diameter 5mm width 2.5mm Capacitor")
-		(property "Reference" "C7"
+		(property "Reference" "C6"
 			(at 2.5 -2.5 0)
 			(layer "F.SilkS")
 			(uuid "09cd9376-f643-4aa5-a748-cae44017f555")
@@ -1610,7 +1607,7 @@
 		(at 431.8 27.87)
 		(descr "C, Disc series, Radial, pin pitch=5.00mm, , diameter*width=5*2.5mm^2, Capacitor, http://cdn-reichelt.de/documents/datenblatt/B300/DS_KERKO_TC.pdf")
 		(tags "C Disc series Radial pin pitch 5.00mm  diameter 5mm width 2.5mm Capacitor")
-		(property "Reference" "C23"
+		(property "Reference" "C22"
 			(at 2.5 -2.5 0)
 			(layer "F.SilkS")
 			(uuid "0fce1d2d-b3c8-46e7-96d9-6fc4ad132435")
@@ -1838,7 +1835,7 @@
 				"In29.Cu" "In30.Cu"
 			)
 			(remove_unused_layers no)
-			(net 11 "Net-(U17-VS+)")
+			(net 11 "Net-(U16-VS+)")
 			(pintype "passive")
 			(uuid "639619a3-114a-4369-94d1-ddd169228731")
 		)
@@ -2258,7 +2255,7 @@
 		(at 149.86 149.86 90)
 		(descr "16-lead though-hole mounted DIP package, row spacing 7.62 mm (300 mils)")
 		(tags "THT DIP DIL PDIP 2.54mm 7.62mm 300mil")
-		(property "Reference" "U17"
+		(property "Reference" "U16"
 			(at 3.81 -2.33 90)
 			(layer "F.SilkS")
 			(uuid "c120fceb-e3dd-4844-89fd-28ca95df6f3b")
@@ -2497,7 +2494,7 @@
 				"In29.Cu" "In30.Cu"
 			)
 			(remove_unused_layers no)
-			(net 7 "Net-(U17-C1+)")
+			(net 7 "Net-(U16-C1+)")
 			(pinfunction "C1+")
 			(pintype "passive")
 			(uuid "776f9694-46f3-4543-b47f-abed68ab4f51")
@@ -2513,7 +2510,7 @@
 				"In29.Cu" "In30.Cu"
 			)
 			(remove_unused_layers no)
-			(net 11 "Net-(U17-VS+)")
+			(net 11 "Net-(U16-VS+)")
 			(pinfunction "VS+")
 			(pintype "power_out")
 			(uuid "33152a2c-1a2b-4450-80fc-66fd8ff4ba17")
@@ -2529,7 +2526,7 @@
 				"In29.Cu" "In30.Cu"
 			)
 			(remove_unused_layers no)
-			(net 6 "Net-(U17-C1-)")
+			(net 6 "Net-(U16-C1-)")
 			(pinfunction "C1-")
 			(pintype "passive")
 			(uuid "0f628c54-9b23-4c2b-8808-8e9e7dd2d8c2")
@@ -2545,7 +2542,7 @@
 				"In29.Cu" "In30.Cu"
 			)
 			(remove_unused_layers no)
-			(net 10 "Net-(U17-C2+)")
+			(net 10 "Net-(U16-C2+)")
 			(pinfunction "C2+")
 			(pintype "passive")
 			(uuid "a94b5a78-26d2-4452-b02b-b6db09109bfc")
@@ -2561,7 +2558,7 @@
 				"In29.Cu" "In30.Cu"
 			)
 			(remove_unused_layers no)
-			(net 9 "Net-(U17-C2-)")
+			(net 9 "Net-(U16-C2-)")
 			(pinfunction "C2-")
 			(pintype "passive")
 			(uuid "423c64f5-4d0e-4b9b-8967-e5b3aee5ed31")
@@ -2577,7 +2574,7 @@
 				"In29.Cu" "In30.Cu"
 			)
 			(remove_unused_layers no)
-			(net 8 "Net-(U17-VS-)")
+			(net 8 "Net-(U16-VS-)")
 			(pinfunction "VS-")
 			(pintype "power_out")
 			(uuid "73b5828a-0e1f-4117-a093-10a530c2ed8a")
@@ -2593,7 +2590,7 @@
 				"In29.Cu" "In30.Cu"
 			)
 			(remove_unused_layers no)
-			(net 44 "Net-(U17-T2OUT)")
+			(net 44 "Net-(U16-T2OUT)")
 			(pinfunction "T2OUT")
 			(pintype "output")
 			(uuid "c74cb2d5-fce9-4c3a-95ab-6e046cb4a373")
@@ -2609,7 +2606,7 @@
 				"In29.Cu" "In30.Cu"
 			)
 			(remove_unused_layers no)
-			(net 177 "unconnected-(U17-R2IN-Pad8)")
+			(net 174 "unconnected-(U16-R2IN-Pad8)")
 			(pinfunction "R2IN")
 			(pintype "input+no_connect")
 			(uuid "ad425072-7f23-428f-a60b-67bef123d06e")
@@ -2625,7 +2622,7 @@
 				"In29.Cu" "In30.Cu"
 			)
 			(remove_unused_layers no)
-			(net 176 "unconnected-(U17-R2OUT-Pad9)")
+			(net 173 "unconnected-(U16-R2OUT-Pad9)")
 			(pinfunction "R2OUT")
 			(pintype "output+no_connect")
 			(uuid "0de71921-52ec-4166-a377-a85df63a8530")
@@ -2641,7 +2638,7 @@
 				"In29.Cu" "In30.Cu"
 			)
 			(remove_unused_layers no)
-			(net 173 "Net-(U16-~{RTS})")
+			(net 170 "Net-(U15-~{RTS})")
 			(pinfunction "T2IN")
 			(pintype "input")
 			(uuid "8418575f-7920-476a-9e8e-7dc0a964e940")
@@ -2657,7 +2654,7 @@
 				"In29.Cu" "In30.Cu"
 			)
 			(remove_unused_layers no)
-			(net 175 "Net-(U16-TxD)")
+			(net 172 "Net-(U15-TxD)")
 			(pinfunction "T1IN")
 			(pintype "input")
 			(uuid "7ffdf7c3-fca3-4a06-a9ac-70a2c02d899b")
@@ -2673,7 +2670,7 @@
 				"In29.Cu" "In30.Cu"
 			)
 			(remove_unused_layers no)
-			(net 174 "Net-(U16-RxD)")
+			(net 171 "Net-(U15-RxD)")
 			(pinfunction "R1OUT")
 			(pintype "output")
 			(uuid "71e83bed-c571-4181-aedb-fdf92f0c9e6d")
@@ -2689,7 +2686,7 @@
 				"In29.Cu" "In30.Cu"
 			)
 			(remove_unused_layers no)
-			(net 49 "Net-(U17-R1IN)")
+			(net 49 "Net-(U16-R1IN)")
 			(pinfunction "R1IN")
 			(pintype "input")
 			(uuid "bf84372a-f859-44cd-b7f5-540865d62bcd")
@@ -2705,7 +2702,7 @@
 				"In29.Cu" "In30.Cu"
 			)
 			(remove_unused_layers no)
-			(net 42 "Net-(U17-T1OUT)")
+			(net 42 "Net-(U16-T1OUT)")
 			(pinfunction "T1OUT")
 			(pintype "output")
 			(uuid "ef43d46f-d203-4aa2-a507-348b9997b7df")
@@ -3163,7 +3160,7 @@
 		(at 119.38 101.6 90)
 		(descr "40-lead though-hole mounted DIP package, row spacing 15.24 mm (600 mils)")
 		(tags "THT DIP DIL PDIP 2.54mm 15.24mm 600mil")
-		(property "Reference" "U4"
+		(property "Reference" "U3"
 			(at 7.62 -2.33 90)
 			(layer "F.SilkS")
 			(uuid "2170cae6-0707-40af-b7c6-b6d98ee64000")
@@ -3418,7 +3415,7 @@
 				"In29.Cu" "In30.Cu"
 			)
 			(remove_unused_layers no)
-			(net 142 "Net-(U4-RDY)")
+			(net 138 "Net-(U3-RDY)")
 			(pinfunction "RDY")
 			(pintype "open_collector")
 			(uuid "e2ffc3c4-6f99-475f-849b-7e2dc3e937fc")
@@ -3434,7 +3431,7 @@
 				"In29.Cu" "In30.Cu"
 			)
 			(remove_unused_layers no)
-			(net 138 "unconnected-(U4-ϕ1-Pad3)")
+			(net 130 "unconnected-(U3-ϕ1-Pad3)")
 			(pinfunction "ϕ1")
 			(pintype "output+no_connect")
 			(uuid "00334985-c0fe-4ebb-9f92-8cd66b392281")
@@ -3930,7 +3927,7 @@
 				"In29.Cu" "In30.Cu"
 			)
 			(remove_unused_layers no)
-			(net 134 "CPU2_R{slash}~{W}")
+			(net 105 "R{slash}~{W}")
 			(pinfunction "R/~{W}")
 			(pintype "tri_state")
 			(uuid "80435e73-1b84-4aeb-8cf1-8238fec22474")
@@ -3946,7 +3943,7 @@
 				"In29.Cu" "In30.Cu"
 			)
 			(remove_unused_layers no)
-			(net 139 "unconnected-(U4-nc-Pad35)")
+			(net 133 "unconnected-(U3-nc-Pad35)")
 			(pinfunction "nc")
 			(pintype "no_connect")
 			(uuid "0db48f8c-8ed8-4c9a-b794-4d1d1c5cf7c9")
@@ -4010,7 +4007,7 @@
 				"In29.Cu" "In30.Cu"
 			)
 			(remove_unused_layers no)
-			(net 140 "unconnected-(U4-ϕ2-Pad39)")
+			(net 134 "unconnected-(U3-ϕ2-Pad39)")
 			(pinfunction "ϕ2")
 			(pintype "output+no_connect")
 			(uuid "7c5d3e0e-a8e6-4939-b111-3ea2c89a4f23")
@@ -4703,7 +4700,7 @@
 		(at 45.72 101.6 90)
 		(descr "28-lead though-hole mounted DIP package, row spacing 15.24 mm (600 mils)")
 		(tags "THT DIP DIL PDIP 2.54mm 15.24mm 600mil")
-		(property "Reference" "U10"
+		(property "Reference" "U9"
 			(at 7.62 -2.33 90)
 			(layer "F.SilkS")
 			(uuid "68fff108-d91f-4c81-ab28-5acfc83959d8")
@@ -4942,7 +4939,7 @@
 				"In29.Cu" "In30.Cu"
 			)
 			(remove_unused_layers no)
-			(net 166 "Net-(U10-A14)")
+			(net 163 "Net-(U9-A14)")
 			(pinfunction "A14")
 			(pintype "input")
 			(uuid "db238461-4fe2-4e1c-931f-d6d62d902164")
@@ -5397,7 +5394,7 @@
 		(at 322.66 161.29)
 		(descr "C, Disc series, Radial, pin pitch=5.00mm, , diameter*width=5*2.5mm^2, Capacitor, http://cdn-reichelt.de/documents/datenblatt/B300/DS_KERKO_TC.pdf")
 		(tags "C Disc series Radial pin pitch 5.00mm  diameter 5mm width 2.5mm Capacitor")
-		(property "Reference" "C15"
+		(property "Reference" "C14"
 			(at 2.5 -2.5 0)
 			(layer "F.SilkS")
 			(uuid "639ebe11-fd09-45ce-9b59-9d7e75c88f99")
@@ -5662,7 +5659,7 @@
 		(at 431.8 19.77)
 		(descr "C, Disc series, Radial, pin pitch=5.00mm, , diameter*width=5*2.5mm^2, Capacitor, http://cdn-reichelt.de/documents/datenblatt/B300/DS_KERKO_TC.pdf")
 		(tags "C Disc series Radial pin pitch 5.00mm  diameter 5mm width 2.5mm Capacitor")
-		(property "Reference" "C21"
+		(property "Reference" "C20"
 			(at 2.5 -2.5 0)
 			(layer "F.SilkS")
 			(uuid "194a30da-ad1b-4322-9ef7-093a9be546fe")
@@ -5890,7 +5887,7 @@
 				"In29.Cu" "In30.Cu"
 			)
 			(remove_unused_layers no)
-			(net 8 "Net-(U17-VS-)")
+			(net 8 "Net-(U16-VS-)")
 			(pintype "passive")
 			(uuid "91b13dba-8e40-4c37-8f01-15b0984f3a02")
 		)
@@ -5927,7 +5924,7 @@
 		(at 40.64 154.94 90)
 		(descr "40-lead though-hole mounted DIP package, row spacing 15.24 mm (600 mils)")
 		(tags "THT DIP DIL PDIP 2.54mm 15.24mm 600mil")
-		(property "Reference" "U15"
+		(property "Reference" "U14"
 			(at 7.62 -2.33 90)
 			(layer "F.SilkS")
 			(uuid "b5fe8f2b-49da-45ac-99f5-1ada49bf43b8")
@@ -7310,7 +7307,7 @@
 		(at 152.4 45.72 90)
 		(descr "14-lead though-hole mounted DIP package, row spacing 7.62 mm (300 mils)")
 		(tags "THT DIP DIL PDIP 2.54mm 7.62mm 300mil")
-		(property "Reference" "U7"
+		(property "Reference" "U6"
 			(at 3.81 -2.33 90)
 			(layer "F.SilkS")
 			(uuid "af3e08fc-7cd2-49df-a7f7-7613f0629d99")
@@ -7655,7 +7652,7 @@
 				"In29.Cu" "In30.Cu"
 			)
 			(remove_unused_layers no)
-			(net 155 "Net-(U14-OE)")
+			(net 151 "Net-(U13-OE)")
 			(pintype "output")
 			(uuid "0afc1259-bfa3-4af3-a221-445e9adc6290")
 		)
@@ -7685,7 +7682,7 @@
 				"In29.Cu" "In30.Cu"
 			)
 			(remove_unused_layers no)
-			(net 152 "Net-(U6-Pad13)")
+			(net 147 "Net-(U5-Pad13)")
 			(pintype "input")
 			(uuid "03663216-1f8d-4f89-822b-04b3c858a016")
 		)
@@ -7715,7 +7712,7 @@
 				"In29.Cu" "In30.Cu"
 			)
 			(remove_unused_layers no)
-			(net 120 "CPU1_CLK")
+			(net 96 "CPU2_CLK")
 			(pintype "input")
 			(uuid "92eb7069-1048-452b-8f97-a3fa7ba66f28")
 		)
@@ -7730,7 +7727,7 @@
 				"In29.Cu" "In30.Cu"
 			)
 			(remove_unused_layers no)
-			(net 96 "CPU2_CLK")
+			(net 120 "CPU1_CLK")
 			(pintype "input")
 			(uuid "eaf985f1-bf62-4480-80d0-a6b29fde2df7")
 		)
@@ -7768,7 +7765,7 @@
 		(at 277.26 169.39)
 		(descr "C, Disc series, Radial, pin pitch=5.00mm, , diameter*width=5*2.5mm^2, Capacitor, http://cdn-reichelt.de/documents/datenblatt/B300/DS_KERKO_TC.pdf")
 		(tags "C Disc series Radial pin pitch 5.00mm  diameter 5mm width 2.5mm Capacitor")
-		(property "Reference" "C10"
+		(property "Reference" "C9"
 			(at 2.5 -2.5 0)
 			(layer "F.SilkS")
 			(uuid "cc2bd4e6-4396-4e04-8267-bfbca9cedb63")
@@ -8033,7 +8030,7 @@
 		(at 73.66 45.72 90)
 		(descr "16-lead though-hole mounted DIP package, row spacing 7.62 mm (300 mils)")
 		(tags "THT DIP DIL PDIP 2.54mm 7.62mm 300mil")
-		(property "Reference" "U8"
+		(property "Reference" "U7"
 			(at 3.81 -2.33 90)
 			(layer "F.SilkS")
 			(uuid "32c966bd-47a8-4e4d-83c1-47c9d68add29")
@@ -8272,7 +8269,7 @@
 				"In29.Cu" "In30.Cu"
 			)
 			(remove_unused_layers no)
-			(net 161 "unconnected-(U8-Q5-Pad1)")
+			(net 158 "unconnected-(U7-Q5-Pad1)")
 			(pinfunction "Q5")
 			(pintype "output+no_connect")
 			(uuid "b4bb8f66-e1ca-4b2e-a67f-c84de07a81b4")
@@ -8320,7 +8317,7 @@
 				"In29.Cu" "In30.Cu"
 			)
 			(remove_unused_layers no)
-			(net 156 "unconnected-(U8-Q2-Pad4)")
+			(net 152 "unconnected-(U7-Q2-Pad4)")
 			(pinfunction "Q2")
 			(pintype "output+no_connect")
 			(uuid "467fec05-12ed-4d24-9225-0fe8e8108029")
@@ -8336,7 +8333,7 @@
 				"In29.Cu" "In30.Cu"
 			)
 			(remove_unused_layers no)
-			(net 157 "Net-(U8-Q6)")
+			(net 154 "Net-(U7-Q6)")
 			(pinfunction "Q6")
 			(pintype "output")
 			(uuid "71a3ebd1-705a-424c-848e-24148474b03a")
@@ -8352,7 +8349,7 @@
 				"In29.Cu" "In30.Cu"
 			)
 			(remove_unused_layers no)
-			(net 158 "unconnected-(U8-Q7-Pad6)")
+			(net 155 "unconnected-(U7-Q7-Pad6)")
 			(pinfunction "Q7")
 			(pintype "output+no_connect")
 			(uuid "5f2864f9-0270-483a-9848-8780ce6e58d4")
@@ -8400,7 +8397,7 @@
 				"In29.Cu" "In30.Cu"
 			)
 			(remove_unused_layers no)
-			(net 160 "unconnected-(U8-Q8-Pad9)")
+			(net 157 "unconnected-(U7-Q8-Pad9)")
 			(pinfunction "Q8")
 			(pintype "output+no_connect")
 			(uuid "b06b504a-b146-4031-8227-cbaccdef8d58")
@@ -8432,7 +8429,7 @@
 				"In29.Cu" "In30.Cu"
 			)
 			(remove_unused_layers no)
-			(net 159 "unconnected-(U8-Q9-Pad11)")
+			(net 156 "unconnected-(U7-Q9-Pad11)")
 			(pinfunction "Q9")
 			(pintype "output+no_connect")
 			(uuid "7c806eed-1b89-4930-b02a-f028d88a0e70")
@@ -8448,7 +8445,7 @@
 				"In29.Cu" "In30.Cu"
 			)
 			(remove_unused_layers no)
-			(net 162 "unconnected-(U8-Cout-Pad12)")
+			(net 159 "unconnected-(U7-Cout-Pad12)")
 			(pinfunction "Cout")
 			(pintype "output+no_connect")
 			(uuid "d9d8045e-b394-4286-b53e-ed8d31e117f6")
@@ -8480,7 +8477,7 @@
 				"In29.Cu" "In30.Cu"
 			)
 			(remove_unused_layers no)
-			(net 163 "Net-(U8-CLK)")
+			(net 160 "Net-(U7-CLK)")
 			(pinfunction "CLK")
 			(pintype "input")
 			(uuid "dffd50d8-488d-46f1-99c5-a0b8ff03f5a5")
@@ -8496,7 +8493,7 @@
 				"In29.Cu" "In30.Cu"
 			)
 			(remove_unused_layers no)
-			(net 157 "Net-(U8-Q6)")
+			(net 154 "Net-(U7-Q6)")
 			(pinfunction "Reset")
 			(pintype "input")
 			(uuid "5de9dcbb-cfdd-48f3-bd2e-6bc386003ad0")
@@ -8774,7 +8771,7 @@
 		(at 251.1 123.09)
 		(descr "C, Disc series, Radial, pin pitch=5.00mm, , diameter*width=5*2.5mm^2, Capacitor, http://cdn-reichelt.de/documents/datenblatt/B300/DS_KERKO_TC.pdf")
 		(tags "C Disc series Radial pin pitch 5.00mm  diameter 5mm width 2.5mm Capacitor")
-		(property "Reference" "C24"
+		(property "Reference" "C23"
 			(at 2.5 -2.5 0)
 			(layer "F.SilkS")
 			(uuid "7c343956-0bb6-41fb-b73c-6ee475e012f3")
@@ -9039,7 +9036,7 @@
 		(at 277.26 165.34)
 		(descr "C, Disc series, Radial, pin pitch=5.00mm, , diameter*width=5*2.5mm^2, Capacitor, http://cdn-reichelt.de/documents/datenblatt/B300/DS_KERKO_TC.pdf")
 		(tags "C Disc series Radial pin pitch 5.00mm  diameter 5mm width 2.5mm Capacitor")
-		(property "Reference" "C9"
+		(property "Reference" "C8"
 			(at 2.5 -2.5 0)
 			(layer "F.SilkS")
 			(uuid "55d5392a-e9c4-41ad-a2a9-5f4981b89d31")
@@ -9304,7 +9301,7 @@
 		(at 121.92 121.92 90)
 		(descr "16-lead though-hole mounted DIP package, row spacing 7.62 mm (300 mils)")
 		(tags "THT DIP DIL PDIP 2.54mm 7.62mm 300mil")
-		(property "Reference" "U13"
+		(property "Reference" "U12"
 			(at 3.81 -2.33 90)
 			(layer "F.SilkS")
 			(uuid "de4fe66c-0238-424d-b4ab-fe89826bc1e7")
@@ -9806,7 +9803,7 @@
 		(at 233.8 79.66)
 		(descr "C, Disc series, Radial, pin pitch=5.00mm, , diameter*width=5*2.5mm^2, Capacitor, http://cdn-reichelt.de/documents/datenblatt/B300/DS_KERKO_TC.pdf")
 		(tags "C Disc series Radial pin pitch 5.00mm  diameter 5mm width 2.5mm Capacitor")
-		(property "Reference" "C12"
+		(property "Reference" "C11"
 			(at 2.5 -2.5 0)
 			(layer "F.SilkS")
 			(uuid "5b632a0b-b9af-455a-ba5f-a7c20098959f")
@@ -10288,7 +10285,7 @@
 			(uuid "55cb081e-3065-4d3c-ba4d-e16f139d3b7d")
 		)
 		(fp_text user "${REFERENCE}"
-			(at 0 26.67 360)
+			(at 0 26.67 0)
 			(layer "F.Fab")
 			(uuid "b271fc2a-dd47-43bb-98ee-0751bd42ec75")
 			(effects
@@ -10668,7 +10665,7 @@
 		(at 38.1 121.92 90)
 		(descr "20-lead though-hole mounted DIP package, row spacing 7.62 mm (300 mils)")
 		(tags "THT DIP DIL PDIP 2.54mm 7.62mm 300mil")
-		(property "Reference" "U14"
+		(property "Reference" "U13"
 			(at 3.81 -2.33 90)
 			(layer "F.SilkS")
 			(uuid "54c03e75-a0c6-461a-aae8-40ed8135bb39")
@@ -10907,7 +10904,7 @@
 				"In29.Cu" "In30.Cu"
 			)
 			(remove_unused_layers no)
-			(net 155 "Net-(U14-OE)")
+			(net 151 "Net-(U13-OE)")
 			(pinfunction "OE")
 			(pintype "input")
 			(uuid "cbc136bd-03b3-43ab-a4c4-ce2e4e2f2689")
@@ -11067,7 +11064,7 @@
 				"In29.Cu" "In30.Cu"
 			)
 			(remove_unused_layers no)
-			(net 154 "Net-(U14-Cp)")
+			(net 150 "Net-(U13-Cp)")
 			(pinfunction "Cp")
 			(pintype "input")
 			(uuid "820a50fe-3516-4b0c-9a96-e8ba402d3762")
@@ -11646,7 +11643,7 @@
 		(at 322.66 157.24)
 		(descr "C, Disc series, Radial, pin pitch=5.00mm, , diameter*width=5*2.5mm^2, Capacitor, http://cdn-reichelt.de/documents/datenblatt/B300/DS_KERKO_TC.pdf")
 		(tags "C Disc series Radial pin pitch 5.00mm  diameter 5mm width 2.5mm Capacitor")
-		(property "Reference" "C14"
+		(property "Reference" "C13"
 			(at 2.5 -2.5 0)
 			(layer "F.SilkS")
 			(uuid "e1321df3-2ae2-4e0d-b71f-68b6f8da198e")
@@ -12279,7 +12276,7 @@
 				"In29.Cu" "In30.Cu"
 			)
 			(remove_unused_layers no)
-			(net 122 "Net-(U16-XTAL2)")
+			(net 122 "Net-(U15-XTAL2)")
 			(pinfunction "1")
 			(pintype "passive")
 			(uuid "d408178a-3639-4888-86d0-26f74a973680")
@@ -12295,7 +12292,7 @@
 				"In29.Cu" "In30.Cu"
 			)
 			(remove_unused_layers no)
-			(net 5 "Net-(U16-XTAL1)")
+			(net 5 "Net-(U15-XTAL1)")
 			(pinfunction "2")
 			(pintype "passive")
 			(uuid "d76c6bb7-ee36-4d6e-bddb-3de3fc6823c2")
@@ -12318,7 +12315,7 @@
 		(at 233.8 75.61)
 		(descr "C, Disc series, Radial, pin pitch=5.00mm, , diameter*width=5*2.5mm^2, Capacitor, http://cdn-reichelt.de/documents/datenblatt/B300/DS_KERKO_TC.pdf")
 		(tags "C Disc series Radial pin pitch 5.00mm  diameter 5mm width 2.5mm Capacitor")
-		(property "Reference" "C11"
+		(property "Reference" "C10"
 			(at 2.5 -2.5 0)
 			(layer "F.SilkS")
 			(uuid "c21e984e-8c43-4f77-ba7a-c2caa8ee40ee")
@@ -13350,7 +13347,7 @@
 				"In29.Cu" "In30.Cu"
 			)
 			(remove_unused_layers no)
-			(net 130 "CPU1_R{slash}~{W}")
+			(net 105 "R{slash}~{W}")
 			(pinfunction "R/~{W}")
 			(pintype "tri_state")
 			(uuid "c686e7d8-df2f-49a0-9c6e-14583a6ec6f1")
@@ -14074,7 +14071,7 @@
 		(at 431.8 23.82)
 		(descr "C, Disc series, Radial, pin pitch=5.00mm, , diameter*width=5*2.5mm^2, Capacitor, http://cdn-reichelt.de/documents/datenblatt/B300/DS_KERKO_TC.pdf")
 		(tags "C Disc series Radial pin pitch 5.00mm  diameter 5mm width 2.5mm Capacitor")
-		(property "Reference" "C22"
+		(property "Reference" "C21"
 			(at 2.5 -2.5 0)
 			(layer "F.SilkS")
 			(uuid "da62c2a1-8a9e-4a52-b748-cc4c5ad566e5")
@@ -14302,7 +14299,7 @@
 				"In29.Cu" "In30.Cu"
 			)
 			(remove_unused_layers no)
-			(net 10 "Net-(U17-C2+)")
+			(net 10 "Net-(U16-C2+)")
 			(pintype "passive")
 			(uuid "d7662ee6-6cbd-4330-8239-083c35fe32fa")
 		)
@@ -14317,7 +14314,7 @@
 				"In29.Cu" "In30.Cu"
 			)
 			(remove_unused_layers no)
-			(net 9 "Net-(U17-C2-)")
+			(net 9 "Net-(U16-C2-)")
 			(pintype "passive")
 			(uuid "cdbf79cc-d051-4ef6-a8c6-a05e5d0b1b00")
 		)
@@ -14618,515 +14615,13 @@
 			)
 		)
 	)
-	(footprint "Package_DIP:DIP-16_W7.62mm"
-		(layer "F.Cu")
-		(uuid "764862e4-2b93-4c43-9252-4da568d43826")
-		(at 149.86 121.92 90)
-		(descr "16-lead though-hole mounted DIP package, row spacing 7.62 mm (300 mils)")
-		(tags "THT DIP DIL PDIP 2.54mm 7.62mm 300mil")
-		(property "Reference" "U3"
-			(at 3.81 -2.33 90)
-			(layer "F.SilkS")
-			(uuid "29ecbde8-4db3-48e5-afcc-0e77b6e8204b")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Value" "74HC157"
-			(at 3.81 20.11 90)
-			(layer "F.Fab")
-			(uuid "536f162a-0333-42ec-a092-2388d02dd5b4")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Footprint" "Package_DIP:DIP-16_W7.62mm"
-			(at 0 0 90)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "4d6580da-9835-4cec-abf2-32ed06f8abbd")
-			(effects
-				(font
-					(size 1.27 1.27)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Datasheet" "http://www.ti.com/lit/gpn/sn74LS157"
-			(at 0 0 90)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "aac0a4d5-0727-4a26-ad7b-f0a7fc620b4b")
-			(effects
-				(font
-					(size 1.27 1.27)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Description" "Quad 2 to 1 line Multiplexer"
-			(at 0 0 90)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "7f9ccc7f-765e-4029-8aa0-d1713972d2c9")
-			(effects
-				(font
-					(size 1.27 1.27)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property ki_fp_filters "DIP?16*")
-		(path "/3e6d4e37-17a2-42ed-9829-cf500e89d60f/f99ba581-e5b3-4f50-8f85-c67bcbab798e")
-		(sheetname "CPU 1")
-		(sheetfile "cpu1.kicad_sch")
-		(attr through_hole)
-		(fp_line
-			(start 6.46 -1.33)
-			(end 4.81 -1.33)
-			(stroke
-				(width 0.12)
-				(type solid)
-			)
-			(layer "F.SilkS")
-			(uuid "128d1492-7028-48ed-a91b-3f9f2cd789db")
-		)
-		(fp_line
-			(start 2.81 -1.33)
-			(end 1.16 -1.33)
-			(stroke
-				(width 0.12)
-				(type solid)
-			)
-			(layer "F.SilkS")
-			(uuid "1e90fe73-fb51-4926-85d1-28c0a48a7d4e")
-		)
-		(fp_line
-			(start 1.16 -1.33)
-			(end 1.16 19.11)
-			(stroke
-				(width 0.12)
-				(type solid)
-			)
-			(layer "F.SilkS")
-			(uuid "1d1b0f29-c0af-4840-9734-83a40fc70d58")
-		)
-		(fp_line
-			(start 6.46 19.11)
-			(end 6.46 -1.33)
-			(stroke
-				(width 0.12)
-				(type solid)
-			)
-			(layer "F.SilkS")
-			(uuid "5943bc17-b715-4fda-bedf-88f9f881cde1")
-		)
-		(fp_line
-			(start 1.16 19.11)
-			(end 6.46 19.11)
-			(stroke
-				(width 0.12)
-				(type solid)
-			)
-			(layer "F.SilkS")
-			(uuid "446cca35-1fbc-4d8d-a3da-9ca356e10c4c")
-		)
-		(fp_arc
-			(start 4.81 -1.33)
-			(mid 3.81 -0.33)
-			(end 2.81 -1.33)
-			(stroke
-				(width 0.12)
-				(type solid)
-			)
-			(layer "F.SilkS")
-			(uuid "ed943f10-ac80-47ff-b910-356110d4e6b3")
-		)
-		(fp_line
-			(start 8.7 -1.55)
-			(end -1.1 -1.55)
-			(stroke
-				(width 0.05)
-				(type solid)
-			)
-			(layer "F.CrtYd")
-			(uuid "b6c7fe10-5bd8-4378-8aea-281bd92b4bad")
-		)
-		(fp_line
-			(start -1.1 -1.55)
-			(end -1.1 19.3)
-			(stroke
-				(width 0.05)
-				(type solid)
-			)
-			(layer "F.CrtYd")
-			(uuid "2f533901-c735-4047-95ca-b74f89cb1160")
-		)
-		(fp_line
-			(start 8.7 19.3)
-			(end 8.7 -1.55)
-			(stroke
-				(width 0.05)
-				(type solid)
-			)
-			(layer "F.CrtYd")
-			(uuid "a873ba66-41c9-4a1f-8fb6-294476a2eceb")
-		)
-		(fp_line
-			(start -1.1 19.3)
-			(end 8.7 19.3)
-			(stroke
-				(width 0.05)
-				(type solid)
-			)
-			(layer "F.CrtYd")
-			(uuid "8475f987-8f99-41bb-a294-6c3232945d5e")
-		)
-		(fp_line
-			(start 6.985 -1.27)
-			(end 6.985 19.05)
-			(stroke
-				(width 0.1)
-				(type solid)
-			)
-			(layer "F.Fab")
-			(uuid "40fc587f-9360-4fd5-8fd3-358d52dac624")
-		)
-		(fp_line
-			(start 1.635 -1.27)
-			(end 6.985 -1.27)
-			(stroke
-				(width 0.1)
-				(type solid)
-			)
-			(layer "F.Fab")
-			(uuid "c663c55b-2095-4451-992b-ab5644aa2a59")
-		)
-		(fp_line
-			(start 0.635 -0.27)
-			(end 1.635 -1.27)
-			(stroke
-				(width 0.1)
-				(type solid)
-			)
-			(layer "F.Fab")
-			(uuid "76471703-3068-47b6-a2a9-a64016fddb83")
-		)
-		(fp_line
-			(start 6.985 19.05)
-			(end 0.635 19.05)
-			(stroke
-				(width 0.1)
-				(type solid)
-			)
-			(layer "F.Fab")
-			(uuid "5c8c448e-0716-4db2-8cb5-d86fafec8768")
-		)
-		(fp_line
-			(start 0.635 19.05)
-			(end 0.635 -0.27)
-			(stroke
-				(width 0.1)
-				(type solid)
-			)
-			(layer "F.Fab")
-			(uuid "5bf08761-9e51-4a28-a77f-15793659b204")
-		)
-		(fp_text user "${REFERENCE}"
-			(at 3.81 8.89 90)
-			(layer "F.Fab")
-			(uuid "aadd3b97-2b9a-4a9f-9e18-07ee570a9276")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(pad "1" thru_hole rect
-			(at 0 0 90)
-			(size 1.6 1.6)
-			(drill 0.8)
-			(layers "*.Cu" "*.Mask" "In1.Cu" "In2.Cu" "In3.Cu" "In4.Cu" "In5.Cu" "In6.Cu"
-				"In7.Cu" "In8.Cu" "In9.Cu" "In10.Cu" "In11.Cu" "In12.Cu" "In13.Cu" "In14.Cu"
-				"In15.Cu" "In16.Cu" "In17.Cu" "In18.Cu" "In19.Cu" "In20.Cu" "In21.Cu"
-				"In22.Cu" "In23.Cu" "In24.Cu" "In25.Cu" "In26.Cu" "In27.Cu" "In28.Cu"
-				"In29.Cu" "In30.Cu"
-			)
-			(remove_unused_layers no)
-			(net 137 "CPU2_BUSEN")
-			(pinfunction "S")
-			(pintype "input")
-			(uuid "a51bdd2b-ca31-40b8-ac2a-dd01958191a5")
-		)
-		(pad "2" thru_hole oval
-			(at 0 2.54 90)
-			(size 1.6 1.6)
-			(drill 0.8)
-			(layers "*.Cu" "*.Mask" "In1.Cu" "In2.Cu" "In3.Cu" "In4.Cu" "In5.Cu" "In6.Cu"
-				"In7.Cu" "In8.Cu" "In9.Cu" "In10.Cu" "In11.Cu" "In12.Cu" "In13.Cu" "In14.Cu"
-				"In15.Cu" "In16.Cu" "In17.Cu" "In18.Cu" "In19.Cu" "In20.Cu" "In21.Cu"
-				"In22.Cu" "In23.Cu" "In24.Cu" "In25.Cu" "In26.Cu" "In27.Cu" "In28.Cu"
-				"In29.Cu" "In30.Cu"
-			)
-			(remove_unused_layers no)
-			(net 130 "CPU1_R{slash}~{W}")
-			(pinfunction "I0a")
-			(pintype "input")
-			(uuid "5a7a3a80-a84f-4c05-bbb7-43155be230d8")
-		)
-		(pad "3" thru_hole oval
-			(at 0 5.08 90)
-			(size 1.6 1.6)
-			(drill 0.8)
-			(layers "*.Cu" "*.Mask" "In1.Cu" "In2.Cu" "In3.Cu" "In4.Cu" "In5.Cu" "In6.Cu"
-				"In7.Cu" "In8.Cu" "In9.Cu" "In10.Cu" "In11.Cu" "In12.Cu" "In13.Cu" "In14.Cu"
-				"In15.Cu" "In16.Cu" "In17.Cu" "In18.Cu" "In19.Cu" "In20.Cu" "In21.Cu"
-				"In22.Cu" "In23.Cu" "In24.Cu" "In25.Cu" "In26.Cu" "In27.Cu" "In28.Cu"
-				"In29.Cu" "In30.Cu"
-			)
-			(remove_unused_layers no)
-			(net 134 "CPU2_R{slash}~{W}")
-			(pinfunction "I1a")
-			(pintype "input")
-			(uuid "45313b51-37e8-48db-b6e1-6c79364d16da")
-		)
-		(pad "4" thru_hole oval
-			(at 0 7.62 90)
-			(size 1.6 1.6)
-			(drill 0.8)
-			(layers "*.Cu" "*.Mask" "In1.Cu" "In2.Cu" "In3.Cu" "In4.Cu" "In5.Cu" "In6.Cu"
-				"In7.Cu" "In8.Cu" "In9.Cu" "In10.Cu" "In11.Cu" "In12.Cu" "In13.Cu" "In14.Cu"
-				"In15.Cu" "In16.Cu" "In17.Cu" "In18.Cu" "In19.Cu" "In20.Cu" "In21.Cu"
-				"In22.Cu" "In23.Cu" "In24.Cu" "In25.Cu" "In26.Cu" "In27.Cu" "In28.Cu"
-				"In29.Cu" "In30.Cu"
-			)
-			(remove_unused_layers no)
-			(net 105 "R{slash}~{W}")
-			(pinfunction "Za")
-			(pintype "output")
-			(uuid "437d808d-9529-4885-8d43-e0f4de275cc8")
-		)
-		(pad "5" thru_hole oval
-			(at 0 10.16 90)
-			(size 1.6 1.6)
-			(drill 0.8)
-			(layers "*.Cu" "*.Mask" "In1.Cu" "In2.Cu" "In3.Cu" "In4.Cu" "In5.Cu" "In6.Cu"
-				"In7.Cu" "In8.Cu" "In9.Cu" "In10.Cu" "In11.Cu" "In12.Cu" "In13.Cu" "In14.Cu"
-				"In15.Cu" "In16.Cu" "In17.Cu" "In18.Cu" "In19.Cu" "In20.Cu" "In21.Cu"
-				"In22.Cu" "In23.Cu" "In24.Cu" "In25.Cu" "In26.Cu" "In27.Cu" "In28.Cu"
-				"In29.Cu" "In30.Cu"
-			)
-			(remove_unused_layers no)
-			(net 125 "CPU1_SYNC")
-			(pinfunction "I0b")
-			(pintype "input")
-			(uuid "fa0122fb-d673-4ca0-9c35-c8c9be031e12")
-		)
-		(pad "6" thru_hole oval
-			(at 0 12.7 90)
-			(size 1.6 1.6)
-			(drill 0.8)
-			(layers "*.Cu" "*.Mask" "In1.Cu" "In2.Cu" "In3.Cu" "In4.Cu" "In5.Cu" "In6.Cu"
-				"In7.Cu" "In8.Cu" "In9.Cu" "In10.Cu" "In11.Cu" "In12.Cu" "In13.Cu" "In14.Cu"
-				"In15.Cu" "In16.Cu" "In17.Cu" "In18.Cu" "In19.Cu" "In20.Cu" "In21.Cu"
-				"In22.Cu" "In23.Cu" "In24.Cu" "In25.Cu" "In26.Cu" "In27.Cu" "In28.Cu"
-				"In29.Cu" "In30.Cu"
-			)
-			(remove_unused_layers no)
-			(net 135 "CPU2_SYNC")
-			(pinfunction "I1b")
-			(pintype "input")
-			(uuid "4bcb60ae-6690-4ebd-80d8-f521ca67e58b")
-		)
-		(pad "7" thru_hole oval
-			(at 0 15.24 90)
-			(size 1.6 1.6)
-			(drill 0.8)
-			(layers "*.Cu" "*.Mask" "In1.Cu" "In2.Cu" "In3.Cu" "In4.Cu" "In5.Cu" "In6.Cu"
-				"In7.Cu" "In8.Cu" "In9.Cu" "In10.Cu" "In11.Cu" "In12.Cu" "In13.Cu" "In14.Cu"
-				"In15.Cu" "In16.Cu" "In17.Cu" "In18.Cu" "In19.Cu" "In20.Cu" "In21.Cu"
-				"In22.Cu" "In23.Cu" "In24.Cu" "In25.Cu" "In26.Cu" "In27.Cu" "In28.Cu"
-				"In29.Cu" "In30.Cu"
-			)
-			(remove_unused_layers no)
-			(net 79 "SYNC")
-			(pinfunction "Zb")
-			(pintype "output")
-			(uuid "4cca459a-8cda-4d26-996d-a998455088cd")
-		)
-		(pad "8" thru_hole oval
-			(at 0 17.78 90)
-			(size 1.6 1.6)
-			(drill 0.8)
-			(layers "*.Cu" "*.Mask" "In1.Cu" "In2.Cu" "In3.Cu" "In4.Cu" "In5.Cu" "In6.Cu"
-				"In7.Cu" "In8.Cu" "In9.Cu" "In10.Cu" "In11.Cu" "In12.Cu" "In13.Cu" "In14.Cu"
-				"In15.Cu" "In16.Cu" "In17.Cu" "In18.Cu" "In19.Cu" "In20.Cu" "In21.Cu"
-				"In22.Cu" "In23.Cu" "In24.Cu" "In25.Cu" "In26.Cu" "In27.Cu" "In28.Cu"
-				"In29.Cu" "In30.Cu"
-			)
-			(remove_unused_layers no)
-			(net 1 "GND")
-			(pinfunction "GND")
-			(pintype "power_in")
-			(uuid "ec431fab-3961-4ce0-974d-22f944906e4f")
-		)
-		(pad "9" thru_hole oval
-			(at 7.62 17.78 90)
-			(size 1.6 1.6)
-			(drill 0.8)
-			(layers "*.Cu" "*.Mask" "In1.Cu" "In2.Cu" "In3.Cu" "In4.Cu" "In5.Cu" "In6.Cu"
-				"In7.Cu" "In8.Cu" "In9.Cu" "In10.Cu" "In11.Cu" "In12.Cu" "In13.Cu" "In14.Cu"
-				"In15.Cu" "In16.Cu" "In17.Cu" "In18.Cu" "In19.Cu" "In20.Cu" "In21.Cu"
-				"In22.Cu" "In23.Cu" "In24.Cu" "In25.Cu" "In26.Cu" "In27.Cu" "In28.Cu"
-				"In29.Cu" "In30.Cu"
-			)
-			(remove_unused_layers no)
-			(net 114 "~{VP}")
-			(pinfunction "Zc")
-			(pintype "output")
-			(uuid "1b929d2f-c896-4f50-ab34-2bd7c8db0943")
-		)
-		(pad "10" thru_hole oval
-			(at 7.62 15.24 90)
-			(size 1.6 1.6)
-			(drill 0.8)
-			(layers "*.Cu" "*.Mask" "In1.Cu" "In2.Cu" "In3.Cu" "In4.Cu" "In5.Cu" "In6.Cu"
-				"In7.Cu" "In8.Cu" "In9.Cu" "In10.Cu" "In11.Cu" "In12.Cu" "In13.Cu" "In14.Cu"
-				"In15.Cu" "In16.Cu" "In17.Cu" "In18.Cu" "In19.Cu" "In20.Cu" "In21.Cu"
-				"In22.Cu" "In23.Cu" "In24.Cu" "In25.Cu" "In26.Cu" "In27.Cu" "In28.Cu"
-				"In29.Cu" "In30.Cu"
-			)
-			(remove_unused_layers no)
-			(net 136 "~{CPU2_VP}")
-			(pinfunction "I1c")
-			(pintype "input")
-			(uuid "9e2f8597-7d89-4257-8875-713b51cfb9d7")
-		)
-		(pad "11" thru_hole oval
-			(at 7.62 12.7 90)
-			(size 1.6 1.6)
-			(drill 0.8)
-			(layers "*.Cu" "*.Mask" "In1.Cu" "In2.Cu" "In3.Cu" "In4.Cu" "In5.Cu" "In6.Cu"
-				"In7.Cu" "In8.Cu" "In9.Cu" "In10.Cu" "In11.Cu" "In12.Cu" "In13.Cu" "In14.Cu"
-				"In15.Cu" "In16.Cu" "In17.Cu" "In18.Cu" "In19.Cu" "In20.Cu" "In21.Cu"
-				"In22.Cu" "In23.Cu" "In24.Cu" "In25.Cu" "In26.Cu" "In27.Cu" "In28.Cu"
-				"In29.Cu" "In30.Cu"
-			)
-			(remove_unused_layers no)
-			(net 131 "~{CPU1_VP}")
-			(pinfunction "I0c")
-			(pintype "input")
-			(uuid "98c93220-0567-489c-8797-e21a57b6aecd")
-		)
-		(pad "12" thru_hole oval
-			(at 7.62 10.16 90)
-			(size 1.6 1.6)
-			(drill 0.8)
-			(layers "*.Cu" "*.Mask" "In1.Cu" "In2.Cu" "In3.Cu" "In4.Cu" "In5.Cu" "In6.Cu"
-				"In7.Cu" "In8.Cu" "In9.Cu" "In10.Cu" "In11.Cu" "In12.Cu" "In13.Cu" "In14.Cu"
-				"In15.Cu" "In16.Cu" "In17.Cu" "In18.Cu" "In19.Cu" "In20.Cu" "In21.Cu"
-				"In22.Cu" "In23.Cu" "In24.Cu" "In25.Cu" "In26.Cu" "In27.Cu" "In28.Cu"
-				"In29.Cu" "In30.Cu"
-			)
-			(remove_unused_layers no)
-			(net 133 "CPU_ID")
-			(pinfunction "Zd")
-			(pintype "output")
-			(uuid "32e74bcc-9ae6-44e9-9ac8-f2a5b6e0886f")
-		)
-		(pad "13" thru_hole oval
-			(at 7.62 7.62 90)
-			(size 1.6 1.6)
-			(drill 0.8)
-			(layers "*.Cu" "*.Mask" "In1.Cu" "In2.Cu" "In3.Cu" "In4.Cu" "In5.Cu" "In6.Cu"
-				"In7.Cu" "In8.Cu" "In9.Cu" "In10.Cu" "In11.Cu" "In12.Cu" "In13.Cu" "In14.Cu"
-				"In15.Cu" "In16.Cu" "In17.Cu" "In18.Cu" "In19.Cu" "In20.Cu" "In21.Cu"
-				"In22.Cu" "In23.Cu" "In24.Cu" "In25.Cu" "In26.Cu" "In27.Cu" "In28.Cu"
-				"In29.Cu" "In30.Cu"
-			)
-			(remove_unused_layers no)
-			(net 3 "+5V")
-			(pinfunction "I1d")
-			(pintype "input")
-			(uuid "adc5cd9e-8404-4bb5-9177-a0b0a1d31e61")
-		)
-		(pad "14" thru_hole oval
-			(at 7.62 5.08 90)
-			(size 1.6 1.6)
-			(drill 0.8)
-			(layers "*.Cu" "*.Mask" "In1.Cu" "In2.Cu" "In3.Cu" "In4.Cu" "In5.Cu" "In6.Cu"
-				"In7.Cu" "In8.Cu" "In9.Cu" "In10.Cu" "In11.Cu" "In12.Cu" "In13.Cu" "In14.Cu"
-				"In15.Cu" "In16.Cu" "In17.Cu" "In18.Cu" "In19.Cu" "In20.Cu" "In21.Cu"
-				"In22.Cu" "In23.Cu" "In24.Cu" "In25.Cu" "In26.Cu" "In27.Cu" "In28.Cu"
-				"In29.Cu" "In30.Cu"
-			)
-			(remove_unused_layers no)
-			(net 1 "GND")
-			(pinfunction "I0d")
-			(pintype "input")
-			(uuid "3919a0c6-0183-406e-97f1-5db167afac25")
-		)
-		(pad "15" thru_hole oval
-			(at 7.62 2.54 90)
-			(size 1.6 1.6)
-			(drill 0.8)
-			(layers "*.Cu" "*.Mask" "In1.Cu" "In2.Cu" "In3.Cu" "In4.Cu" "In5.Cu" "In6.Cu"
-				"In7.Cu" "In8.Cu" "In9.Cu" "In10.Cu" "In11.Cu" "In12.Cu" "In13.Cu" "In14.Cu"
-				"In15.Cu" "In16.Cu" "In17.Cu" "In18.Cu" "In19.Cu" "In20.Cu" "In21.Cu"
-				"In22.Cu" "In23.Cu" "In24.Cu" "In25.Cu" "In26.Cu" "In27.Cu" "In28.Cu"
-				"In29.Cu" "In30.Cu"
-			)
-			(remove_unused_layers no)
-			(net 1 "GND")
-			(pinfunction "E")
-			(pintype "input")
-			(uuid "deeb98a6-d5da-452c-9ec7-dc880dac3b08")
-		)
-		(pad "16" thru_hole oval
-			(at 7.62 0 90)
-			(size 1.6 1.6)
-			(drill 0.8)
-			(layers "*.Cu" "*.Mask" "In1.Cu" "In2.Cu" "In3.Cu" "In4.Cu" "In5.Cu" "In6.Cu"
-				"In7.Cu" "In8.Cu" "In9.Cu" "In10.Cu" "In11.Cu" "In12.Cu" "In13.Cu" "In14.Cu"
-				"In15.Cu" "In16.Cu" "In17.Cu" "In18.Cu" "In19.Cu" "In20.Cu" "In21.Cu"
-				"In22.Cu" "In23.Cu" "In24.Cu" "In25.Cu" "In26.Cu" "In27.Cu" "In28.Cu"
-				"In29.Cu" "In30.Cu"
-			)
-			(remove_unused_layers no)
-			(net 3 "+5V")
-			(pinfunction "VCC")
-			(pintype "power_in")
-			(uuid "5e77f170-e113-4f4b-9309-865342c3617f")
-		)
-		(model "${KICAD8_3DMODEL_DIR}/Package_DIP.3dshapes/DIP-16_W7.62mm.wrl"
-			(offset
-				(xyz 0 0 0)
-			)
-			(scale
-				(xyz 1 1 1)
-			)
-			(rotate
-				(xyz 0 0 0)
-			)
-		)
-	)
 	(footprint "Capacitor_THT:C_Disc_D5.0mm_W2.5mm_P5.00mm"
 		(layer "F.Cu")
 		(uuid "79b02d16-ec78-485e-811f-264978ff68cc")
 		(at 232.4 105.21)
 		(descr "C, Disc series, Radial, pin pitch=5.00mm, , diameter*width=5*2.5mm^2, Capacitor, http://cdn-reichelt.de/documents/datenblatt/B300/DS_KERKO_TC.pdf")
 		(tags "C Disc series Radial pin pitch 5.00mm  diameter 5mm width 2.5mm Capacitor")
-		(property "Reference" "C16"
+		(property "Reference" "C15"
 			(at 2.5 -2.5 0)
 			(layer "F.SilkS")
 			(uuid "b92bb355-8155-4148-832b-e543a6b0f88a")
@@ -15760,7 +15255,7 @@
 		(at 96.52 121.92 90)
 		(descr "14-lead though-hole mounted DIP package, row spacing 7.62 mm (300 mils)")
 		(tags "THT DIP DIL PDIP 2.54mm 7.62mm 300mil")
-		(property "Reference" "U12"
+		(property "Reference" "U11"
 			(at 3.81 -2.33 90)
 			(layer "F.SilkS")
 			(uuid "8388bc2f-b4bd-4f15-b5db-927cee7cd7d1")
@@ -16074,7 +15569,7 @@
 				"In29.Cu" "In30.Cu"
 			)
 			(remove_unused_layers no)
-			(net 151 "Net-(U12-Pad6)")
+			(net 144 "Net-(U11-Pad6)")
 			(pintype "output")
 			(uuid "af96850e-5da4-4133-a688-82ce4f7dc260")
 		)
@@ -16135,7 +15630,7 @@
 				"In29.Cu" "In30.Cu"
 			)
 			(remove_unused_layers no)
-			(net 170 "Net-(U12-Pad10)")
+			(net 165 "Net-(U11-Pad10)")
 			(pintype "input")
 			(uuid "296307db-464b-4306-bf9b-e1a5f91c1439")
 		)
@@ -16150,7 +15645,7 @@
 				"In29.Cu" "In30.Cu"
 			)
 			(remove_unused_layers no)
-			(net 170 "Net-(U12-Pad10)")
+			(net 165 "Net-(U11-Pad10)")
 			(pintype "output")
 			(uuid "a5e82719-125e-429b-a1c2-4e9b787e6500")
 		)
@@ -16503,7 +15998,7 @@
 		(at 233.8 83.71)
 		(descr "C, Disc series, Radial, pin pitch=5.00mm, , diameter*width=5*2.5mm^2, Capacitor, http://cdn-reichelt.de/documents/datenblatt/B300/DS_KERKO_TC.pdf")
 		(tags "C Disc series Radial pin pitch 5.00mm  diameter 5mm width 2.5mm Capacitor")
-		(property "Reference" "C13"
+		(property "Reference" "C12"
 			(at 2.5 -2.5 0)
 			(layer "F.SilkS")
 			(uuid "94da9409-64b5-453c-bc94-b0ea86b6a62e")
@@ -16768,7 +16263,7 @@
 		(at 106.68 154.94 90)
 		(descr "28-lead though-hole mounted DIP package, row spacing 15.24 mm (600 mils)")
 		(tags "THT DIP DIL PDIP 2.54mm 15.24mm 600mil")
-		(property "Reference" "U16"
+		(property "Reference" "U15"
 			(at 7.62 -2.33 90)
 			(layer "F.SilkS")
 			(uuid "f96dc146-b56d-45f7-a07b-b3955302f49b")
@@ -17071,7 +16566,7 @@
 				"In29.Cu" "In30.Cu"
 			)
 			(remove_unused_layers no)
-			(net 171 "unconnected-(U16-RxC-Pad5)")
+			(net 166 "unconnected-(U15-RxC-Pad5)")
 			(pinfunction "RxC")
 			(pintype "bidirectional+no_connect")
 			(uuid "22444e5f-7cdd-4ea2-bd25-59b71e16b5cc")
@@ -17087,7 +16582,7 @@
 				"In29.Cu" "In30.Cu"
 			)
 			(remove_unused_layers no)
-			(net 5 "Net-(U16-XTAL1)")
+			(net 5 "Net-(U15-XTAL1)")
 			(pinfunction "XTAL1")
 			(pintype "input")
 			(uuid "bebc5f1e-9b91-4615-8036-ccf31b55e6d0")
@@ -17103,7 +16598,7 @@
 				"In29.Cu" "In30.Cu"
 			)
 			(remove_unused_layers no)
-			(net 122 "Net-(U16-XTAL2)")
+			(net 122 "Net-(U15-XTAL2)")
 			(pinfunction "XTAL2")
 			(pintype "output")
 			(uuid "8fefe610-d51d-4853-a888-7ce3131e8fe4")
@@ -17119,7 +16614,7 @@
 				"In29.Cu" "In30.Cu"
 			)
 			(remove_unused_layers no)
-			(net 173 "Net-(U16-~{RTS})")
+			(net 170 "Net-(U15-~{RTS})")
 			(pinfunction "~{RTS}")
 			(pintype "output")
 			(uuid "54a2b2c9-d39a-459e-8235-915237d019de")
@@ -17151,7 +16646,7 @@
 				"In29.Cu" "In30.Cu"
 			)
 			(remove_unused_layers no)
-			(net 175 "Net-(U16-TxD)")
+			(net 172 "Net-(U15-TxD)")
 			(pinfunction "TxD")
 			(pintype "output")
 			(uuid "f66559b7-e5e3-4097-8dd4-33a6831fc4c2")
@@ -17167,7 +16662,7 @@
 				"In29.Cu" "In30.Cu"
 			)
 			(remove_unused_layers no)
-			(net 172 "unconnected-(U16-~{DTR}-Pad11)")
+			(net 167 "unconnected-(U15-~{DTR}-Pad11)")
 			(pinfunction "~{DTR}")
 			(pintype "output+no_connect")
 			(uuid "3d68259a-b7b8-4846-9a17-4a560929e6ad")
@@ -17183,7 +16678,7 @@
 				"In29.Cu" "In30.Cu"
 			)
 			(remove_unused_layers no)
-			(net 174 "Net-(U16-RxD)")
+			(net 171 "Net-(U15-RxD)")
 			(pinfunction "RxD")
 			(pintype "input")
 			(uuid "b098d0c0-e11d-4a03-83d1-09a286e9398a")
@@ -17747,7 +17242,7 @@
 		(at 431.8 11.67)
 		(descr "C, Disc series, Radial, pin pitch=5.00mm, , diameter*width=5*2.5mm^2, Capacitor, http://cdn-reichelt.de/documents/datenblatt/B300/DS_KERKO_TC.pdf")
 		(tags "C Disc series Radial pin pitch 5.00mm  diameter 5mm width 2.5mm Capacitor")
-		(property "Reference" "C19"
+		(property "Reference" "C18"
 			(at 2.5 -2.5 0)
 			(layer "F.SilkS")
 			(uuid "2549e52e-9fe1-4f22-bd44-35f5fac400b5")
@@ -17975,7 +17470,7 @@
 				"In29.Cu" "In30.Cu"
 			)
 			(remove_unused_layers no)
-			(net 5 "Net-(U16-XTAL1)")
+			(net 5 "Net-(U15-XTAL1)")
 			(pintype "passive")
 			(uuid "a1e7c2aa-ee75-4c77-adec-3d1cc2e1b584")
 		)
@@ -19835,7 +19330,7 @@
 		(at 408.94 130.26)
 		(descr "C, Disc series, Radial, pin pitch=5.00mm, , diameter*width=5*2.5mm^2, Capacitor, http://cdn-reichelt.de/documents/datenblatt/B300/DS_KERKO_TC.pdf")
 		(tags "C Disc series Radial pin pitch 5.00mm  diameter 5mm width 2.5mm Capacitor")
-		(property "Reference" "C17"
+		(property "Reference" "C16"
 			(at 2.5 -2.5 0)
 			(layer "F.SilkS")
 			(uuid "69a7041f-76e9-4194-98c7-8b97784b45b6")
@@ -20100,7 +19595,7 @@
 		(at 45.72 76.2 90)
 		(descr "3M 28-pin zero insertion force socket, through-hole, row spacing 15.24 mm (600 mils), http://multimedia.3m.com/mws/media/494546O/3mtm-dip-sockets-100-2-54-mm-ts0365.pdf")
 		(tags "THT DIP DIL ZIF 15.24mm 600mil Socket")
-		(property "Reference" "U11"
+		(property "Reference" "U10"
 			(at 7.62 -11.56 90)
 			(layer "F.SilkS")
 			(uuid "3bbcebe4-d6bc-47cb-b7d7-48a328b82aa0")
@@ -20530,7 +20025,7 @@
 				"In29.Cu" "In30.Cu"
 			)
 			(remove_unused_layers no)
-			(net 133 "CPU_ID")
+			(net 137 "CPU2_BUSEN")
 			(pinfunction "A14")
 			(pintype "input")
 			(uuid "5c509fd4-e321-4eda-a1c1-14b20332c237")
@@ -20985,7 +20480,7 @@
 		(at 101.6 45.72 90)
 		(descr "14-lead though-hole mounted DIP package, row spacing 7.62 mm (300 mils)")
 		(tags "THT DIP DIL PDIP 2.54mm 7.62mm 300mil")
-		(property "Reference" "U5"
+		(property "Reference" "U4"
 			(at 3.81 -2.33 90)
 			(layer "F.SilkS")
 			(uuid "3be87b3c-0e39-40f3-aa3d-4f268c057873")
@@ -21239,7 +20734,7 @@
 				"In29.Cu" "In30.Cu"
 			)
 			(remove_unused_layers no)
-			(net 151 "Net-(U12-Pad6)")
+			(net 144 "Net-(U11-Pad6)")
 			(pintype "input")
 			(uuid "e594ab40-47bd-45df-add0-c80bdefc03b3")
 		)
@@ -21299,7 +20794,7 @@
 				"In29.Cu" "In30.Cu"
 			)
 			(remove_unused_layers no)
-			(net 147 "unconnected-(U5-Pad6)")
+			(net 140 "unconnected-(U4-Pad6)")
 			(pintype "output+no_connect")
 			(uuid "9453daf1-9bcf-4851-9c17-e887191c94c6")
 		)
@@ -21330,7 +20825,7 @@
 				"In29.Cu" "In30.Cu"
 			)
 			(remove_unused_layers no)
-			(net 150 "Net-(U5-Pad8)")
+			(net 142 "Net-(U4-Pad8)")
 			(pintype "output")
 			(uuid "c7f977c5-bdeb-446a-9bbf-967fef3023c6")
 		)
@@ -21375,7 +20870,7 @@
 				"In29.Cu" "In30.Cu"
 			)
 			(remove_unused_layers no)
-			(net 144 "Net-(U5-Pad11)")
+			(net 139 "Net-(U4-Pad11)")
 			(pintype "output")
 			(uuid "28bea666-25cf-4345-b554-a1f643806f04")
 		)
@@ -21561,7 +21056,7 @@
 		(at 71.12 121.92 90)
 		(descr "14-lead though-hole mounted DIP package, row spacing 7.62 mm (300 mils)")
 		(tags "THT DIP DIL PDIP 2.54mm 7.62mm 300mil")
-		(property "Reference" "U9"
+		(property "Reference" "U8"
 			(at 3.81 -2.33 90)
 			(layer "F.SilkS")
 			(uuid "bfe56e11-79e1-444e-8865-58f703c2d517")
@@ -21830,7 +21325,7 @@
 				"In29.Cu" "In30.Cu"
 			)
 			(remove_unused_layers no)
-			(net 165 "unconnected-(U9-Pad3)")
+			(net 162 "unconnected-(U8-Pad3)")
 			(pintype "output+no_connect")
 			(uuid "61a97110-69d3-4a63-92de-ee71608052c2")
 		)
@@ -21875,7 +21370,7 @@
 				"In29.Cu" "In30.Cu"
 			)
 			(remove_unused_layers no)
-			(net 164 "unconnected-(U9-Pad6)")
+			(net 161 "unconnected-(U8-Pad6)")
 			(pintype "output+no_connect")
 			(uuid "43cee813-80b8-44fa-a799-b259071cb2e6")
 		)
@@ -21906,7 +21401,7 @@
 				"In29.Cu" "In30.Cu"
 			)
 			(remove_unused_layers no)
-			(net 167 "unconnected-(U9-Pad8)")
+			(net 164 "unconnected-(U8-Pad8)")
 			(pintype "output+no_connect")
 			(uuid "a9d6465f-07d6-4c03-beb9-aeabe72a7dd4")
 		)
@@ -21951,7 +21446,7 @@
 				"In29.Cu" "In30.Cu"
 			)
 			(remove_unused_layers no)
-			(net 166 "Net-(U10-A14)")
+			(net 163 "Net-(U9-A14)")
 			(pintype "output")
 			(uuid "8aa5b628-3109-4456-9ea9-0c469e429f23")
 		)
@@ -21981,7 +21476,7 @@
 				"In29.Cu" "In30.Cu"
 			)
 			(remove_unused_layers no)
-			(net 133 "CPU_ID")
+			(net 137 "CPU2_BUSEN")
 			(pintype "input")
 			(uuid "10e3e95c-f389-49d0-8e19-57d5faca83c5")
 		)
@@ -22019,7 +21514,7 @@
 		(at 277.26 161.29)
 		(descr "C, Disc series, Radial, pin pitch=5.00mm, , diameter*width=5*2.5mm^2, Capacitor, http://cdn-reichelt.de/documents/datenblatt/B300/DS_KERKO_TC.pdf")
 		(tags "C Disc series Radial pin pitch 5.00mm  diameter 5mm width 2.5mm Capacitor")
-		(property "Reference" "C8"
+		(property "Reference" "C7"
 			(at 2.5 -2.5 0)
 			(layer "F.SilkS")
 			(uuid "914f7032-c63f-4ec6-9214-42736a31da5f")
@@ -22284,7 +21779,7 @@
 		(at 431.8 15.72)
 		(descr "C, Disc series, Radial, pin pitch=5.00mm, , diameter*width=5*2.5mm^2, Capacitor, http://cdn-reichelt.de/documents/datenblatt/B300/DS_KERKO_TC.pdf")
 		(tags "C Disc series Radial pin pitch 5.00mm  diameter 5mm width 2.5mm Capacitor")
-		(property "Reference" "C20"
+		(property "Reference" "C19"
 			(at 2.5 -2.5 0)
 			(layer "F.SilkS")
 			(uuid "abc732ef-0938-42f3-956a-77e5763e5967")
@@ -22512,7 +22007,7 @@
 				"In29.Cu" "In30.Cu"
 			)
 			(remove_unused_layers no)
-			(net 7 "Net-(U17-C1+)")
+			(net 7 "Net-(U16-C1+)")
 			(pintype "passive")
 			(uuid "acac16a8-63f4-4d44-a28e-0b85996311d4")
 		)
@@ -22527,7 +22022,7 @@
 				"In29.Cu" "In30.Cu"
 			)
 			(remove_unused_layers no)
-			(net 6 "Net-(U17-C1-)")
+			(net 6 "Net-(U16-C1-)")
 			(pintype "passive")
 			(uuid "9f349121-62e5-4311-8935-6b4846dd3661")
 		)
@@ -22549,7 +22044,7 @@
 		(at 127 45.72 90)
 		(descr "14-lead though-hole mounted DIP package, row spacing 7.62 mm (300 mils)")
 		(tags "THT DIP DIL PDIP 2.54mm 7.62mm 300mil")
-		(property "Reference" "U6"
+		(property "Reference" "U5"
 			(at 3.81 -2.33 90)
 			(layer "F.SilkS")
 			(uuid "1e4fe5e8-9de7-4d19-a6ed-1ac6ec133997")
@@ -22803,7 +22298,7 @@
 				"In29.Cu" "In30.Cu"
 			)
 			(remove_unused_layers no)
-			(net 144 "Net-(U5-Pad11)")
+			(net 139 "Net-(U4-Pad11)")
 			(pintype "input")
 			(uuid "16143867-be39-4586-8003-33103c2a80cd")
 		)
@@ -22863,7 +22358,7 @@
 				"In29.Cu" "In30.Cu"
 			)
 			(remove_unused_layers no)
-			(net 150 "Net-(U5-Pad8)")
+			(net 142 "Net-(U4-Pad8)")
 			(pintype "input")
 			(uuid "de29c245-6a1b-47d2-a358-e33f3781fa8b")
 		)
@@ -22924,7 +22419,7 @@
 				"In29.Cu" "In30.Cu"
 			)
 			(remove_unused_layers no)
-			(net 154 "Net-(U14-Cp)")
+			(net 150 "Net-(U13-Cp)")
 			(pintype "output")
 			(uuid "c69810c8-218f-4895-9143-64a1c5365593")
 		)
@@ -22969,7 +22464,7 @@
 				"In29.Cu" "In30.Cu"
 			)
 			(remove_unused_layers no)
-			(net 152 "Net-(U6-Pad13)")
+			(net 147 "Net-(U5-Pad13)")
 			(pintype "output")
 			(uuid "028d48c3-70c0-4cda-a1f6-30dc346923f3")
 		)
@@ -23255,7 +22750,7 @@
 				"In29.Cu" "In30.Cu"
 			)
 			(remove_unused_layers no)
-			(net 5 "Net-(U16-XTAL1)")
+			(net 5 "Net-(U15-XTAL1)")
 			(pintype "passive")
 			(uuid "0296c60d-1e7f-4b13-b6e9-ad7d12069774")
 		)
@@ -23270,7 +22765,7 @@
 				"In29.Cu" "In30.Cu"
 			)
 			(remove_unused_layers no)
-			(net 122 "Net-(U16-XTAL2)")
+			(net 122 "Net-(U15-XTAL2)")
 			(pintype "passive")
 			(uuid "fe67c01a-3ad8-41f3-80cd-29a8d7775fd9")
 		)
@@ -24072,7 +23567,7 @@
 				"In29.Cu" "In30.Cu"
 			)
 			(remove_unused_layers no)
-			(net 42 "Net-(U17-T1OUT)")
+			(net 42 "Net-(U16-T1OUT)")
 			(pinfunction "2")
 			(pintype "passive")
 			(uuid "21eac894-14ad-4eb7-bc5b-d8a30d4bc16c")
@@ -24088,7 +23583,7 @@
 				"In29.Cu" "In30.Cu"
 			)
 			(remove_unused_layers no)
-			(net 49 "Net-(U17-R1IN)")
+			(net 49 "Net-(U16-R1IN)")
 			(pinfunction "3")
 			(pintype "passive")
 			(uuid "ef22873c-3262-4be3-b975-8bc0e0635e72")
@@ -24168,7 +23663,7 @@
 				"In29.Cu" "In30.Cu"
 			)
 			(remove_unused_layers no)
-			(net 44 "Net-(U17-T2OUT)")
+			(net 44 "Net-(U16-T2OUT)")
 			(pinfunction "8")
 			(pintype "passive")
 			(uuid "56f982dd-e4d8-4f18-a6e1-ca6caa4956cc")
@@ -25111,7 +24606,7 @@
 				"In29.Cu" "In30.Cu"
 			)
 			(remove_unused_layers no)
-			(net 179 "unconnected-(Y1-EN-Pad1)")
+			(net 176 "unconnected-(Y1-EN-Pad1)")
 			(pinfunction "EN")
 			(pintype "input+no_connect")
 			(uuid "515079e8-a5fb-4c39-b5fd-02da58d7557a")
@@ -25143,7 +24638,7 @@
 				"In29.Cu" "In30.Cu"
 			)
 			(remove_unused_layers no)
-			(net 163 "Net-(U8-CLK)")
+			(net 160 "Net-(U7-CLK)")
 			(pinfunction "OUT")
 			(pintype "output")
 			(uuid "8ad32bf5-0843-4c26-a8e9-d23d11993110")
@@ -26329,271 +25824,6 @@
 			(uuid "f66620ac-e10c-4e28-9ad8-d75f7b6d3d59")
 		)
 		(model "${KICAD8_3DMODEL_DIR}/Resistor_THT.3dshapes/R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal.wrl"
-			(offset
-				(xyz 0 0 0)
-			)
-			(scale
-				(xyz 1 1 1)
-			)
-			(rotate
-				(xyz 0 0 0)
-			)
-		)
-	)
-	(footprint "Capacitor_THT:C_Disc_D5.0mm_W2.5mm_P5.00mm"
-		(layer "F.Cu")
-		(uuid "e7ffd8fb-b1c7-47b9-b154-aaa98db93e16")
-		(at 284.81 117.49)
-		(descr "C, Disc series, Radial, pin pitch=5.00mm, , diameter*width=5*2.5mm^2, Capacitor, http://cdn-reichelt.de/documents/datenblatt/B300/DS_KERKO_TC.pdf")
-		(tags "C Disc series Radial pin pitch 5.00mm  diameter 5mm width 2.5mm Capacitor")
-		(property "Reference" "C5"
-			(at 2.5 -2.5 0)
-			(layer "F.SilkS")
-			(uuid "3cfbe5ef-785a-40fa-b657-8f0b41eabd72")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Value" "100nF"
-			(at 2.5 2.5 0)
-			(layer "F.Fab")
-			(uuid "b4d6351e-1ac4-471a-aeb9-fed0e73d5aa6")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Footprint" "Capacitor_THT:C_Disc_D5.0mm_W2.5mm_P5.00mm"
-			(at 0 0 0)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "b378edc1-723a-4b1d-bde8-3d9ac550b549")
-			(effects
-				(font
-					(size 1.27 1.27)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 0 0 0)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "c9e8ba28-f795-4ed0-94df-649975aa8e02")
-			(effects
-				(font
-					(size 1.27 1.27)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Description" "Unpolarized capacitor"
-			(at 0 0 0)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "c2450b14-e7e7-4c63-87e0-05283a8308ae")
-			(effects
-				(font
-					(size 1.27 1.27)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property ki_fp_filters "C_*")
-		(path "/3e6d4e37-17a2-42ed-9829-cf500e89d60f/b26f10d1-5bdd-4b27-a407-9995c0a9ad14")
-		(sheetname "CPU 1")
-		(sheetfile "cpu1.kicad_sch")
-		(attr through_hole)
-		(fp_line
-			(start -0.12 -1.37)
-			(end -0.12 -1.055)
-			(stroke
-				(width 0.12)
-				(type solid)
-			)
-			(layer "F.SilkS")
-			(uuid "f41e14fc-6773-41be-ba77-55fc727a2982")
-		)
-		(fp_line
-			(start -0.12 -1.37)
-			(end 5.12 -1.37)
-			(stroke
-				(width 0.12)
-				(type solid)
-			)
-			(layer "F.SilkS")
-			(uuid "e514dcb8-b9af-4957-9c19-e577ec367c2b")
-		)
-		(fp_line
-			(start -0.12 1.055)
-			(end -0.12 1.37)
-			(stroke
-				(width 0.12)
-				(type solid)
-			)
-			(layer "F.SilkS")
-			(uuid "8dd01721-e63c-466f-a07c-ca106f9eaece")
-		)
-		(fp_line
-			(start -0.12 1.37)
-			(end 5.12 1.37)
-			(stroke
-				(width 0.12)
-				(type solid)
-			)
-			(layer "F.SilkS")
-			(uuid "9de62f66-1f92-4a1d-a417-2eb5f7bed26e")
-		)
-		(fp_line
-			(start 5.12 -1.37)
-			(end 5.12 -1.055)
-			(stroke
-				(width 0.12)
-				(type solid)
-			)
-			(layer "F.SilkS")
-			(uuid "d3723ace-6cfa-495d-8fbb-99e17795e0dd")
-		)
-		(fp_line
-			(start 5.12 1.055)
-			(end 5.12 1.37)
-			(stroke
-				(width 0.12)
-				(type solid)
-			)
-			(layer "F.SilkS")
-			(uuid "e7796e97-b743-499d-86a9-5ea8b826c822")
-		)
-		(fp_line
-			(start -1.05 -1.5)
-			(end -1.05 1.5)
-			(stroke
-				(width 0.05)
-				(type solid)
-			)
-			(layer "F.CrtYd")
-			(uuid "f020e1b1-5a25-43e4-b6bb-e7c2173089ff")
-		)
-		(fp_line
-			(start -1.05 1.5)
-			(end 6.05 1.5)
-			(stroke
-				(width 0.05)
-				(type solid)
-			)
-			(layer "F.CrtYd")
-			(uuid "f445d86a-3bf1-4cf7-9629-3721783f32bf")
-		)
-		(fp_line
-			(start 6.05 -1.5)
-			(end -1.05 -1.5)
-			(stroke
-				(width 0.05)
-				(type solid)
-			)
-			(layer "F.CrtYd")
-			(uuid "8915e2b9-743c-4cea-b789-7e19ba43952b")
-		)
-		(fp_line
-			(start 6.05 1.5)
-			(end 6.05 -1.5)
-			(stroke
-				(width 0.05)
-				(type solid)
-			)
-			(layer "F.CrtYd")
-			(uuid "d1e528a9-4ffd-450f-84c5-3d5ca6fa516e")
-		)
-		(fp_line
-			(start 0 -1.25)
-			(end 0 1.25)
-			(stroke
-				(width 0.1)
-				(type solid)
-			)
-			(layer "F.Fab")
-			(uuid "5a5198cd-f150-43be-8db9-4407013214ac")
-		)
-		(fp_line
-			(start 0 1.25)
-			(end 5 1.25)
-			(stroke
-				(width 0.1)
-				(type solid)
-			)
-			(layer "F.Fab")
-			(uuid "c85ce511-abe2-494c-beb9-1eb801caa7dc")
-		)
-		(fp_line
-			(start 5 -1.25)
-			(end 0 -1.25)
-			(stroke
-				(width 0.1)
-				(type solid)
-			)
-			(layer "F.Fab")
-			(uuid "dd86b02b-cc40-4208-894f-19c10309091b")
-		)
-		(fp_line
-			(start 5 1.25)
-			(end 5 -1.25)
-			(stroke
-				(width 0.1)
-				(type solid)
-			)
-			(layer "F.Fab")
-			(uuid "d057397b-617d-4251-991a-28d65f77e501")
-		)
-		(fp_text user "${REFERENCE}"
-			(at 2.5 0 0)
-			(layer "F.Fab")
-			(uuid "97128561-ba60-4d4a-b6fa-619a3147ff49")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(pad "1" thru_hole circle
-			(at 0 0)
-			(size 1.6 1.6)
-			(drill 0.8)
-			(layers "*.Cu" "*.Mask" "In1.Cu" "In2.Cu" "In3.Cu" "In4.Cu" "In5.Cu" "In6.Cu"
-				"In7.Cu" "In8.Cu" "In9.Cu" "In10.Cu" "In11.Cu" "In12.Cu" "In13.Cu" "In14.Cu"
-				"In15.Cu" "In16.Cu" "In17.Cu" "In18.Cu" "In19.Cu" "In20.Cu" "In21.Cu"
-				"In22.Cu" "In23.Cu" "In24.Cu" "In25.Cu" "In26.Cu" "In27.Cu" "In28.Cu"
-				"In29.Cu" "In30.Cu"
-			)
-			(remove_unused_layers no)
-			(net 3 "+5V")
-			(pintype "passive")
-			(uuid "02291535-33fb-48d4-af10-b94172cb9441")
-		)
-		(pad "2" thru_hole circle
-			(at 5 0)
-			(size 1.6 1.6)
-			(drill 0.8)
-			(layers "*.Cu" "*.Mask" "In1.Cu" "In2.Cu" "In3.Cu" "In4.Cu" "In5.Cu" "In6.Cu"
-				"In7.Cu" "In8.Cu" "In9.Cu" "In10.Cu" "In11.Cu" "In12.Cu" "In13.Cu" "In14.Cu"
-				"In15.Cu" "In16.Cu" "In17.Cu" "In18.Cu" "In19.Cu" "In20.Cu" "In21.Cu"
-				"In22.Cu" "In23.Cu" "In24.Cu" "In25.Cu" "In26.Cu" "In27.Cu" "In28.Cu"
-				"In29.Cu" "In30.Cu"
-			)
-			(remove_unused_layers no)
-			(net 1 "GND")
-			(pintype "passive")
-			(uuid "a2948fff-265b-41bd-aa86-34f69ec8d4fc")
-		)
-		(model "${KICAD8_3DMODEL_DIR}/Capacitor_THT.3dshapes/C_Disc_D5.0mm_W2.5mm_P5.00mm.wrl"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -28645,9 +27875,9 @@
 				"In29.Cu" "In30.Cu"
 			)
 			(remove_unused_layers no)
-			(net 79 "SYNC")
+			(net 79 "unconnected-(J5-Pin_47-Pad47)")
 			(pinfunction "Pin_47")
-			(pintype "passive")
+			(pintype "passive+no_connect")
 			(uuid "5db52502-e5bb-4e61-baa1-0c164b1fc007")
 		)
 		(pad "48" thru_hole oval
@@ -28661,9 +27891,9 @@
 				"In29.Cu" "In30.Cu"
 			)
 			(remove_unused_layers no)
-			(net 114 "~{VP}")
+			(net 114 "unconnected-(J5-Pin_48-Pad48)")
 			(pinfunction "Pin_48")
-			(pintype "passive")
+			(pintype "passive+no_connect")
 			(uuid "ee93d3f9-e2c4-429b-9598-6f09b91db51d")
 		)
 		(pad "49" thru_hole oval
@@ -29196,7 +28426,7 @@
 		(at 431.8 7.62)
 		(descr "C, Disc series, Radial, pin pitch=5.00mm, , diameter*width=5*2.5mm^2, Capacitor, http://cdn-reichelt.de/documents/datenblatt/B300/DS_KERKO_TC.pdf")
 		(tags "C Disc series Radial pin pitch 5.00mm  diameter 5mm width 2.5mm Capacitor")
-		(property "Reference" "C18"
+		(property "Reference" "C17"
 			(at 2.5 -2.5 0)
 			(layer "F.SilkS")
 			(uuid "5daa9ee0-3783-4890-9c9e-43c7eaee7ac0")
@@ -29461,7 +28691,7 @@
 		(at 449.58 132.08)
 		(descr "14-lead though-hole mounted DIP package, row spacing 7.62 mm (300 mils)")
 		(tags "THT DIP DIL PDIP 2.54mm 7.62mm 300mil")
-		(property "Reference" "U18"
+		(property "Reference" "U17"
 			(at 3.81 -2.33 0)
 			(layer "F.SilkS")
 			(uuid "e102bf31-a7ba-4e02-8643-480cd6c1f08f")
@@ -29523,7 +28753,7 @@
 			)
 		)
 		(property ki_fp_filters "DIP*W7.62mm* SO14*")
-		(path "/3412cf2c-7ca6-479d-a9c2-89b197305d30/9a2a765c-dd12-422c-b805-aa584ea75f43")
+		(path "/3412cf2c-7ca6-479d-a9c2-89b197305d30/738aa3d6-5e79-4717-ace0-51c80a61e38b")
 		(sheetname "RCBus")
 		(sheetfile "rcbus.kicad_sch")
 		(attr through_hole)
@@ -29821,7 +29051,7 @@
 				"In29.Cu" "In30.Cu"
 			)
 			(remove_unused_layers no)
-			(net 178 "Net-(U18-Pad11)")
+			(net 175 "Net-(U17-Pad11)")
 			(pintype "input")
 			(uuid "987f9056-5afe-46c2-8678-3f7688dc2638")
 		)
@@ -29851,7 +29081,7 @@
 				"In29.Cu" "In30.Cu"
 			)
 			(remove_unused_layers no)
-			(net 178 "Net-(U18-Pad11)")
+			(net 175 "Net-(U17-Pad11)")
 			(pintype "output")
 			(uuid "69a6476b-3217-44b2-b42d-750ecedb2c83")
 		)
