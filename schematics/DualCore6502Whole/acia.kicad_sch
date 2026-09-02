@@ -3698,7 +3698,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "0132fafd-931e-4e55-b625-2e32cf109368")
-		(property "Reference" "U16"
+		(property "Reference" "U18"
 			(at 196.5041 67.31 0)
 			(effects
 				(font
@@ -3795,7 +3795,7 @@
 		(instances
 			(project "DualCore6502Whole"
 				(path "/93e0914e-b2e9-49c2-95f2-7cc419f4ea20/659d2ec5-e43d-4409-be3e-c470dc127456"
-					(reference "U16")
+					(reference "U18")
 					(unit 1)
 				)
 			)
@@ -3811,7 +3811,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "04e02dd3-fb1d-41d5-94b9-a6df704ded60")
-		(property "Reference" "U15"
+		(property "Reference" "U17"
 			(at 96.1741 60.96 0)
 			(effects
 				(font
@@ -3944,7 +3944,7 @@
 		(instances
 			(project ""
 				(path "/93e0914e-b2e9-49c2-95f2-7cc419f4ea20/659d2ec5-e43d-4409-be3e-c470dc127456"
-					(reference "U15")
+					(reference "U17")
 					(unit 1)
 				)
 			)
@@ -4028,7 +4028,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "1147a4ce-5692-42ba-9d6b-402cfda60c30")
-		(property "Reference" "C19"
+		(property "Reference" "C21"
 			(at 168.91 77.47 0)
 			(effects
 				(font
@@ -4082,7 +4082,7 @@
 		(instances
 			(project "DualCore6502Whole"
 				(path "/93e0914e-b2e9-49c2-95f2-7cc419f4ea20/659d2ec5-e43d-4409-be3e-c470dc127456"
-					(reference "C19")
+					(reference "C21")
 					(unit 1)
 				)
 			)
@@ -4098,7 +4098,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "166f8cdb-5f07-4f4e-93b5-1abbf7d0a567")
-		(property "Reference" "C22"
+		(property "Reference" "C24"
 			(at 238.76 123.19 0)
 			(effects
 				(font
@@ -4152,7 +4152,7 @@
 		(instances
 			(project "DualCore6502Whole"
 				(path "/93e0914e-b2e9-49c2-95f2-7cc419f4ea20/659d2ec5-e43d-4409-be3e-c470dc127456"
-					(reference "C22")
+					(reference "C24")
 					(unit 1)
 				)
 			)
@@ -4168,7 +4168,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "1b6e612a-adcf-4baa-8979-d85fd3435d90")
-		(property "Reference" "#PWR89"
+		(property "Reference" "#PWR99"
 			(at 115.57 124.46 0)
 			(effects
 				(font
@@ -4218,7 +4218,7 @@
 		(instances
 			(project "DualCore6502Whole"
 				(path "/93e0914e-b2e9-49c2-95f2-7cc419f4ea20/659d2ec5-e43d-4409-be3e-c470dc127456"
-					(reference "#PWR89")
+					(reference "#PWR99")
 					(unit 1)
 				)
 			)
@@ -4234,7 +4234,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "1d01c0bb-0b7c-4cea-8f7f-49e6783f8d9c")
-		(property "Reference" "#PWR86"
+		(property "Reference" "#PWR96"
 			(at 19.05 101.6 0)
 			(effects
 				(font
@@ -4284,7 +4284,7 @@
 		(instances
 			(project "DualCore6502Whole"
 				(path "/93e0914e-b2e9-49c2-95f2-7cc419f4ea20/659d2ec5-e43d-4409-be3e-c470dc127456"
-					(reference "#PWR86")
+					(reference "#PWR96")
 					(unit 1)
 				)
 			)
@@ -4300,7 +4300,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "2521ef13-a169-47ff-b1e3-0586c53817fb")
-		(property "Reference" "#PWR90"
+		(property "Reference" "#PWR100"
 			(at 149.86 81.28 0)
 			(effects
 				(font
@@ -4350,7 +4350,7 @@
 		(instances
 			(project "DualCore6502Whole"
 				(path "/93e0914e-b2e9-49c2-95f2-7cc419f4ea20/659d2ec5-e43d-4409-be3e-c470dc127456"
-					(reference "#PWR90")
+					(reference "#PWR100")
 					(unit 1)
 				)
 			)
@@ -4366,7 +4366,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "304c7909-802b-4775-827e-71cd4a6245d4")
-		(property "Reference" "J4"
+		(property "Reference" "J5"
 			(at 271.78 104.1399 0)
 			(effects
 				(font
@@ -4444,7 +4444,7 @@
 		(instances
 			(project "DualCore6502Whole"
 				(path "/93e0914e-b2e9-49c2-95f2-7cc419f4ea20/659d2ec5-e43d-4409-be3e-c470dc127456"
-					(reference "J4")
+					(reference "J5")
 					(unit 1)
 				)
 			)
@@ -4460,7 +4460,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "452fce4d-a084-4086-ac67-7cb08ac5a171")
-		(property "Reference" "C20"
+		(property "Reference" "C22"
 			(at 227.33 123.19 0)
 			(effects
 				(font
@@ -4514,7 +4514,7 @@
 		(instances
 			(project "DualCore6502Whole"
 				(path "/93e0914e-b2e9-49c2-95f2-7cc419f4ea20/659d2ec5-e43d-4409-be3e-c470dc127456"
-					(reference "C20")
+					(reference "C22")
 					(unit 1)
 				)
 			)
@@ -4530,7 +4530,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "59d2751b-c2dc-4502-aed5-c965117de091")
-		(property "Reference" "#PWR85"
+		(property "Reference" "#PWR95"
 			(at 19.05 91.44 0)
 			(effects
 				(font
@@ -4580,7 +4580,7 @@
 		(instances
 			(project ""
 				(path "/93e0914e-b2e9-49c2-95f2-7cc419f4ea20/659d2ec5-e43d-4409-be3e-c470dc127456"
-					(reference "#PWR85")
+					(reference "#PWR95")
 					(unit 1)
 				)
 			)
@@ -4596,7 +4596,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "6c16d697-f592-4c67-85f0-5693d83fa27d")
-		(property "Reference" "C17"
+		(property "Reference" "C19"
 			(at 22.86 90.17 0)
 			(effects
 				(font
@@ -4650,7 +4650,7 @@
 		(instances
 			(project "DualCore6502Whole"
 				(path "/93e0914e-b2e9-49c2-95f2-7cc419f4ea20/659d2ec5-e43d-4409-be3e-c470dc127456"
-					(reference "C17")
+					(reference "C19")
 					(unit 1)
 				)
 			)
@@ -4666,7 +4666,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "7aa6745c-7f8c-424b-a7a1-9d236b4f3436")
-		(property "Reference" "#PWR92"
+		(property "Reference" "#PWR102"
 			(at 194.31 134.62 0)
 			(effects
 				(font
@@ -4716,7 +4716,7 @@
 		(instances
 			(project "DualCore6502Whole"
 				(path "/93e0914e-b2e9-49c2-95f2-7cc419f4ea20/659d2ec5-e43d-4409-be3e-c470dc127456"
-					(reference "#PWR92")
+					(reference "#PWR102")
 					(unit 1)
 				)
 			)
@@ -4732,7 +4732,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "7fa4ba9f-2edd-4ed9-89a3-3d171d3a3a9b")
-		(property "Reference" "#PWR95"
+		(property "Reference" "#PWR105"
 			(at 256.54 124.46 0)
 			(effects
 				(font
@@ -4782,7 +4782,7 @@
 		(instances
 			(project "DualCore6502Whole"
 				(path "/93e0914e-b2e9-49c2-95f2-7cc419f4ea20/659d2ec5-e43d-4409-be3e-c470dc127456"
-					(reference "#PWR95")
+					(reference "#PWR105")
 					(unit 1)
 				)
 			)
@@ -4868,7 +4868,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "82360d9e-e9e9-4f3f-9ddc-ecef057e42ce")
-		(property "Reference" "#PWR94"
+		(property "Reference" "#PWR104"
 			(at 234.95 134.62 0)
 			(effects
 				(font
@@ -4918,7 +4918,7 @@
 		(instances
 			(project "DualCore6502Whole"
 				(path "/93e0914e-b2e9-49c2-95f2-7cc419f4ea20/659d2ec5-e43d-4409-be3e-c470dc127456"
-					(reference "#PWR94")
+					(reference "#PWR104")
 					(unit 1)
 				)
 			)
@@ -4934,7 +4934,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "9d43942d-e0b8-443b-9d0c-96562b8f3793")
-		(property "Reference" "#PWR91"
+		(property "Reference" "#PWR101"
 			(at 194.31 71.12 0)
 			(effects
 				(font
@@ -4984,7 +4984,7 @@
 		(instances
 			(project "DualCore6502Whole"
 				(path "/93e0914e-b2e9-49c2-95f2-7cc419f4ea20/659d2ec5-e43d-4409-be3e-c470dc127456"
-					(reference "#PWR91")
+					(reference "#PWR101")
 					(unit 1)
 				)
 			)
@@ -5000,7 +5000,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "b3689d84-6f2a-4862-a963-04649486ab6d")
-		(property "Reference" "#PWR88"
+		(property "Reference" "#PWR98"
 			(at 93.98 140.97 0)
 			(effects
 				(font
@@ -5050,7 +5050,7 @@
 		(instances
 			(project ""
 				(path "/93e0914e-b2e9-49c2-95f2-7cc419f4ea20/659d2ec5-e43d-4409-be3e-c470dc127456"
-					(reference "#PWR88")
+					(reference "#PWR98")
 					(unit 1)
 				)
 			)
@@ -5066,7 +5066,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "bbb8546f-dd9e-4cbe-9a27-ac8cc3442d59")
-		(property "Reference" "C21"
+		(property "Reference" "C23"
 			(at 228.6 77.47 0)
 			(effects
 				(font
@@ -5120,7 +5120,7 @@
 		(instances
 			(project "DualCore6502Whole"
 				(path "/93e0914e-b2e9-49c2-95f2-7cc419f4ea20/659d2ec5-e43d-4409-be3e-c470dc127456"
-					(reference "C21")
+					(reference "C23")
 					(unit 1)
 				)
 			)
@@ -5136,7 +5136,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "d01990b9-8332-4f7e-bb8d-cc2d5f630715")
-		(property "Reference" "#PWR93"
+		(property "Reference" "#PWR103"
 			(at 223.52 134.62 0)
 			(effects
 				(font
@@ -5186,7 +5186,7 @@
 		(instances
 			(project "DualCore6502Whole"
 				(path "/93e0914e-b2e9-49c2-95f2-7cc419f4ea20/659d2ec5-e43d-4409-be3e-c470dc127456"
-					(reference "#PWR93")
+					(reference "#PWR103")
 					(unit 1)
 				)
 			)
@@ -5202,7 +5202,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "d1ed5e2e-ad89-4565-be27-e1455e4d8d7b")
-		(property "Reference" "#PWR87"
+		(property "Reference" "#PWR97"
 			(at 93.98 64.77 0)
 			(effects
 				(font
@@ -5252,7 +5252,7 @@
 		(instances
 			(project "DualCore6502Whole"
 				(path "/93e0914e-b2e9-49c2-95f2-7cc419f4ea20/659d2ec5-e43d-4409-be3e-c470dc127456"
-					(reference "#PWR87")
+					(reference "#PWR97")
 					(unit 1)
 				)
 			)
@@ -5268,7 +5268,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "da362ee8-6f9a-4c42-8060-355fe8347921")
-		(property "Reference" "C18"
+		(property "Reference" "C20"
 			(at 153.67 69.85 0)
 			(effects
 				(font
@@ -5322,7 +5322,7 @@
 		(instances
 			(project "DualCore6502Whole"
 				(path "/93e0914e-b2e9-49c2-95f2-7cc419f4ea20/659d2ec5-e43d-4409-be3e-c470dc127456"
-					(reference "C18")
+					(reference "C20")
 					(unit 1)
 				)
 			)
