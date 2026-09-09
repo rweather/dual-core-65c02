@@ -4,6 +4,12 @@
 	(generator_version "8.0")
 	(uuid "65c32037-9f14-4334-9db5-ca25ec40d71c")
 	(paper "A4")
+	(title_block
+		(title "Dual Core 65C02 Computer")
+		(date "2026")
+		(comment 1 "Copyright (c) 2026 Rhys Weatherley")
+		(comment 3 "CPU 1")
+	)
 	(lib_symbols
 		(symbol "65xx:W65C02SxP"
 			(pin_names
@@ -1633,16 +1639,6 @@
 	)
 	(wire
 		(pts
-			(xy 102.87 101.6) (xy 135.89 101.6)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "1d80c232-06e7-47d6-8b83-7de079ca893f")
-	)
-	(wire
-		(pts
 			(xy 166.37 88.9) (xy 176.53 88.9)
 		)
 		(stroke
@@ -1891,6 +1887,16 @@
 		)
 		(uuid "8504bdc4-9f40-443d-978a-cbc6d7381f62")
 	)
+	(wire
+		(pts
+			(xy 107.95 81.28) (xy 107.95 101.6)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8ba03ae3-572c-4d61-a491-ce81dde2dcac")
+	)
 	(bus
 		(pts
 			(xy 179.07 81.28) (xy 179.07 78.74)
@@ -2111,6 +2117,16 @@
 		)
 		(uuid "c4381823-fc81-4b19-bdf4-125f4cdcc90f")
 	)
+	(wire
+		(pts
+			(xy 107.95 101.6) (xy 135.89 101.6)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d38ea6d9-0070-43e5-af14-d5c587b7a1d7")
+	)
 	(bus
 		(pts
 			(xy 179.07 96.52) (xy 179.07 93.98)
@@ -2170,16 +2186,6 @@
 			(type default)
 		)
 		(uuid "e659b291-f335-4b5d-98d6-270221e70666")
-	)
-	(wire
-		(pts
-			(xy 85.09 101.6) (xy 95.25 101.6)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "e757202b-72d8-4daa-95be-69a007203407")
 	)
 	(bus
 		(pts
@@ -2528,28 +2534,6 @@
 		(uuid "30fbc47b-7857-44de-baaa-bfac072a91a6")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 72.8519 83.82 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "CPU1_RDY"
-		(shape input)
-		(at 85.09 101.6 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "6ebef9d0-ce28-440e-84f4-b7b37bff3fac")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 72.4286 101.6 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2929,7 +2913,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "26ea90e4-91dc-4962-9340-55bb6ec0dce9")
-		(property "Reference" "#PWR20"
+		(property "Reference" "#PWR21"
 			(at 151.13 139.7 0)
 			(effects
 				(font
@@ -2979,7 +2963,143 @@
 		(instances
 			(project ""
 				(path "/93e0914e-b2e9-49c2-95f2-7cc419f4ea20/3e6d4e37-17a2-42ed-9829-cf500e89d60f"
-					(reference "#PWR20")
+					(reference "#PWR21")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R_US")
+		(at 107.95 77.47 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "2fcc735f-2a64-47cd-b692-6ea6a1d2b128")
+		(property "Reference" "R5"
+			(at 110.49 76.1999 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "1K"
+			(at 110.49 78.7399 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal"
+			(at 108.966 77.724 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 107.95 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor, US symbol"
+			(at 107.95 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "349f93a6-efe3-46bb-ada3-db246c09a56c")
+		)
+		(pin "1"
+			(uuid "80c12683-2e29-4d06-8844-4c0336ea6a45")
+		)
+		(instances
+			(project "DualCore6502Whole"
+				(path "/93e0914e-b2e9-49c2-95f2-7cc419f4ea20/3e6d4e37-17a2-42ed-9829-cf500e89d60f"
+					(reference "R5")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+5V")
+		(at 107.95 73.66 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "305b412b-b324-479c-8284-d58d033dc7f2")
+		(property "Reference" "#PWR16"
+			(at 107.95 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+5V"
+			(at 107.95 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 107.95 73.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 107.95 73.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+5V\""
+			(at 107.95 73.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "be9683ea-41cd-4767-96de-76437dcdb308")
+		)
+		(instances
+			(project "DualCore6502Whole"
+				(path "/93e0914e-b2e9-49c2-95f2-7cc419f4ea20/3e6d4e37-17a2-42ed-9829-cf500e89d60f"
+					(reference "#PWR16")
 					(unit 1)
 				)
 			)
@@ -3061,7 +3181,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "4d5d0ec1-8a9c-43e0-8f42-81477bc359e2")
-		(property "Reference" "#PWR17"
+		(property "Reference" "#PWR18"
 			(at 121.92 53.34 0)
 			(effects
 				(font
@@ -3111,7 +3231,7 @@
 		(instances
 			(project "DualCore6502Whole"
 				(path "/93e0914e-b2e9-49c2-95f2-7cc419f4ea20/3e6d4e37-17a2-42ed-9829-cf500e89d60f"
-					(reference "#PWR17")
+					(reference "#PWR18")
 					(unit 1)
 				)
 			)
@@ -3263,7 +3383,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "abda7c8e-0fb6-4b97-b64b-d29f25057c46")
-		(property "Reference" "#PWR18"
+		(property "Reference" "#PWR19"
 			(at 134.62 124.46 0)
 			(effects
 				(font
@@ -3314,7 +3434,7 @@
 		(instances
 			(project "DualCore6502Whole"
 				(path "/93e0914e-b2e9-49c2-95f2-7cc419f4ea20/3e6d4e37-17a2-42ed-9829-cf500e89d60f"
-					(reference "#PWR18")
+					(reference "#PWR19")
 					(unit 1)
 				)
 			)
@@ -3470,7 +3590,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "ced7a02f-4142-42b8-8963-4f9a57b4a72f")
-		(property "Reference" "#PWR19"
+		(property "Reference" "#PWR20"
 			(at 151.13 58.42 0)
 			(effects
 				(font
@@ -3520,7 +3640,7 @@
 		(instances
 			(project ""
 				(path "/93e0914e-b2e9-49c2-95f2-7cc419f4ea20/3e6d4e37-17a2-42ed-9829-cf500e89d60f"
-					(reference "#PWR19")
+					(reference "#PWR20")
 					(unit 1)
 				)
 			)
@@ -3536,7 +3656,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "d146ae26-a825-4997-8952-2f991050f2f1")
-		(property "Reference" "#PWR16"
+		(property "Reference" "#PWR17"
 			(at 121.92 43.18 0)
 			(effects
 				(font
@@ -3586,75 +3706,7 @@
 		(instances
 			(project "DualCore6502Whole"
 				(path "/93e0914e-b2e9-49c2-95f2-7cc419f4ea20/3e6d4e37-17a2-42ed-9829-cf500e89d60f"
-					(reference "#PWR16")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R_US")
-		(at 99.06 101.6 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "fc0410a5-c68d-413a-b878-96ac6eb66d20")
-		(property "Reference" "R5"
-			(at 99.06 95.25 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "33R"
-			(at 99.06 97.79 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 99.314 100.584 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 99.06 101.6 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor, US symbol"
-			(at 99.06 101.6 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "a3afd56f-3d42-45f8-83fe-9ef43dee6f69")
-		)
-		(pin "2"
-			(uuid "5b2d31a5-0e43-485f-acec-a4acc77a22fe")
-		)
-		(instances
-			(project ""
-				(path "/93e0914e-b2e9-49c2-95f2-7cc419f4ea20/3e6d4e37-17a2-42ed-9829-cf500e89d60f"
-					(reference "R5")
+					(reference "#PWR17")
 					(unit 1)
 				)
 			)
