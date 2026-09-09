@@ -21,60 +21,58 @@
 ;
 
 ;
-; Example that blinks alternate LED's on different CPU's.
+; Example that chases the LED's from left to right on CPU1, then
+; chases from right to left on CPU2.  Mutual exclusion is used to
+; co-ordinate whose turn it is.
 ;
 
         .include startup.s
 
-    .if CPU1
-LED1    .equ    $8100
-LED2    .equ    $8102
-LED3    .equ    $8104
-    .else
-LED1    .equ    $8101
-LED2    .equ    $8103
-LED3    .equ    $8103       ; Repeat LED2 to maintain timing.
-    .endif
+LEDS    .equ    $8100
 
 cold_start:
 warm_start:
 
-    .if CPU2
-        lda     #0
-        jsr     set_leds    ; Offset CPU2's blinks from CPU1's.
-    .endif
-
 loop:
-        lda     #1          ; Turn the LED's on.
-        jsr     set_leds
-        lda     #0          ; Turn the LED's off.
-        jsr     set_leds
-        jmp     loop        ; Go around again.
-
+        jsr     mutex_lock      ; Acquire the mutex for this CPU.
 ;
-; Set the LED's repeatedly for approximately half a second at 2MHz.
-; We keep setting the state over and over to check for bus contention
-; between the two CPU's.
-;
-set_leds:
-        ldx     #0
-        ldy     #230
-set_leds_loop:
-        sta     LED1
-        sta     LED2
-        sta     LED3
+    .if CPU1
+        ldx     #0              ; CPU1 chases from LED0 to LED4.
+    .else
+        ldx     #4              ; CPU2 chases from LED4 to LED0.
+    .endif
+chase_leds:
+        lda     #1
+        sta     LEDS,x
+        jsr     delay
+        lda     #0
+        sta     LEDS,x
+    .if CPU1
+        inx
+        cpx     #5
+        bcc     chase_leds
+    .else
         dex
-        bne     set_leds_loop
+        bpl     chase_leds
+    .endif
+;
+        jsr     mutex_unlock    ; Release the mutex.
+        bra     loop            ; Go around again.
+;
+; Delay of approximately 100ms.  Destroys A and Y.  Preserves X.
+;
+delay:
+        lda     #156
+        ldy     #0
+delay_loop:
         dey
-        bne     set_leds_loop
+        bne     delay_loop
+        sec
+        sbc     #1
+        bne     delay_loop
         rts
 ;
-; Initialize the hardware.
-;
 hw_init:
-        stz     LED1
-        stz     LED2
-        stz     LED3
         rts
 ;
 ; Interrupt handlers.
