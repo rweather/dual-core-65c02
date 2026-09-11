@@ -4730,6 +4730,44 @@
 		)
 	)
 	(sheet
+		(at 192.278 48.006)
+		(size 34.544 16.256)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "731fd70c-eedb-4909-a6f7-e3ec3269813b")
+		(property "Sheetname" "Tick Timer"
+			(at 192.278 47.2944 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "tick_timer.kicad_sch"
+			(at 192.278 64.8466 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "DualCore6502Whole"
+				(path "/93e0914e-b2e9-49c2-95f2-7cc419f4ea20"
+					(page "11")
+				)
+			)
+		)
+	)
+	(sheet
 		(at 65.278 22.86)
 		(size 31.242 16.51)
 		(fields_autoplaced yes)
