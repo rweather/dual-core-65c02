@@ -21,7 +21,7 @@
 ;
 
 ;
-; The startup code assumes that the following labels are present:
+; The startup code in the BIOS assumes that the following labels are present:
 ;
 ; hw_init       Subroutine that initializes the hardware.  Interrupts are
 ;               enabled after this subroutine returns.  On entry, A is
@@ -29,15 +29,23 @@
 ; cold_start    Entry point for a cold start.
 ; warm_start    Entry point for a warm start.
 ;
-; On a cold start, the zero page is cleared to zeroes except for $FD to $FF
-; which are reserved for startup-related purposes.
+; On a cold start, the zero page is cleared to zeroes.  The locations
+; $F8 to $FF are reserved for startup-related purposes.
 ;
 
 ;
 ; Definitions.
 ;
+systick_val .equ    $F8     ; 16-bit system millisecond tick counter.
+serial_wr   .equ    $FA     ; Write pointer for the serial buffer (CPU1 only).
+serial_rd   .equ    $FB     ; Read pointer for the serial buffer (CPU1 only).
 startup_vec .equ    $FD     ; Jump address for warm start.
 startup_chk .equ    $FF     ; Startup checksum.
+serial_buf  .equ    $0400   ; Location of the serial buffer in memory.
+;
+    .if CPU1
+        .include acia.s
+    .endif
 ;
         .org    $C000
 ;
@@ -48,14 +56,14 @@ startup_chk .equ    $FF     ; Startup checksum.
         jmp     mutex_lock      ; $C003: Lock the hardware mutex.
         jmp     mutex_unlock    ; $C006: Unlock the hardware mutex.
         jmp     mutex_try_lock  ; $C009: Try to lock the hardware mutex.
-        jmp     reserved        ; $C00C: Reserved for future use.
-        jmp     reserved        ; $C00F: Reserved for future use.
-        jmp     reserved        ; $C012: Reserved for future use.
+        jmp     put_char        ; $C00C: Print a character on the ACIA (CPU1).
+        jmp     get_char        ; $C00F: Get a character from the ACIA (CPU1).
+        jmp     systick         ; $C012: Get system millisecond tick counter.
         jmp     reserved        ; $C015: Reserved for future use.
         jmp     reserved        ; $C018: Reserved for future use.
         jmp     reset_cold      ; $C01B: Cold start reset of the system.
 ;
-; $C01E: Reset entry point to the ROM.
+; $C01E: Reset entry point to the ROM / warm start reset.
 ;
 reset:
         cld                 ; Make sure that D is off.
@@ -79,6 +87,13 @@ startup_delay:
 ;
         jsr     mutex_unlock
 ;
+; Reset the system millisecond tick counter.  We need to set the low
+; byte twice because NMI might fire and increment it while clearing.
+;
+        stz     systick_val
+        stz     systick_val+1
+        stz     systick_val
+;
 ; Are we doing a cold or warm start of the system?
 ;
         lda     startup_vec
@@ -89,7 +104,7 @@ startup_delay:
 ;
 ; Clear most of the zero page so it starts in a known state on a cold start.
 ;
-        ldx     #startup_vec-1
+        ldx     #systick_val-1
         lda     #0
 startup_clearz:
         sta     0,x
@@ -99,6 +114,9 @@ startup_clearz:
 ;
 ; Initialize the hardware for the cold start.
 ;
+    .if CPU1
+        jsr     acia_init
+    .endif
         lda     #1
         jsr     hw_init
 ;
@@ -121,6 +139,9 @@ startup_clearz:
 ; Initialize the hardware and do the warm start.
 ;
 startup_warm:
+    .if CPU1
+        jsr     acia_init
+    .endif
         lda     #0
         jsr     hw_init
         cli
@@ -202,3 +223,126 @@ mutex_locked:
         eor     #1                  ; Set Z based on the result.
 reserved:
         rts
+;
+; ACIA serial is on CPU1 only.
+;
+    .if CPU1
+;
+; Initialize the ACIA.
+;
+acia_init:
+        stz     serial_wr   ; Reset the serial buffer write and read pointers.
+        stz     serial_rd
+        lda     ACIA_STATUS ; Clear spurious status bits.
+        lda     ACIA_DATA   ; Empty the receive buffer.
+        stz     ACIA_STATUS ; Force the ACIA to reset itself.
+        lda     #(ACIA_BPS_19200 | ACIA_RCS)
+        sta     ACIA_CTRL
+        lda     #(ACIA_TIC1 | ACIA_DTR)
+        sta     ACIA_CMD
+        lda     #1          ; Assert RTS to allow the connected peer to send.
+        sta     ACIA_RTS
+        rts
+;
+; Print the character in A to the ACIA.  Preserves A, X, and Y.
+;
+put_char:
+        phx
+        sta     ACIA_DATA   ; Write the character to the serial port.
+        ldx     #$FF        ; Delay to wait for the character to be sent.
+put_char_delay:
+        nop
+        nop
+        nop
+        dex
+        bne     put_char_delay
+        plx
+        rts
+;
+; Get a character from the ACIA into A.  Preserves X and Y.
+; Carry is set if a character was received, or carry is cleared if no
+; character is currently available.
+;
+get_char:
+        phx
+        ldx     serial_rd       ; Is there a character in the serial buffer?
+        cpx     serial_wr
+        beq     get_char_none   ; If not, then return "no character".
+        lda     serial_buf,x    ; Get the character.
+        tax
+        inc     serial_rd       ; Increment the buffer's read pointer.
+        lda     serial_wr
+        sec
+        sbc     serial_rd
+        cmp     #224            ; Are we below the low water mark?
+        bge     get_char_done
+        lda     #1              ; If yes, assert RTS to re-enable receive.
+        sta     ACIA_RTS
+get_char_done:
+        txa
+        plx
+        sec                     ; Set carry to indicate an available character.
+        rts
+get_char_none:
+        plx
+        lda     #0              ; No character available, so return NUL
+        clc                     ; and clear the carry.
+        rts
+;
+    .else ; CPU2
+;
+; Stub the put_char and get_char subroutines because CPU2 cannot
+; directly access the ACIA.
+;
+get_char:
+        clc
+put_char:
+        rts
+;
+    .endif ; CPU2
+;
+; IRQBRK handler for the system.
+;
+irqbrk:
+        cld                     ; Make sure that D is off during the handler.
+        pha                     ; Save the A and X registers on the stack.
+        phx
+    .if CPU1
+        lda     ACIA_STATUS     ; Did we receive a character via the ACIA?
+        and     #ACIA_RDRF
+        beq     irq_acia_done
+        lda     ACIA_DATA       ; Get the received byte into A.
+        ldx     serial_wr       ; Get the serial buffer write pointer.
+        sta     serial_buf,x    ; Store A into the serial buffer.
+        inc     serial_wr       ; Increment the write pointer.
+        lda     serial_wr       ; Is the buffer almost full?
+        sec
+        sbc     serial_rd
+        cmp     #240
+        blt     irq_acia_done   ; If not, then leave RTS asserted for now.
+        lda     #0              ; De-assert RTS to stop the peer talking to us.
+        sta     ACIA_RTS
+irq_acia_done:
+    .endif ; CPU1
+        plx                     ; Restore the registers and return.
+        pla
+        rti
+;
+; Get the value of the system millisecond tick counter into A:X
+; where A is the high byte.
+;
+systick:
+        ldx     systick_val     ; Fetch the low byte.
+        lda     systick_val+1   ; Fetch the high byte.
+        cpx     systick_val     ; Did the low byte change while doing this?
+        bne     systick         ; If it did, fetch the value again.
+        rts
+;
+; NMI handler for the system which handles the millisecond tick counter.
+;
+nmi:
+        inc     systick_val
+        bne     nmi_done
+        inc     systick_val+1
+nmi_done:
+        rti

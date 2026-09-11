@@ -26,7 +26,7 @@
 ; co-ordinate whose turn it is.
 ;
 
-        .include startup.s
+        .include bios.s
 
 LEDS    .equ    $8100
 
@@ -74,12 +74,6 @@ delay_loop:
 ;
 hw_init:
         rts
-;
-; Interrupt handlers.
-;
-irqbrk:
-nmi:
-        rti
 ;
         .org    $FFFA
         .dw     nmi

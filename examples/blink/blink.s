@@ -24,7 +24,7 @@
 ; Example that blinks alternate LED's on different CPU's.
 ;
 
-        .include startup.s
+        .include bios.s
 
     .if CPU1
 LED1    .equ    $8100
@@ -76,12 +76,6 @@ hw_init:
         stz     LED2
         stz     LED3
         rts
-;
-; Interrupt handlers.
-;
-irqbrk:
-nmi:
-        rti
 ;
         .org    $FFFA
         .dw     nmi
