@@ -251,9 +251,6 @@ put_char:
         sta     ACIA_DATA   ; Write the character to the serial port.
         ldx     #$FF        ; Delay to wait for the character to be sent.
 put_char_delay:
-        nop
-        nop
-        nop
         dex
         bne     put_char_delay
         plx
