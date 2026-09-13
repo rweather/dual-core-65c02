@@ -30,15 +30,15 @@
 ; warm_start    Entry point for a warm start.
 ;
 ; On a cold start, the zero page is cleared to zeroes.  The locations
-; $F8 to $FF are reserved for startup-related purposes.
+; $F8 to $FF are reserved for BIOS-related purposes.
 ;
 
 ;
 ; Definitions.
 ;
-systick_val .equ    $F8     ; 16-bit system millisecond tick counter.
-serial_wr   .equ    $FA     ; Write pointer for the serial buffer (CPU1 only).
-serial_rd   .equ    $FB     ; Read pointer for the serial buffer (CPU1 only).
+systick_val .equ    $F8     ; 24-bit system millisecond tick counter.
+serial_wr   .equ    $FB     ; Write pointer for the serial buffer (CPU1 only).
+serial_rd   .equ    $FC     ; Read pointer for the serial buffer (CPU1 only).
 startup_vec .equ    $FD     ; Jump address for warm start.
 startup_chk .equ    $FF     ; Startup checksum.
 serial_buf  .equ    $0400   ; Location of the serial buffer in memory.
@@ -61,9 +61,9 @@ serial_buf  .equ    $0400   ; Location of the serial buffer in memory.
         jmp     systick         ; $C012: Get system millisecond tick counter.
         jmp     reserved        ; $C015: Reserved for future use.
         jmp     reserved        ; $C018: Reserved for future use.
-        jmp     reset_cold      ; $C01B: Cold start reset of the system.
+        jmp     reserved        ; $C01B: Reserved for future use.
 ;
-; $C01E: Reset entry point to the ROM / warm start reset.
+; Reset entry point to the ROM / warm start reset.
 ;
 reset:
         cld                 ; Make sure that D is off.
@@ -84,14 +84,30 @@ startup_delay:
         bne     startup_delay
 ;
 ; Release the mutex for this CPU in case we had locked it pre-reset.
+; Alternatively, lock the mutex to CPU1 or CPU2 at startup.
 ;
-        jsr     mutex_unlock
+    .if CPU1
+      .ifdef START_WITH_CPU1_LOCKED
+        lda     #1
+      .else
+        lda     #0
+      .endif
+        sta     $8107
+    .else
+      .ifdef START_WITH_CPU2_LOCKED
+        lda     #1
+      .else
+        lda     #0
+      .endif
+        sta     $8106
+    .endif
 ;
 ; Reset the system millisecond tick counter.  We need to set the low
 ; byte twice because NMI might fire and increment it while clearing.
 ;
         stz     systick_val
         stz     systick_val+1
+        stz     systick_val+2
         stz     systick_val
 ;
 ; Are we doing a cold or warm start of the system?
@@ -146,14 +162,6 @@ startup_warm:
         jsr     hw_init
         cli
         jmp     (startup_vec)
-;
-; Force a cold start reset.
-;
-reset_cold:
-        stz     startup_vec
-        stz     startup_vec+1
-        stz     startup_chk
-        jmp     reset
 ;
 ; Get the identifier for the current CPU.  Returns A = 0 for CPU1 or
 ; A = 1 for CPU2.  Preserves X and Y.
@@ -301,7 +309,6 @@ put_char:
 ; IRQBRK handler for the system.
 ;
 irqbrk:
-        cld                     ; Make sure that D is off during the handler.
         pha                     ; Save the A and X registers on the stack.
         phx
     .if CPU1
@@ -325,12 +332,15 @@ irq_acia_done:
         pla
         rti
 ;
-; Get the value of the system millisecond tick counter into A:X
-; where A is the high byte.
+; Get the value of the system millisecond tick counter into Y:A:X
+; where Y is the high byte.
+;
+; The returned 24-bit value can time events up to about 4.66 hours.
 ;
 systick:
         ldx     systick_val     ; Fetch the low byte.
-        lda     systick_val+1   ; Fetch the high byte.
+        lda     systick_val+1   ; Fetch the middle byte.
+        ldy     systick_val+2   ; Fetch the high byte.
         cpx     systick_val     ; Did the low byte change while doing this?
         bne     systick         ; If it did, fetch the value again.
         rts
@@ -341,5 +351,7 @@ nmi:
         inc     systick_val
         bne     nmi_done
         inc     systick_val+1
+        bne     nmi_done
+        inc     systick_val+2
 nmi_done:
         rti
