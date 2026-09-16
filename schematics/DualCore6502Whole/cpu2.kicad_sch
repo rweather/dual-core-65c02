@@ -818,6 +818,108 @@
 				)
 			)
 		)
+		(symbol "Connector:TestPoint"
+			(pin_numbers hide)
+			(pin_names
+				(offset 0.762) hide)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "TP"
+				(at 0 6.858 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "TestPoint"
+				(at 0 5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 5.08 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 5.08 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "test point"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "test point tp"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "Pin* Test*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "TestPoint_0_1"
+				(circle
+					(center 0 3.302)
+					(radius 0.762)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "TestPoint_1_1"
+				(pin passive line
+					(at 0 0 90)
+					(length 2.54)
+					(name "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
 		(symbol "Device:C"
 			(pin_numbers hide)
 			(pin_names
@@ -2477,28 +2579,6 @@
 		)
 		(uuid "e6a878f8-d081-4c5b-b99a-4f336aed26d8")
 	)
-	(global_label "~{CPU2_VP}"
-		(shape output)
-		(at 129.54 118.11 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "1d3ab781-a2f3-4ba2-b445-c5bbcd6c099c")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 118.1486 118.11 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-	)
 	(global_label "R{slash}~{W}"
 		(shape output)
 		(at 129.54 97.79 180)
@@ -2609,28 +2689,6 @@
 			)
 		)
 	)
-	(global_label "~{CPU2_ML}"
-		(shape output)
-		(at 129.54 120.65 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "92d03e52-277a-4600-be75-32e37c2a6d94")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 118.0277 120.65 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-	)
 	(global_label "CPU2_BUSEN"
 		(shape input)
 		(at 129.54 107.95 180)
@@ -2644,28 +2702,6 @@
 		(uuid "a2072a38-ad5f-4b63-b0f8-41db27a09211")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 114.2177 107.95 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "CPU2_SYNC"
-		(shape output)
-		(at 129.54 115.57 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "bb19806e-5443-43ec-b487-8d9d69e69a47")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 115.6086 115.57 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2716,6 +2752,70 @@
 				)
 				(justify right)
 				(hide yes)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 129.54 120.65 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "15d6765b-d631-4946-9d54-3038d5413232")
+		(property "Reference" "TP6"
+			(at 121.92 120.65 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "~{CPU2_ML}"
+			(at 113.538 120.65 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.5mm"
+			(at 129.54 115.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 129.54 115.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "test point"
+			(at 129.54 120.65 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "195aada5-156b-4981-9747-1f0cac10d911")
+		)
+		(instances
+			(project "DualCore6502Whole"
+				(path "/93e0914e-b2e9-49c2-95f2-7cc419f4ea20/578e6b65-8887-41c5-b062-8f45f343257b"
+					(reference "TP6")
+					(unit 1)
+				)
 			)
 		)
 	)
@@ -2799,7 +2899,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "3366fb3f-55cd-4955-bc3c-10b832f0b13f")
-		(property "Reference" "#PWR25"
+		(property "Reference" "#PWR21"
 			(at 120.65 46.99 0)
 			(effects
 				(font
@@ -2849,7 +2949,71 @@
 		(instances
 			(project "DualCore6502Whole"
 				(path "/93e0914e-b2e9-49c2-95f2-7cc419f4ea20/578e6b65-8887-41c5-b062-8f45f343257b"
-					(reference "#PWR25")
+					(reference "#PWR21")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 129.54 118.11 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "6283c442-4a72-4339-9750-5e4727de0ab7")
+		(property "Reference" "TP5"
+			(at 121.92 118.11 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "~{CPU2_VP}"
+			(at 113.538 118.11 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.5mm"
+			(at 129.54 113.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 129.54 113.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "test point"
+			(at 129.54 118.11 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "694db816-232c-4a01-9315-61725c077434")
+		)
+		(instances
+			(project "DualCore6502Whole"
+				(path "/93e0914e-b2e9-49c2-95f2-7cc419f4ea20/578e6b65-8887-41c5-b062-8f45f343257b"
+					(reference "TP5")
 					(unit 1)
 				)
 			)
@@ -2865,7 +3029,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "6bb1874e-280e-4bfb-8f52-badf23692f80")
-		(property "Reference" "#PWR27"
+		(property "Reference" "#PWR23"
 			(at 133.35 128.27 0)
 			(effects
 				(font
@@ -2916,7 +3080,7 @@
 		(instances
 			(project "DualCore6502Whole"
 				(path "/93e0914e-b2e9-49c2-95f2-7cc419f4ea20/578e6b65-8887-41c5-b062-8f45f343257b"
-					(reference "#PWR27")
+					(reference "#PWR23")
 					(unit 1)
 				)
 			)
@@ -2932,7 +3096,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "75a65db2-26ad-4d85-8f93-8c02b13c6066")
-		(property "Reference" "#PWR22"
+		(property "Reference" "#PWR18"
 			(at 88.9 81.28 0)
 			(effects
 				(font
@@ -2982,7 +3146,7 @@
 		(instances
 			(project "DualCore6502Whole"
 				(path "/93e0914e-b2e9-49c2-95f2-7cc419f4ea20/578e6b65-8887-41c5-b062-8f45f343257b"
-					(reference "#PWR22")
+					(reference "#PWR18")
 					(unit 1)
 				)
 			)
@@ -3068,7 +3232,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "96b8f77d-d86b-4431-bde0-1454ab8853a5")
-		(property "Reference" "#PWR26"
+		(property "Reference" "#PWR22"
 			(at 120.65 57.15 0)
 			(effects
 				(font
@@ -3118,7 +3282,7 @@
 		(instances
 			(project "DualCore6502Whole"
 				(path "/93e0914e-b2e9-49c2-95f2-7cc419f4ea20/578e6b65-8887-41c5-b062-8f45f343257b"
-					(reference "#PWR26")
+					(reference "#PWR22")
 					(unit 1)
 				)
 			)
@@ -3134,7 +3298,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "993d30b4-e04f-4d77-a0d6-52ffaac03b67")
-		(property "Reference" "#PWR24"
+		(property "Reference" "#PWR20"
 			(at 106.68 81.28 0)
 			(effects
 				(font
@@ -3184,7 +3348,71 @@
 		(instances
 			(project "DualCore6502Whole"
 				(path "/93e0914e-b2e9-49c2-95f2-7cc419f4ea20/578e6b65-8887-41c5-b062-8f45f343257b"
-					(reference "#PWR24")
+					(reference "#PWR20")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 129.54 115.57 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "a0d4da06-6518-4e3b-9766-0fb2a0670b56")
+		(property "Reference" "TP4"
+			(at 121.92 115.57 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "CPU2 SYNC"
+			(at 113.538 115.57 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.5mm"
+			(at 129.54 110.49 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 129.54 110.49 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "test point"
+			(at 129.54 115.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "ae210ae5-7e03-45b2-ae19-fba5c901a71e")
+		)
+		(instances
+			(project "DualCore6502Whole"
+				(path "/93e0914e-b2e9-49c2-95f2-7cc419f4ea20/578e6b65-8887-41c5-b062-8f45f343257b"
+					(reference "TP4")
 					(unit 1)
 				)
 			)
@@ -3200,7 +3428,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "a5356ade-d736-4da2-a1af-d4fe45abcc55")
-		(property "Reference" "#PWR28"
+		(property "Reference" "#PWR24"
 			(at 149.86 62.23 0)
 			(effects
 				(font
@@ -3250,7 +3478,7 @@
 		(instances
 			(project "DualCore6502Whole"
 				(path "/93e0914e-b2e9-49c2-95f2-7cc419f4ea20/578e6b65-8887-41c5-b062-8f45f343257b"
-					(reference "#PWR28")
+					(reference "#PWR24")
 					(unit 1)
 				)
 			)
@@ -3266,7 +3494,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "a8b72f45-4c31-41a2-8fe0-edb7ca56d02a")
-		(property "Reference" "#PWR23"
+		(property "Reference" "#PWR19"
 			(at 97.79 81.28 0)
 			(effects
 				(font
@@ -3316,7 +3544,7 @@
 		(instances
 			(project "DualCore6502Whole"
 				(path "/93e0914e-b2e9-49c2-95f2-7cc419f4ea20/578e6b65-8887-41c5-b062-8f45f343257b"
-					(reference "#PWR23")
+					(reference "#PWR19")
 					(unit 1)
 				)
 			)
@@ -3332,7 +3560,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "c0fc4a50-da57-44f4-b6c4-4a9426a4ec8f")
-		(property "Reference" "#PWR29"
+		(property "Reference" "#PWR25"
 			(at 149.86 143.51 0)
 			(effects
 				(font
@@ -3382,7 +3610,7 @@
 		(instances
 			(project "DualCore6502Whole"
 				(path "/93e0914e-b2e9-49c2-95f2-7cc419f4ea20/578e6b65-8887-41c5-b062-8f45f343257b"
-					(reference "#PWR29")
+					(reference "#PWR25")
 					(unit 1)
 				)
 			)
@@ -3397,7 +3625,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "c71a586e-2e41-4173-a83b-cd46fad46d7a")
-		(property "Reference" "U3"
+		(property "Reference" "U2"
 			(at 156.21 58.42 0)
 			(effects
 				(font
@@ -3416,7 +3644,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_DIP:DIP-40_W15.24mm"
+		(property "Footprint" "Package_DIP:DIP-40_W15.24mm_Socket"
 			(at 149.86 46.99 0)
 			(effects
 				(font
@@ -3566,7 +3794,7 @@
 		(instances
 			(project "DualCore6502Whole"
 				(path "/93e0914e-b2e9-49c2-95f2-7cc419f4ea20/578e6b65-8887-41c5-b062-8f45f343257b"
-					(reference "U3")
+					(reference "U2")
 					(unit 1)
 				)
 			)
@@ -3582,7 +3810,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "dd9998f9-5f5e-40f1-a7b7-f9214be6de30")
-		(property "Reference" "C5"
+		(property "Reference" "C4"
 			(at 124.46 45.7199 0)
 			(effects
 				(font
@@ -3636,7 +3864,7 @@
 		(instances
 			(project "DualCore6502Whole"
 				(path "/93e0914e-b2e9-49c2-95f2-7cc419f4ea20/578e6b65-8887-41c5-b062-8f45f343257b"
-					(reference "C5")
+					(reference "C4")
 					(unit 1)
 				)
 			)

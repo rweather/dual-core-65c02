@@ -979,6 +979,108 @@
 				)
 			)
 		)
+		(symbol "Connector:TestPoint"
+			(pin_numbers hide)
+			(pin_names
+				(offset 0.762) hide)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "TP"
+				(at 0 6.858 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "TestPoint"
+				(at 0 5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 5.08 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 5.08 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "test point"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "test point tp"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "Pin* Test*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "TestPoint_0_1"
+				(circle
+					(center 0 3.302)
+					(radius 0.762)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "TestPoint_1_1"
+				(pin passive line
+					(at 0 0 90)
+					(length 2.54)
+					(name "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
 		(symbol "Device:C"
 			(pin_numbers hide)
 			(pin_names
@@ -2104,6 +2206,12 @@
 		(uuid "701e87ff-78d1-4e5d-a6ec-a751fbd6d9df")
 	)
 	(junction
+		(at 139.7 86.36)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "71fdf102-2b27-472c-9b8c-31fb6c4ea231")
+	)
+	(junction
 		(at 149.86 86.36)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2187,7 +2295,7 @@
 	)
 	(wire
 		(pts
-			(xy 119.38 86.36) (xy 149.86 86.36)
+			(xy 119.38 86.36) (xy 139.7 86.36)
 		)
 		(stroke
 			(width 0)
@@ -2204,6 +2312,16 @@
 			(type default)
 		)
 		(uuid "420e8c77-16b1-4e09-bba7-adf922b651fa")
+	)
+	(wire
+		(pts
+			(xy 139.7 86.36) (xy 149.86 86.36)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "52d975a8-bce6-4fa5-9da3-b362ab7f66c4")
 	)
 	(wire
 		(pts
@@ -2244,6 +2362,16 @@
 			(type default)
 		)
 		(uuid "73f9c66b-b8c7-4d74-9547-147c10028212")
+	)
+	(wire
+		(pts
+			(xy 139.7 82.55) (xy 139.7 86.36)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "794a5b59-c3e2-4cfd-bbaa-38c847c14525")
 	)
 	(wire
 		(pts
@@ -2437,7 +2565,7 @@
 	)
 	(text "Invert so ~{CPUn_NMI} is pulled high during reset."
 		(exclude_from_sim no)
-		(at 163.83 74.168 0)
+		(at 174.244 75.438 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2521,7 +2649,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "00f83934-933f-427a-9444-62df533f79f4")
-		(property "Reference" "U5"
+		(property "Reference" "U4"
 			(at 163.83 101.6 0)
 			(effects
 				(font
@@ -2537,7 +2665,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Package_DIP:DIP-14_W7.62mm"
+		(property "Footprint" "Package_DIP:DIP-14_W7.62mm_Socket"
 			(at 163.83 110.49 0)
 			(effects
 				(font
@@ -2609,7 +2737,7 @@
 		(instances
 			(project "DualCore6502Whole"
 				(path "/93e0914e-b2e9-49c2-95f2-7cc419f4ea20/731fd70c-eedb-4909-a6f7-e3ec3269813b"
-					(reference "U5")
+					(reference "U4")
 					(unit 3)
 				)
 			)
@@ -2625,7 +2753,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "08a54d3f-f50b-40e8-ba36-3e123664c343")
-		(property "Reference" "#PWR150"
+		(property "Reference" "#PWR146"
 			(at 106.68 114.3 0)
 			(effects
 				(font
@@ -2675,7 +2803,7 @@
 		(instances
 			(project "DualCore6502Whole"
 				(path "/93e0914e-b2e9-49c2-95f2-7cc419f4ea20/731fd70c-eedb-4909-a6f7-e3ec3269813b"
-					(reference "#PWR150")
+					(reference "#PWR146")
 					(unit 1)
 				)
 			)
@@ -2691,7 +2819,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "11f5858b-2f0c-48ae-8575-98a012b475af")
-		(property "Reference" "#PWR149"
+		(property "Reference" "#PWR145"
 			(at 106.68 78.74 0)
 			(effects
 				(font
@@ -2741,7 +2869,7 @@
 		(instances
 			(project "DualCore6502Whole"
 				(path "/93e0914e-b2e9-49c2-95f2-7cc419f4ea20/731fd70c-eedb-4909-a6f7-e3ec3269813b"
-					(reference "#PWR149")
+					(reference "#PWR145")
 					(unit 1)
 				)
 			)
@@ -2765,7 +2893,7 @@
 				)
 			)
 		)
-		(property "Value" "Tick 2"
+		(property "Value" "NMI2"
 			(at 181.61 107.95 0)
 			(effects
 				(font
@@ -2773,7 +2901,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm"
+		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical"
 			(at 181.61 110.49 0)
 			(effects
 				(font
@@ -2816,6 +2944,73 @@
 		)
 	)
 	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 139.7 82.55 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "65a93330-4865-4829-a47d-b56b86e78d2d")
+		(property "Reference" "TP7"
+			(at 142.24 77.9779 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "1KHz"
+			(at 142.24 80.5179 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.5mm"
+			(at 144.78 82.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 144.78 82.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "test point"
+			(at 139.7 82.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "1f687e9d-ef28-4fc7-b656-42642dd107da")
+		)
+		(instances
+			(project ""
+				(path "/93e0914e-b2e9-49c2-95f2-7cc419f4ea20/731fd70c-eedb-4909-a6f7-e3ec3269813b"
+					(reference "TP7")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "74xx:74LS02")
 		(at 163.83 88.9 0)
 		(unit 4)
@@ -2825,7 +3020,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "6624d0b2-74c8-4f3c-92a7-e91ae872f20a")
-		(property "Reference" "U5"
+		(property "Reference" "U4"
 			(at 163.83 80.01 0)
 			(effects
 				(font
@@ -2841,7 +3036,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Package_DIP:DIP-14_W7.62mm"
+		(property "Footprint" "Package_DIP:DIP-14_W7.62mm_Socket"
 			(at 163.83 88.9 0)
 			(effects
 				(font
@@ -2913,7 +3108,7 @@
 		(instances
 			(project "DualCore6502Whole"
 				(path "/93e0914e-b2e9-49c2-95f2-7cc419f4ea20/731fd70c-eedb-4909-a6f7-e3ec3269813b"
-					(reference "U5")
+					(reference "U4")
 					(unit 4)
 				)
 			)
@@ -2928,7 +3123,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "6979d03c-6d75-4b61-a781-6a496dadec28")
-		(property "Reference" "U23"
+		(property "Reference" "U22"
 			(at 108.8741 78.74 0)
 			(effects
 				(font
@@ -2946,7 +3141,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_DIP:DIP-8_W7.62mm"
+		(property "Footprint" "Package_DIP:DIP-8_W7.62mm_Socket"
 			(at 123.19 101.6 0)
 			(effects
 				(font
@@ -3000,7 +3195,7 @@
 		(instances
 			(project "DualCore6502Whole"
 				(path "/93e0914e-b2e9-49c2-95f2-7cc419f4ea20/731fd70c-eedb-4909-a6f7-e3ec3269813b"
-					(reference "U23")
+					(reference "U22")
 					(unit 1)
 				)
 			)
@@ -3024,7 +3219,7 @@
 				)
 			)
 		)
-		(property "Value" "Tick 1"
+		(property "Value" "NMI1"
 			(at 181.61 86.36 0)
 			(effects
 				(font
@@ -3032,7 +3227,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm"
+		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical"
 			(at 181.61 88.9 0)
 			(effects
 				(font
@@ -3084,7 +3279,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "8c076c12-573b-4b52-b6ca-ae8464928053")
-		(property "Reference" "#PWR148"
+		(property "Reference" "#PWR144"
 			(at 88.9 114.3 0)
 			(effects
 				(font
@@ -3134,7 +3329,7 @@
 		(instances
 			(project "DualCore6502Whole"
 				(path "/93e0914e-b2e9-49c2-95f2-7cc419f4ea20/731fd70c-eedb-4909-a6f7-e3ec3269813b"
-					(reference "#PWR148")
+					(reference "#PWR144")
 					(unit 1)
 				)
 			)
@@ -3220,7 +3415,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "a5c0a972-4ef2-424d-b5c2-37f6f9372c1f")
-		(property "Reference" "#PWR152"
+		(property "Reference" "#PWR148"
 			(at 128.27 78.74 0)
 			(effects
 				(font
@@ -3270,7 +3465,7 @@
 		(instances
 			(project "DualCore6502Whole"
 				(path "/93e0914e-b2e9-49c2-95f2-7cc419f4ea20/731fd70c-eedb-4909-a6f7-e3ec3269813b"
-					(reference "#PWR152")
+					(reference "#PWR148")
 					(unit 1)
 				)
 			)
@@ -3356,7 +3551,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "b41e4a40-a229-492b-bd0c-02f8818b3544")
-		(property "Reference" "C29"
+		(property "Reference" "C28"
 			(at 92.71 102.8699 0)
 			(effects
 				(font
@@ -3410,7 +3605,7 @@
 		(instances
 			(project "DualCore6502Whole"
 				(path "/93e0914e-b2e9-49c2-95f2-7cc419f4ea20/731fd70c-eedb-4909-a6f7-e3ec3269813b"
-					(reference "C29")
+					(reference "C28")
 					(unit 1)
 				)
 			)
@@ -3426,7 +3621,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "c2fdbe40-448a-40c1-9c1b-4a449cba8ae6")
-		(property "Reference" "C30"
+		(property "Reference" "C29"
 			(at 127 121.9199 0)
 			(effects
 				(font
@@ -3480,7 +3675,7 @@
 		(instances
 			(project "DualCore6502Whole"
 				(path "/93e0914e-b2e9-49c2-95f2-7cc419f4ea20/731fd70c-eedb-4909-a6f7-e3ec3269813b"
-					(reference "C30")
+					(reference "C29")
 					(unit 1)
 				)
 			)
@@ -3496,7 +3691,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "dc532277-39b3-490f-9937-05c6d0fde93c")
-		(property "Reference" "#PWR151"
+		(property "Reference" "#PWR147"
 			(at 123.19 133.35 0)
 			(effects
 				(font
@@ -3546,7 +3741,7 @@
 		(instances
 			(project "DualCore6502Whole"
 				(path "/93e0914e-b2e9-49c2-95f2-7cc419f4ea20/731fd70c-eedb-4909-a6f7-e3ec3269813b"
-					(reference "#PWR151")
+					(reference "#PWR147")
 					(unit 1)
 				)
 			)
@@ -3636,7 +3831,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "ff4444a9-0edb-416a-b2c7-d9f348adf8a2")
-		(property "Reference" "#PWR153"
+		(property "Reference" "#PWR149"
 			(at 152.4 121.92 0)
 			(effects
 				(font
@@ -3686,7 +3881,7 @@
 		(instances
 			(project "DualCore6502Whole"
 				(path "/93e0914e-b2e9-49c2-95f2-7cc419f4ea20/731fd70c-eedb-4909-a6f7-e3ec3269813b"
-					(reference "#PWR153")
+					(reference "#PWR149")
 					(unit 1)
 				)
 			)

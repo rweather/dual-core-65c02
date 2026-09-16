@@ -3551,7 +3551,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "26e18149-acac-4f32-893a-18b3749513b6")
-		(property "Reference" "U11"
+		(property "Reference" "U10"
 			(at 48.26 158.7499 0)
 			(effects
 				(font
@@ -3569,7 +3569,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_DIP:DIP-14_W7.62mm"
+		(property "Footprint" "Package_DIP:DIP-14_W7.62mm_Socket"
 			(at 41.91 160.02 0)
 			(effects
 				(font
@@ -3641,7 +3641,7 @@
 		(instances
 			(project "DualCore6502Whole"
 				(path "/93e0914e-b2e9-49c2-95f2-7cc419f4ea20/c648dfd0-2e47-4168-b72a-602e847f0b30"
-					(reference "U11")
+					(reference "U10")
 					(unit 5)
 				)
 			)
@@ -3657,7 +3657,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "406a0c61-4a1a-485a-aa06-b6d30334f95c")
-		(property "Reference" "#PWR72"
+		(property "Reference" "#PWR68"
 			(at 81.28 123.19 0)
 			(effects
 				(font
@@ -3708,7 +3708,7 @@
 		(instances
 			(project "DualCore6502Whole"
 				(path "/93e0914e-b2e9-49c2-95f2-7cc419f4ea20/c648dfd0-2e47-4168-b72a-602e847f0b30"
-					(reference "#PWR72")
+					(reference "#PWR68")
 					(unit 1)
 				)
 			)
@@ -3724,7 +3724,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "4c530ba0-dbea-4ba8-a33e-168c591c05a4")
-		(property "Reference" "U11"
+		(property "Reference" "U10"
 			(at 124.4517 67.31 0)
 			(effects
 				(font
@@ -3740,7 +3740,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Package_DIP:DIP-14_W7.62mm"
+		(property "Footprint" "Package_DIP:DIP-14_W7.62mm_Socket"
 			(at 124.46 76.2 0)
 			(effects
 				(font
@@ -3812,7 +3812,7 @@
 		(instances
 			(project "DualCore6502Whole"
 				(path "/93e0914e-b2e9-49c2-95f2-7cc419f4ea20/c648dfd0-2e47-4168-b72a-602e847f0b30"
-					(reference "U11")
+					(reference "U10")
 					(unit 3)
 				)
 			)
@@ -3828,7 +3828,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "4d68a32c-9228-4a37-97a9-3cb7711793ae")
-		(property "Reference" "#PWR68"
+		(property "Reference" "#PWR64"
 			(at 41.91 179.07 0)
 			(effects
 				(font
@@ -3878,7 +3878,7 @@
 		(instances
 			(project "DualCore6502Whole"
 				(path "/93e0914e-b2e9-49c2-95f2-7cc419f4ea20/c648dfd0-2e47-4168-b72a-602e847f0b30"
-					(reference "#PWR68")
+					(reference "#PWR64")
 					(unit 1)
 				)
 			)
@@ -3894,7 +3894,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "59c48653-97ab-407e-8225-d7a05a2e9c38")
-		(property "Reference" "C13"
+		(property "Reference" "C12"
 			(at 66.04 158.75 0)
 			(effects
 				(font
@@ -3948,7 +3948,7 @@
 		(instances
 			(project "DualCore6502Whole"
 				(path "/93e0914e-b2e9-49c2-95f2-7cc419f4ea20/c648dfd0-2e47-4168-b72a-602e847f0b30"
-					(reference "C13")
+					(reference "C12")
 					(unit 1)
 				)
 			)
@@ -3964,7 +3964,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "5d39620f-43df-4c4a-a78e-c03688680a8e")
-		(property "Reference" "U8"
+		(property "Reference" "U7"
 			(at 89.8652 111.76 0)
 			(effects
 				(font
@@ -3980,7 +3980,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Package_DIP:DIP-14_W7.62mm"
+		(property "Footprint" "Package_DIP:DIP-14_W7.62mm_Socket"
 			(at 90.17 120.65 0)
 			(effects
 				(font
@@ -4052,7 +4052,7 @@
 		(instances
 			(project "DualCore6502Whole"
 				(path "/93e0914e-b2e9-49c2-95f2-7cc419f4ea20/c648dfd0-2e47-4168-b72a-602e847f0b30"
-					(reference "U8")
+					(reference "U7")
 					(unit 1)
 				)
 			)
@@ -4068,7 +4068,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "62e2d4f2-c914-4578-b893-608c948d6636")
-		(property "Reference" "#PWR70"
+		(property "Reference" "#PWR66"
 			(at 62.23 170.18 0)
 			(effects
 				(font
@@ -4118,7 +4118,7 @@
 		(instances
 			(project "DualCore6502Whole"
 				(path "/93e0914e-b2e9-49c2-95f2-7cc419f4ea20/c648dfd0-2e47-4168-b72a-602e847f0b30"
-					(reference "#PWR70")
+					(reference "#PWR66")
 					(unit 1)
 				)
 			)
@@ -4134,7 +4134,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "63530f82-36ed-46fd-99cf-3a03892c9c89")
-		(property "Reference" "U8"
+		(property "Reference" "U7"
 			(at 148.2852 106.68 0)
 			(effects
 				(font
@@ -4150,7 +4150,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Package_DIP:DIP-14_W7.62mm"
+		(property "Footprint" "Package_DIP:DIP-14_W7.62mm_Socket"
 			(at 148.59 115.57 0)
 			(effects
 				(font
@@ -4222,7 +4222,7 @@
 		(instances
 			(project "DualCore6502Whole"
 				(path "/93e0914e-b2e9-49c2-95f2-7cc419f4ea20/c648dfd0-2e47-4168-b72a-602e847f0b30"
-					(reference "U8")
+					(reference "U7")
 					(unit 2)
 				)
 			)
@@ -4238,7 +4238,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "72cfb9df-43fe-4a4f-9849-c853e1638dbb")
-		(property "Reference" "#PWR71"
+		(property "Reference" "#PWR67"
 			(at 81.28 81.28 0)
 			(effects
 				(font
@@ -4289,7 +4289,7 @@
 		(instances
 			(project "DualCore6502Whole"
 				(path "/93e0914e-b2e9-49c2-95f2-7cc419f4ea20/c648dfd0-2e47-4168-b72a-602e847f0b30"
-					(reference "#PWR71")
+					(reference "#PWR67")
 					(unit 1)
 				)
 			)
@@ -4305,7 +4305,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "813ba847-1f37-49d4-875c-7f3a3f58464e")
-		(property "Reference" "U11"
+		(property "Reference" "U10"
 			(at 90.1617 90.17 0)
 			(effects
 				(font
@@ -4321,7 +4321,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Package_DIP:DIP-14_W7.62mm"
+		(property "Footprint" "Package_DIP:DIP-14_W7.62mm_Socket"
 			(at 90.17 99.06 0)
 			(effects
 				(font
@@ -4393,7 +4393,7 @@
 		(instances
 			(project "DualCore6502Whole"
 				(path "/93e0914e-b2e9-49c2-95f2-7cc419f4ea20/c648dfd0-2e47-4168-b72a-602e847f0b30"
-					(reference "U11")
+					(reference "U10")
 					(unit 1)
 				)
 			)
@@ -4409,7 +4409,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "995126e6-6122-4d15-bc1e-55cf223beca3")
-		(property "Reference" "#PWR77"
+		(property "Reference" "#PWR73"
 			(at 186.69 114.3 0)
 			(effects
 				(font
@@ -4459,7 +4459,7 @@
 		(instances
 			(project "DualCore6502Whole"
 				(path "/93e0914e-b2e9-49c2-95f2-7cc419f4ea20/c648dfd0-2e47-4168-b72a-602e847f0b30"
-					(reference "#PWR77")
+					(reference "#PWR73")
 					(unit 1)
 				)
 			)
@@ -4475,7 +4475,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "9bc5109f-3a83-4f63-801f-b1176f706249")
-		(property "Reference" "U11"
+		(property "Reference" "U10"
 			(at 90.1617 69.85 0)
 			(effects
 				(font
@@ -4491,7 +4491,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Package_DIP:DIP-14_W7.62mm"
+		(property "Footprint" "Package_DIP:DIP-14_W7.62mm_Socket"
 			(at 90.17 78.74 0)
 			(effects
 				(font
@@ -4563,7 +4563,7 @@
 		(instances
 			(project "DualCore6502Whole"
 				(path "/93e0914e-b2e9-49c2-95f2-7cc419f4ea20/c648dfd0-2e47-4168-b72a-602e847f0b30"
-					(reference "U11")
+					(reference "U10")
 					(unit 4)
 				)
 			)
@@ -4579,7 +4579,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "a7993343-6651-4fba-b3f9-dee948de6cac")
-		(property "Reference" "#PWR67"
+		(property "Reference" "#PWR63"
 			(at 41.91 151.13 0)
 			(effects
 				(font
@@ -4629,7 +4629,7 @@
 		(instances
 			(project "DualCore6502Whole"
 				(path "/93e0914e-b2e9-49c2-95f2-7cc419f4ea20/c648dfd0-2e47-4168-b72a-602e847f0b30"
-					(reference "#PWR67")
+					(reference "#PWR63")
 					(unit 1)
 				)
 			)
@@ -4645,7 +4645,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "b862988e-15be-4054-9451-abfb6da6eee5")
-		(property "Reference" "#PWR76"
+		(property "Reference" "#PWR72"
 			(at 186.69 78.74 0)
 			(effects
 				(font
@@ -4695,7 +4695,7 @@
 		(instances
 			(project "DualCore6502Whole"
 				(path "/93e0914e-b2e9-49c2-95f2-7cc419f4ea20/c648dfd0-2e47-4168-b72a-602e847f0b30"
-					(reference "#PWR76")
+					(reference "#PWR72")
 					(unit 1)
 				)
 			)
@@ -4711,7 +4711,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "b9b1d361-3274-4c64-873e-226c88247999")
-		(property "Reference" "#PWR73"
+		(property "Reference" "#PWR69"
 			(at 143.51 113.03 0)
 			(effects
 				(font
@@ -4762,7 +4762,7 @@
 		(instances
 			(project "DualCore6502Whole"
 				(path "/93e0914e-b2e9-49c2-95f2-7cc419f4ea20/c648dfd0-2e47-4168-b72a-602e847f0b30"
-					(reference "#PWR73")
+					(reference "#PWR69")
 					(unit 1)
 				)
 			)
@@ -4778,7 +4778,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "bce1d374-aeac-4a53-87d3-8a3f79687e2e")
-		(property "Reference" "#PWR75"
+		(property "Reference" "#PWR71"
 			(at 186.69 63.5 0)
 			(effects
 				(font
@@ -4828,7 +4828,7 @@
 		(instances
 			(project "DualCore6502Whole"
 				(path "/93e0914e-b2e9-49c2-95f2-7cc419f4ea20/c648dfd0-2e47-4168-b72a-602e847f0b30"
-					(reference "#PWR75")
+					(reference "#PWR71")
 					(unit 1)
 				)
 			)
@@ -4844,7 +4844,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "c31af855-0b63-4dac-8ab2-8e9704934aac")
-		(property "Reference" "U11"
+		(property "Reference" "U10"
 			(at 124.4517 109.22 0)
 			(effects
 				(font
@@ -4860,7 +4860,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Package_DIP:DIP-14_W7.62mm"
+		(property "Footprint" "Package_DIP:DIP-14_W7.62mm_Socket"
 			(at 124.46 118.11 0)
 			(effects
 				(font
@@ -4932,7 +4932,7 @@
 		(instances
 			(project "DualCore6502Whole"
 				(path "/93e0914e-b2e9-49c2-95f2-7cc419f4ea20/c648dfd0-2e47-4168-b72a-602e847f0b30"
-					(reference "U11")
+					(reference "U10")
 					(unit 2)
 				)
 			)
@@ -4948,7 +4948,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "c3a30ab2-5056-4e3e-90fc-4c014bec937e")
-		(property "Reference" "#PWR74"
+		(property "Reference" "#PWR70"
 			(at 186.69 53.34 0)
 			(effects
 				(font
@@ -4998,7 +4998,7 @@
 		(instances
 			(project "DualCore6502Whole"
 				(path "/93e0914e-b2e9-49c2-95f2-7cc419f4ea20/c648dfd0-2e47-4168-b72a-602e847f0b30"
-					(reference "#PWR74")
+					(reference "#PWR70")
 					(unit 1)
 				)
 			)
@@ -5014,7 +5014,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "c40055b3-a5ca-4e4e-ab7b-35f8d5e774bc")
-		(property "Reference" "U12"
+		(property "Reference" "U11"
 			(at 188.8841 74.93 0)
 			(effects
 				(font
@@ -5032,7 +5032,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_DIP:DIP-16_W7.62mm"
+		(property "Footprint" "Package_DIP:DIP-16_W7.62mm_Socket"
 			(at 186.69 90.17 0)
 			(effects
 				(font
@@ -5110,7 +5110,7 @@
 		(instances
 			(project ""
 				(path "/93e0914e-b2e9-49c2-95f2-7cc419f4ea20/c648dfd0-2e47-4168-b72a-602e847f0b30"
-					(reference "U12")
+					(reference "U11")
 					(unit 1)
 				)
 			)
@@ -5126,7 +5126,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "e2091850-e485-49da-bec8-0a3546406b5f")
-		(property "Reference" "C14"
+		(property "Reference" "C13"
 			(at 190.5 52.07 0)
 			(effects
 				(font
@@ -5180,7 +5180,7 @@
 		(instances
 			(project "DualCore6502Whole"
 				(path "/93e0914e-b2e9-49c2-95f2-7cc419f4ea20/c648dfd0-2e47-4168-b72a-602e847f0b30"
-					(reference "C14")
+					(reference "C13")
 					(unit 1)
 				)
 			)
@@ -5196,7 +5196,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "e8aabe00-6b42-46bc-bfa5-c7d42225665b")
-		(property "Reference" "#PWR69"
+		(property "Reference" "#PWR65"
 			(at 62.23 160.02 0)
 			(effects
 				(font
@@ -5246,7 +5246,7 @@
 		(instances
 			(project "DualCore6502Whole"
 				(path "/93e0914e-b2e9-49c2-95f2-7cc419f4ea20/c648dfd0-2e47-4168-b72a-602e847f0b30"
-					(reference "#PWR69")
+					(reference "#PWR65")
 					(unit 1)
 				)
 			)

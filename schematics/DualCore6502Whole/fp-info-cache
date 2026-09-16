@@ -1,4 +1,4 @@
-24525040801553715
+24526830301713045
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -86976,6 +86976,13 @@ Through hole angled pin header THT 2x40 2.54mm double row
 79
 RCBus
 RCBus_PinSocket_2x40_P2.54mm_Vertical
+Through hole straight socket strip, 2x40, 2.54mm pitch, double cols (from Kicad 4.0.7), script generated
+Through hole socket strip THT 2x40 2.54mm double row
+0
+80
+80
+RCBus
+RCBus_PinSocket_2x40_P2.54mm_Vertical_DC
 Through hole straight socket strip, 2x40, 2.54mm pitch, double cols (from Kicad 4.0.7), script generated
 Through hole socket strip THT 2x40 2.54mm double row
 0
