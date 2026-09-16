@@ -131,9 +131,10 @@ NMI can interfere with foreground code and regular IRQ handlers,
 which may affect timing-critical code.  There are jumpers in the circuit
 that allow the 555 to be disconnected from one or both of the CPU's.
 
-## Schematic
+## Schematic and other technical information
 
 * [PDF of the schematic](schematics/DualCore6502Whole/PDF/DualCore6502Whole.pdf)
+* [Parts list](doc/parts-list.md)
 
 ## What can't it do?
 
