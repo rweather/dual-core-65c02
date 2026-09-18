@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2024 Rhys Weatherley
+ * Copyright (C) 2026 Rhys Weatherley
  *
  * Permission is hereby granted, free of charge, to any person obtaining a
  * copy of this software and associated documentation files (the "Software"),
@@ -61,6 +61,9 @@ typedef struct
 
     /** Alternate ROM image for CPU2 */
     uint8_t     rom_alt[ROMSZ];
+
+    /** Flags that indicate the system I/O state */
+    uint32_t    io_flags;
 
 } emul6502_mem_t;
 
@@ -254,11 +257,11 @@ uint8_t emul6502_pop_byte(emul6502_t *emul);
 uint16_t emul6502_pop_word(emul6502_t *emul);
 
 /**
- * @brief Runs the 6502 emulator.
+ * @brief Perform a single instruction step on the 6502 emulator.
  *
  * @param[in,out] emul Points to the emulator.
  */
-void emul6502_run(emul6502_t *emul);
+void emul6502_step(emul6502_t *emul);
 
 /**
  * @brief Loads a file into memory and positions it as the main ROM

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2024 Rhys Weatherley
+ * Copyright (C) 2026 Rhys Weatherley
  *
  * Permission is hereby granted, free of charge, to any person obtaining a
  * copy of this software and associated documentation files (the "Software"),
@@ -32,198 +32,72 @@
 #include <time.h>
 
 /*
- * Locations in the I/O space between $CF00 and $CFFF.
+ * Locations in the I/O space between $8000 and $8FFF.
  */
-#define KEYBRD      0x3C7E0 /* Read keyboard data */
-#define KEYRAW      0x3C7E1 /* Read raw 8-bit keyboard data. */
-#define KEYSTR      0x3C7E2 /* Clear keyboard strobe */
-#define SBANK1      0x3C7E3 /* Select memory bank for memory window 0 (0-15) */
-#define SBANK2      0x3C7E4 /* Select memory bank for memory window 1 (0-15) */
-#define SBANK3      0x3C7E5 /* Select memory bank for memory window 2 (0-15) */
-#define SBANK4      0x3C7E6 /* Select memory bank for memory window 3 (0-15) */
-#define KEYBRDW     0x3C7E7 /* Read from the keyboard and wait. */
-#define KEYBRDT     0x3C7E8 /* Read from the keyboard with a timeout. */
-#define KEYTOUT     0x3C7E9 /* Timeout for KEYBRDT (0-255 ms) */
-#define TTYOUT      0x3C7EA /* Pass-through to the system tty */
-#define SCRNWID     0x3C7EB /* Read actual screen width */
-#define SCRNHT      0x3C7EC /* Read actual screen height */
-#define MILLIS      0x3C7ED /* Get the system ms tick counter into A:X. */
-#define QUITEMUL    0x3C7EE /* Writing to this will quit the emulator */
-#define TAPEOPEN    0x3C7EF /* Open the "tape" for reading or writing */
-#define TAPECLOSE   0x3C7F0 /* Close the open "tape" */
-#define TAPEDATA    0x3C7F1 /* Read or write a byte of "tape" data */
+#define INPUT_FLAGS 0x8080  /* Input flags */
+#define RS232_RTS   0x8105  /* RTS signal to the RS-232 port */
+#define MUTEX_WANT2 0x8106  /* Want the mutex on CPU2 */
+#define MUTEX_WANT1 0x8107  /* Want the mutex on CPU1 */
+#define ACIA_DATA   0x8410  /* ACIA data register */
+#define ACIA_STATUS 0x8411  /* ACIA status register */
+#define ACIA_CMD    0x8412  /* ACIA command register */
+#define ACIA_CTRL   0x8413  /* ACIA control register */
 
 /*
- * File access modes for the kernel.
+ * Input flags.
  */
-#define FO_RDONLY   0x00
-#define FO_WRONLY   0x01
-#define FO_RDWR     0x02
-#define FO_APPEND   0x10
-#define FO_TRUNC    0x20
-#define FO_CREAT    0x40
-#define FO_EXCL     0x80
-#define FO_ISREAD(mode) \
-    (((mode) & 0x03) == FO_RDONLY || ((mode) & 0x03) == FO_RDWR)
-#define FO_ISWRITE(mode) \
-    (((mode) & 0x03) == FO_WRONLY || ((mode) & 0x03) == FO_RDWR)
+#define FLAG_CTS    0x20    /* CTS signal from the RS-232 port */
+#define FLAG_ACQ2   0x40    /* Acquired the mutex on CPU2 */
+#define FLAG_ACQ1   0x80    /* Acquired the mutex on CPU1 */
 
-/* I/O locations that trigger a software switch but don't have a value */
-static int emulio_switch(emul6502_t *emul, uint32_t addr)
-{
-    (void)emul;
-    switch (addr) {
-    case KEYSTR:
-        /* Keyboard strobe to clear the most-recently received character */
-        if (emul->key_push) {
-            ++(emul->key_push);
-            if (emul->key_push[0] == '\0')
-                emul->key_push = 0; /* Done pushing in keys */
-        }
-        emul->keybuf &= 0x7F;
-        break;
+/*
+ * I/O flags in the emul6502_mem_t structure.
+ */
+#define IO_WANT1    0x0001  /* Want the mutex on CPU1 */
+#define IO_WANT2    0x0002  /* Want the mutex on CPU2 */
+#define IO_ACQ1     0x0004  /* Acquired the mutex on CPU1 */
+#define IO_ACQ2     0x0008  /* Acquired the mutex on CPU2 */
+#define IO_RTS      0x0010  /* RTS signal is raised, ACIA comms allowed */
+#define IO_CTS      0x0020  /* CTS signal is lowered */
 
-    default:
-        /* Allow anything else in the I/O space but ignore */
-        if (addr >= 0x3C000 && addr <= 0x3C3FF)
-            return 1;
-        return 0;
-    }
-    return 1;
-}
-
-/* Get the file descriptor for read/write operations from A:X */
-static int emulio_get_fd(emul6502_t *emul)
-{
-    return emul->A | (((int)(emul->X)) << 8);
-}
+/*
+ * Memory locations for the serial buffer in CPU1.
+ */
+#define SER_RD      0x00FC  /* Read pointer */
+#define SER_WR      0x00FB  /* Write pointer */
+#define SER_BUF     0x0400  /* Serial receive buffer */
 
 uint8_t emulio_load_byte(emul6502_t *emul, uint32_t addr)
 {
-    int ch;
+    uint8_t result = 0;
     switch (addr) {
-    case KEYBRD:
-        /* Read from the keyboard.  MSB is set for a pressed key,
-         * and then cleared by KEYSTR when the key is handled. */
-        if (emul->key_push) {
-            /* Return the next pushed-in character */
-            ch = emul->key_push[0] & 0xFF;
-            emul->keybuf = ch | 0x80;
-            emul->keyraw = ch;
-        } else if ((emul->keybuf & 0x80) == 0) {
-            /* We don't have a key in the buffer, so poll for one */
-            ch = emulio_tty_in(emul, 0);
-            if (ch >= 0) {
-                emul->keybuf = ch | 0x80;
-                emul->keyraw = ch;
-            }
+    case INPUT_FLAGS:
+        if (emul->mem->io_flags & IO_ACQ1) {
+            result |= FLAG_ACQ1;
         }
-        return emul->keybuf;
-
-    case KEYRAW:
-        /* Read the last raw byte that arrived at the keyboard */
-        return emul->keyraw;
-
-    case KEYBRDW:
-    case KEYBRDT:
-        /* This is an extension to avoid hard-locked keyboard polling loops.
-         * Waits for a key to be pressed on the keyboard and returns it.
-         * Automatically invokes the key strobe when the key arrives. */
-        if ((emul->keybuf & 0x80) != 0) {
-            /* We already have a key in the buffer, so return that */
-            uint8_t key = emul->keybuf;
-            emul->keybuf &= 0x7F;
-            return key;
-        } else if (emul->key_push) {
-            /* We are pushing keys into the keyboard buffer at startup */
-            ch = emul->key_push[0] & 0xFF;
-            ++(emul->key_push);
-            if (emul->key_push[0] == '\0')
-                emul->key_push = 0; /* Done pushing in keys */
-            emul->keybuf = ch & 0x7F;
-            emul->keyraw = ch;
-            return ch | 0x80;
+        if (emul->mem->io_flags & IO_ACQ2) {
+            result |= FLAG_ACQ2;
+        }
+        if (emul->mem->io_flags & IO_CTS) {
+            result |= FLAG_CTS;
+        }
+#if 0
+        if (emul->cpu_num == 1) {
+            /* Probably polling for the mutex on CPU1.  If we don't have it,
+             * perform a small delay to avoid pegging the host CPU at 100% */
+            if (!(emul->mem->io_flags & IO_ACQ1)) {
+                usleep(1000);
+            }
         } else {
-            /* Wait for the key, optionally with a timeout */
-            ch = emulio_tty_in
-                (emul, (addr == KEYBRDT) ? emul->key_timeout : -1);
-            if (ch >= 0) {
-                emul->keybuf = ch & 0x7F;
-                emul->keyraw = ch;
-                return ch | 0x80;
+            /* Same, but for CPU2 this time */
+            if (!(emul->mem->io_flags & IO_ACQ2)) {
+                usleep(1000);
             }
         }
-        return emul->keybuf;
+#endif
+        return result;
 
-    case SCRNWID: {
-        /* Get the actual width of the screen */
-        struct winsize ws;
-        if (ioctl(0, TIOCGWINSZ, &ws) >= 0)
-            return ws.ws_col;
-        else
-            return 80; /* Default to 80 */
-        }
-
-    case SCRNHT: {
-        /* Get the actual height of the screen */
-        struct winsize ws;
-        if (ioctl(0, TIOCGWINSZ, &ws) >= 0)
-            return ws.ws_row;
-        else
-            return 25; /* Default to 25 */
-        }
-
-    case MILLIS: {
-        /* Get the value of the system millisecond tick counter */
-        struct timespec tv;
-        uint64_t ns;
-        uint16_t ms;
-        clock_gettime(CLOCK_MONOTONIC, &tv);
-        ns = tv.tv_sec * 1000000000L + tv.tv_nsec;
-        ms = (uint16_t)(ns / 1000000UL);
-        emul->X = ms >> 8; /* Return the high byte in X */
-        return (uint8_t)ms;
-        }
-
-    case TAPEDATA:
-        /* Read data from the open "tape" file */
-        if (emulio_get_fd(emul) == 0 &&
-                emul->tape != NULL && FO_ISREAD(emul->tape_mode)) {
-            int ch = fgetc(emul->tape);
-            if (ch < 0) {
-                if (feof(emul->tape)) {
-                    /* We have reached EOF, so set A:X to -1 */
-                    emul->A = 0xFF;
-                    emul->X = 0xFF;
-                } else {
-                    /* An error occurred while reading from the file */
-                    emul->A = (-5 & 0xFF); /* -EIO */
-                    emul->X = 0xFF;
-                }
-            } else {
-                /* Return the character that was read to the caller */
-                emul->A = ch;
-                emul->X = 0;
-                return ch;
-            }
-        } else if (emul->tape == NULL) {
-            /* File is not open */
-            emul->A = (-9 & 0xFF); /* -EBADF */
-            emul->X = 0xFF;
-        } else {
-            /* File is not open for reading */
-            emul->A = (-22 & 0xFF); /* -EINVAL */
-            emul->X = 0xFF;
-        }
-        return emul->A;
-
-    default:
-        /* Catch-all for software switches that don't have a particular value */
-        if (!emulio_switch(emul, addr)) {
-            /* Not handled, so read from the ROM's instead */
-            return emul->memory[addr];
-        }
-        break;
+    default: break;
     }
     return 0;
 }
@@ -231,99 +105,57 @@ uint8_t emulio_load_byte(emul6502_t *emul, uint32_t addr)
 void emulio_store_byte(emul6502_t *emul, uint32_t addr, uint8_t value)
 {
     switch (addr) {
-    case KEYBRDW:
-        /* Put a key back into the keyboard buffer */
-        emul->keybuf = value | 0x80;
-        emul->keyraw = value;
+    case RS232_RTS:
+        /* Raise or lower the RTS signal on the RS-232 port */
+        if (value & 0x01) {
+            emul->mem->io_flags |= IO_RTS;
+        } else {
+            emul->mem->io_flags &= ~IO_RTS;
+        }
         break;
 
-    case SBANK1:
-        /* Set the physical page for memory bank 1 */
-        emul6502_set_bank(emul, 0, value);
+    case MUTEX_WANT1:
+        /* CPU1 either wants the mutex or is releasing the mutex */
+        if (value & 0x01) {
+            emul->mem->io_flags |= IO_WANT1;
+            if (!(emul->mem->io_flags & IO_ACQ2)) {
+                emul->mem->io_flags |= IO_ACQ1;
+            }
+        } else {
+            emul->mem->io_flags &= ~(IO_WANT1 | IO_ACQ1);
+            if (emul->mem->io_flags & IO_WANT2) {
+                emul->mem->io_flags |= IO_ACQ2;
+            }
+        }
         break;
 
-    case SBANK2:
-        /* Set the physical page for memory bank 2 */
-        emul6502_set_bank(emul, 1, value);
+    case MUTEX_WANT2:
+        /* CPU2 either wants the mutex or is releasing the mutex */
+        if (value & 0x01) {
+            emul->mem->io_flags |= IO_WANT2;
+            if (!(emul->mem->io_flags & IO_ACQ1)) {
+                emul->mem->io_flags |= IO_ACQ2;
+            }
+        } else {
+            emul->mem->io_flags &= ~(IO_WANT2 | IO_ACQ2);
+            if (emul->mem->io_flags & IO_WANT1) {
+                emul->mem->io_flags |= IO_ACQ1;
+            }
+        }
         break;
 
-    case SBANK3:
-        /* Set the physical page for memory bank 3 */
-        emul6502_set_bank(emul, 2, value);
-        break;
-
-    case SBANK4:
-        /* Set the physical page for memory bank 4 */
-        emul6502_set_bank(emul, 3, value);
-        break;
-
-    case KEYTOUT:
-        /* Set the timeout for keyboard polling */
-        emul->key_timeout = value;
-        break;
-
-    case TTYOUT:
-        /* Write to the host system's tty */
+    case ACIA_DATA:
+        /* Write to the serial port */
         emulio_tty_out(emul, value);
         break;
 
-    case QUITEMUL:
-        /* Request to quit the emulator */
-        emulio_tty_end(emul);
-        exit(value);
+    case ACIA_STATUS:
+    case ACIA_CMD:
+    case ACIA_CTRL:
+        /* Ignore ACIA setup as we assume we're running at full speed */
         break;
 
-    case TAPEOPEN:
-        /* Open the "tape" file for reading or writing */
-        if (emulio_tape_open(emul, value)) {
-            /* File is open, so return a file descriptor for it in A:X.
-             * We only support one file at a time, so it is always zero. */
-            emul->A = 0;
-            emul->X = 0;
-        } else {
-            /* File could not be opened, so report -ENOENT (-2) */
-            emul->A = (-2 & 0xFF);
-            emul->X = 0xFF;
-        }
-        break;
-
-    case TAPECLOSE:
-        /* Close the "tape" file if the file descriptor is 0 */
-        if (emulio_get_fd(emul) == 0)
-            emulio_tape_close(emul);
-        break;
-
-    case TAPEDATA:
-        /* Write data to the open "tape" file */
-        if (emulio_get_fd(emul) == 0 &&
-                emul->tape != NULL && FO_ISWRITE(emul->tape_mode)) {
-            if (fputc(value, emul->tape) < 0) {
-                /* An error occurred while writing to the tape */
-                emul->A = (-5 & 0xFF); /* -EIO */
-                emul->X = 0xFF;
-            } else {
-                /* Byte was written successfully */
-                emul->A = 0;
-                emul->X = 0;
-            }
-        } else if (emul->tape == NULL) {
-            /* File is not open */
-            emul->A = (-9 & 0xFF); /* -EBADF */
-            emul->X = 0xFF;
-        } else {
-            /* File is not open for writing */
-            emul->A = (-22 & 0xFF); /* -EINVAL */
-            emul->X = 0xFF;
-        }
-        break;
-
-    default:
-        /* Catch-all for software switches */
-        if (!emulio_switch(emul, addr)) {
-            /* Invalid write to ROM's */
-            emul->error = ERR_ACCESS;
-        }
-        break;
+    default: break;
     }
 }
 
@@ -430,71 +262,15 @@ int emulio_tty_in(emul6502_t *emul, int timeout)
     return -1;
 }
 
-int emulio_tape_open(emul6502_t *emul, uint8_t mode)
+void emulio_tty_peek(emul6502_t *emul)
 {
-    char filename[256];
-    uint32_t addr;
-    const char *fmode;
-    int len;
-
-    /* Close the file if it is already open */
-    emulio_tape_close(emul);
-
-    /* Convert the file mode into a stdio open mode.  We only handle a
-     * subset of the full set of POSIX-style file modes at the moment. */
-    switch (mode) {
-    case FO_RDONLY:
-        fmode = "rb";
-        break;
-
-    case FO_WRONLY | FO_CREAT:
-    case FO_WRONLY:
-    case FO_RDWR | FO_CREAT:
-    case FO_RDWR:
-        fmode = "r+b";
-        break;
-
-    case FO_WRONLY | FO_APPEND:
-        fmode = "ab";
-        break;
-
-    case FO_RDWR | FO_APPEND:
-        fmode = "a+b";
-        break;
-
-    case FO_WRONLY | FO_CREAT | FO_TRUNC:
-        fmode = "wb";
-        break;
-
-    default:
-        return 0;
-    }
-    emul->tape_mode = mode;
-
-    /* The address of the filename is in A:X, so copy the data out */
-    addr = emul6502_resolve_address
-        (emul, (((uint16_t)(emul->X)) << 8) | emul->A);
-    for (len = 0; len < 255; ++len, ++addr) {
-        char ch = emul6502_load_byte(emul, addr);
-        if (ch == '\0')
-            break;
-        filename[len] = ch;
-    }
-    filename[len] = '\0';
-    if (len == 0) {
-        /* No filename supplied, so error out */
-        return 0;
-    }
-
-    /* Now try to open the file */
-    emul->tape = fopen(filename, fmode);
-    return emul->tape != NULL;
-}
-
-void emulio_tape_close(emul6502_t *emul)
-{
-    if (emul->tape != NULL) {
-        fclose(emul->tape);
-        emul->tape = NULL;
+    uint8_t write = emul->mem->memory[SER_RD];
+    if (emul->mem->memory[SER_RD] == write) {
+        /* Serial buffer is empty, so poll for keyboard input */
+        int ch = emulio_tty_in(emul, 10);
+        if (ch >= 0) {
+            emul->mem->memory[SER_BUF + write] = (uint8_t)ch;
+            emul->mem->memory[SER_WR] = (uint8_t)(write + 1);
+        }
     }
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2024 Rhys Weatherley
+ * Copyright (C) 2026 Rhys Weatherley
  *
  * Permission is hereby granted, free of charge, to any person obtaining a
  * copy of this software and associated documentation files (the "Software"),
@@ -60,9 +60,6 @@ void emul6502_reset(emul6502_t *emul)
 
     /* Load the program counter from the reset vector address */
     emul->PC = emul6502_load_word(emul, 0xFFFC);
-
-    /* Close any open tape files */
-    emulio_tape_close(emul);
 }
 
 int emul6502_irq(emul6502_t *emul)
@@ -567,12 +564,12 @@ static void emul6502_compare(emul6502_t *emul, uint8_t x, uint8_t y)
 /* Mark an instruction as WDC65C02 only */
 #define MCU_WDC65C02    do { ; } while (0)
 
-void emul6502_run(emul6502_t *emul)
+void emul6502_step(emul6502_t *emul)
 {
     uint16_t start; /* PC at the start of the instruction fetch */
     uint32_t ea; /* Effective address for current instruction */
     uint8_t imm; /* Immediate value for current instruction */
-    for (;;) {
+    do {
         /* 6502:  https://www.masswerk.at/6502/6502_instruction_set.html */
         /* 65C02: http://6502.org/tutorials/65c02opcodes.html */
         start = emul->PC;
@@ -1443,6 +1440,12 @@ void emul6502_run(emul6502_t *emul)
 
         case 0xA6:      /* LDX zpg */
             EA_ZPG;
+            if (ea == 0x00FC && emul->cpu_num == 1) {
+                /* Probably about to read from the serial port.  Instead of
+                 * simulating ACIA interrupts, we stuff data into the buffer
+                 * within the foreground process. */
+                emulio_tty_peek(emul);
+            }
             emul->X = emul6502_load_byte(emul, ea);
             UPDATE_NZ(emul->X);
             CYCLES(3);
@@ -1937,6 +1940,7 @@ void emul6502_run(emul6502_t *emul)
             emul6502_break(emul);
         }
     }
+    while (0); /* Only do the instruction loop once for the step */
 }
 
 int emul6502_load_rom_file(emul6502_t *emul, const char *filename)

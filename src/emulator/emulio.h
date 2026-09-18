@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2024 Rhys Weatherley
+ * Copyright (C) 2026 Rhys Weatherley
  *
  * Permission is hereby granted, free of charge, to any person obtaining a
  * copy of this software and associated documentation files (the "Software"),
@@ -83,21 +83,11 @@ void emulio_tty_out(emul6502_t *emul, uint8_t ch);
 int emulio_tty_in(emul6502_t *emul, int timeout);
 
 /**
- * @brief Opens the tape file for reading or writing.
- *
- * @param[in,out] emul Points to the emulator.
- * @param[in] mode 0 for reading, 1 for writing.
- *
- * @return Non-zero if the tape was opened, or zero if there was an error.
- */
-int emulio_tape_open(emul6502_t *emul, uint8_t mode);
-
-/**
- * @brief Closes the tape file if is currently open.
+ * @brief Peek at the next character and stuff it into the receive buffer.
  *
  * @param[in,out] emul Points to the emulator.
  */
-void emulio_tape_close(emul6502_t *emul);
+void emulio_tty_peek(emul6502_t *emul);
 
 #ifdef __cplusplus
 }

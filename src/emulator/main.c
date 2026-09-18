@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2024 Rhys Weatherley
+ * Copyright (C) 2026 Rhys Weatherley
  *
  * Permission is hereby granted, free of charge, to any person obtaining a
  * copy of this software and associated documentation files (the "Software"),
@@ -38,9 +38,9 @@ static struct option long_options[] = {
 
 static void usage(const char *progname);
 
-static emul6502_memory_t mem;   /* Shared memory */
-static emul6502_t emul1;        /* Emulator for CPU1 */
-static emul6502_t emul2;        /* Emulator for CPU2 */
+static emul6502_mem_t mem;  /* Shared memory */
+static emul6502_t emul1;    /* Emulator for CPU1 */
+static emul6502_t emul2;    /* Emulator for CPU2 */
 
 int main(int argc, char *argv[])
 {
@@ -48,7 +48,6 @@ int main(int argc, char *argv[])
     const char *rom_file = NULL;
 
     /* Initialize the emulator */
-    emul6502_mem_init(&mem);
     emul6502_init(&emul1, &mem, 1);
     emul6502_init(&emul2, &mem, 2);
 
@@ -78,7 +77,7 @@ int main(int argc, char *argv[])
     rom_file = argv[optind];
 
     /* Load the ROM file, half into each CPU */
-    if (!emul6502_load_rom_file(&emul1, &emul2, rom_file)) {
+    if (!emul6502_load_rom_file(&emul1, rom_file)) {
         perror(rom_file);
         return 1;
     }

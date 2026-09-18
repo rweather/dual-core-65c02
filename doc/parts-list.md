@@ -30,7 +30,7 @@ Parts list for Dual Core 65C02
 * 1 x 5K6 resistor
 * 5 x 10K resistor
 * 1 x 1M resistor
-* 1 x 10K potentiometer
+* 1 x 10K trimpot
 
 Note: All resistors should be rated for at least 5% tolerance and 1/4W.
 
@@ -75,6 +75,7 @@ current limiting resistors for other LED's.
 * 1 x 10-pin 2.54mm terminal pin header, 5x2 configuration
 * 1 x 22-pin 2.54mm terminal pin socket
 * 1 x 80-pin 2.54mm terminal pin socket, 40x2 configuration
+* 8 x 2-pin 2.54mm jumper (NMI1, NMI2, VIA IRQ, and 5 Aux Inputs)
 
 ## Other
 
