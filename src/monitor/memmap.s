@@ -29,6 +29,7 @@
 ;
 ; System vectors that the user can redirect.
 ;
+    .ifndef DUAL_CORE_65C02
 BRKJMP      .equ    $3EF    ; "JMP" instruction to jump to the BREAK handler
 BRKVER      .equ    $3F0    ; Address of the BREAK handler
 RESTVR      .equ    $3F2    ; Address of the soft RESET handler
@@ -36,6 +37,19 @@ PWRIND      .equ    $3F4    ; Power-on indicator to detect hard-vs-soft RESET
 USRADR      .equ    $3F8    ; "USR" subroutine calls jump to here
 NMIADR      .equ    $3FB    ; NMI interrupts jump to here
 IRQVER      .equ    $3FE    ; Address of the IRQ handler
+    .else
+;
+; On the Dual Core 65C02 computer, $03XX is in the stack for the other CPU.
+; Move the "page 3" variables to the end of RAM instead.
+;
+BRKJMP      .equ    $7DEF   ; "JMP" instruction to jump to the BREAK handler
+BRKVER      .equ    $7DF0   ; Address of the BREAK handler
+RESTVR      .equ    $7DF2   ; Address of the soft RESET handler
+PWRIND      .equ    $7DF4   ; Power-on indicator to detect hard-vs-soft RESET
+USRADR      .equ    $7DF8   ; "USR" subroutine calls jump to here
+NMIADR      .equ    $7DFB   ; NMI interrupts jump to here
+IRQVER      .equ    $7DFE   ; Address of the IRQ handler
+    .endif
 ;
 ; Other regions of memory.
 ;

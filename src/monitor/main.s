@@ -27,7 +27,7 @@ ANSI_ESCAPES    .equ    1
 BREAK_HANDLER   .equ    1
 CPU_65C02       .equ    1
 DUAL_CORE_65C02 .equ    1
-RAMTOP          .equ    $8000
+RAMTOP          .equ    $7D00   ; Monitor data structures above this point.
 SYSCLK          .equ    2000
 
         .include bios.s
