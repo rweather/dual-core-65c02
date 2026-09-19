@@ -54,7 +54,7 @@ VAR_sq  .equ    $41             ; Temporary for squaring (48-bit fixed-point).
 ;
 ; Location of the job queue in RAM.
 ;
-JOBS    .equ    $0500
+JOBS    .equ    $0400
 ;
 ; Location of the computed mandelbrot data in RAM.  Must be page-aligned.
 ;

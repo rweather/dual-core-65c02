@@ -43,7 +43,7 @@ STACK       .equ    $100    ; Stack (256 bytes)
     .ifndef DUAL_CORE_65C02
 KEYBUF      .equ    $200    ; Keyboard buffer (256 bytes)
     .else
-KEYBUF      .equ    $500    ; Keyboard buffer (256 bytes)
+KEYBUF      .equ    $7E00   ; Keyboard buffer (256 bytes)
     .endif
 
     .ifdef DSE_CAT

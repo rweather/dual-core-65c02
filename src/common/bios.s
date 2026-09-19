@@ -42,7 +42,7 @@ serial_wr   .equ    $FB     ; Write pointer for the serial buffer (CPU1 only).
 serial_rd   .equ    $FC     ; Read pointer for the serial buffer (CPU1 only).
 startup_vec .equ    $FD     ; Jump address for warm start.
 startup_chk .equ    $FF     ; Startup checksum.
-serial_buf  .equ    $0400   ; Location of the serial buffer in memory.
+serial_buf  .equ    $7F00   ; Location of the serial buffer in memory.
 ;
     .if CPU1
         .include acia.s

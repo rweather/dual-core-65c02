@@ -65,7 +65,7 @@
  */
 #define SER_RD      0x00FC  /* Read pointer */
 #define SER_WR      0x00FB  /* Write pointer */
-#define SER_BUF     0x0400  /* Serial receive buffer */
+#define SER_BUF     0x7F00  /* Serial receive buffer */
 
 uint8_t emulio_load_byte(emul6502_t *emul, uint32_t addr)
 {
