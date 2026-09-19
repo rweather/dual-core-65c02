@@ -94,7 +94,7 @@ void emul6502_break(emul6502_t *emul)
 
 void emul6502_rti(emul6502_t *emul)
 {
-    emul->P = emul6502_pop_byte(emul);
+    emul->P = emul6502_pop_byte(emul) & ~P_B;
     emul->PC = emul6502_pop_word(emul);
 }
 
@@ -794,7 +794,7 @@ void emul6502_step(emul6502_t *emul)
             break;
 
         case 0x28:      /* PLP */
-            emul->P = emul6502_pop_byte(emul);
+            emul->P = emul6502_pop_byte(emul) & ~P_B;
             CYCLES(4);
             break;
 

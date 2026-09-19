@@ -24,6 +24,7 @@
 ; Configure platform-specific defines.
 ;
 ANSI_ESCAPES    .equ    1
+BREAK_HANDLER   .equ    1
 CPU_65C02       .equ    1
 DUAL_CORE_65C02 .equ    1
 RAMTOP          .equ    $8000
@@ -71,6 +72,7 @@ hw_init:
         rts
 cold_start:
 warm_start:
+do_break:
         jmp     warm_start
 
     .endif ; CPU2

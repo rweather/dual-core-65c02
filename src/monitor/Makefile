@@ -39,3 +39,6 @@ $(TARGET_CPU2): main.s $(COMMON_DIR)/bios.s $(SOURCE_DEPS)
 
 clean:
 	rm -f $(TARGET) $(TARGET_CPU1) $(TARGET_CPU2) $(TARGET_CPU1_LIST) $(TARGET_CPU2_LIST)
+
+run: $(TARGET)
+	../emulator/emulator $(TARGET)

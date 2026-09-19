@@ -28,6 +28,7 @@
 ;               zero for a warm start or 1 for a cold start.
 ; cold_start    Entry point for a cold start.
 ; warm_start    Entry point for a warm start.
+; do_break      If BREAK_HANDLER is defined, "do_break" handles the BREAK.
 ;
 ; On a cold start, the zero page is cleared to zeroes.  The locations
 ; $F8 to $FF are reserved for BIOS-related purposes.
@@ -311,6 +312,12 @@ put_char:
 irqbrk:
         pha                     ; Save the A and X registers on the stack.
         phx
+    .ifdef BREAK_HANDLER
+        tsx                     ; Did a BREAK occur?
+        lda     $0103,x
+        and     #$10
+        bne     do_break_jump
+    .endif
     .if CPU1
         lda     ACIA_STATUS     ; Did we receive a character via the ACIA?
         and     #ACIA_RDRF
@@ -331,6 +338,12 @@ irq_acia_done:
         plx                     ; Restore the registers and return.
         pla
         rti
+    .ifdef BREAK_HANDLER
+do_break_jump:
+        plx
+        pla
+        jmp     do_break
+    .endif
 ;
 ; Get the value of the system millisecond tick counter into Y:A:X
 ; where Y is the high byte.

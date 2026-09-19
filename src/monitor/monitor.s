@@ -537,14 +537,22 @@ done_serial_rx:
         jmp     (IRQVER)        ; Jump to the user-supplied interrupt handler.
 do_break:
         plp                     ; Restore the status register.
+    .ifdef DUAL_CORE_65C02
+        jsr     MSAVE           ; Save all registers in the zero page.
+    .else
         jsr     MSAVE2          ; Save all registers in the zero page.
+    .endif
         pla                     ; Copy the BREAK address to the zero page.
         sta     PCL
         pla
         sta     PCH
         cld                     ; Make sure D is off again.
         cli                     ; Re-enable interrupts.
+    .ifdef DUAL_CORE_65C02
+        jmp     break_handler
+    .else
         jmp     (BRKVER)        ; Jump to the user-supplied BREAK handler.
+    .endif
 ;
 ; Reset vector for the system.
 ;
