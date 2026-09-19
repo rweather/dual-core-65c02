@@ -59,8 +59,8 @@ serial_buf  .equ    $7F00   ; Location of the serial buffer in memory.
         jmp     mutex_try_lock  ; $C009: Try to lock the hardware mutex.
         jmp     put_char        ; $C00C: Print a character on the ACIA (CPU1).
         jmp     get_char        ; $C00F: Get a character from the ACIA (CPU1).
-        jmp     systick         ; $C012: Get system millisecond tick counter.
-        jmp     reserved        ; $C015: Reserved for future use.
+        jmp     peek_char       ; $C012: Peek at the next character (CPU1).
+        jmp     systick         ; $C015: Get system millisecond tick counter.
         jmp     reserved        ; $C018: Reserved for future use.
         jmp     reserved        ; $C01B: Reserved for future use.
 ;
@@ -295,12 +295,29 @@ get_char_none:
         clc                     ; and clear the carry.
         rts
 ;
+; Peek to see if there is a character in the serial buffer.
+; Carry set if there is, clear if not.  Preserves A, X, and Y.
+;
+peek_char:
+        phx
+        ldx     serial_rd       ; Is there a character in the serial buffer?
+        cpx     serial_wr
+        beq     peek_char_none
+        plx
+        sec
+        rts
+peek_char_none:
+        plx
+        clc
+        rts
+;
     .else ; CPU2
 ;
 ; Stub the put_char and get_char subroutines because CPU2 cannot
 ; directly access the ACIA.
 ;
 get_char:
+peek_char:
         clc
 put_char:
         rts

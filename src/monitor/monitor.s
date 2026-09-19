@@ -1416,8 +1416,12 @@ no_key:
         clc
         rts
     .else
+    .ifdef DUAL_CORE_65C02
+        jmp     peek_char
+    .else
         clc                     ; Don't know how to peek for a key.
         rts
+    .endif
     .endif
     .endif
     .endif
