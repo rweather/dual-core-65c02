@@ -27,6 +27,7 @@
 #include <string.h>
 #include <signal.h>
 #include <getopt.h>
+#include <time.h>
 
 #define short_options "thc"
 static struct option long_options[] = {
@@ -46,6 +47,8 @@ int main(int argc, char *argv[])
 {
     const char *progname = argv[0];
     const char *rom_file = NULL;
+    struct timespec now, then;
+    int64_t ns;
 
     /* Initialize the emulator */
     emul6502_init(&emul1, &mem, 1);
@@ -96,9 +99,26 @@ int main(int argc, char *argv[])
         fprintf(stderr, "ROM file does not have a valid reset vector\n");
         return 1;
     }
+    clock_gettime(CLOCK_MONOTONIC, &then);
     for (;;) {
+        /* Run some instructions */
         emul6502_step(&emul1);
         emul6502_step(&emul2);
+
+        /* If 1ms has elapsed, simulate a system tick on the NMI pins */
+        clock_gettime(CLOCK_MONOTONIC, &now);
+        if (now.tv_sec == then.tv_sec) {
+            ns = now.tv_nsec - then.tv_nsec;
+        } else {
+            ns = 1000000000 - then.tv_nsec;
+            ns += now.tv_nsec;
+            ns += (now.tv_sec - then.tv_sec - 1) * 1000000000LL;
+        }
+        then = now;
+        if (ns >= 1000000) {
+            emul6502_nmi(&emul1);
+            emul6502_nmi(&emul2);
+        }
     }
 
     /* Shut the system down */
