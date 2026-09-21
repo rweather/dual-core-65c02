@@ -14,7 +14,7 @@
 ;
 ;*****************************************************************************
 ;
-; Free space for user programs: $00 - $1F
+; Free space for user programs: $00 - $0F
 ;
 ;*****************************************************************************
 ;
@@ -182,71 +182,71 @@ RANDSEED    .equ    $C9     ; Random number seed (5 bytes)
 ;
 ;*****************************************************************************
 ;
-; Reserved space for user programs compatible with llvm-mos: $E0 - $FF
+; Reserved space for user programs compatible with llvm-mos: $10-$1F, $E0-$EF
 ; https://llvm-mos.org/wiki/C_calling_convention
 ;
 ;*****************************************************************************
 
-__rs0       .equ    $E0     ; llvm-mos stack pointer
-__rc0       .equ    $E0
-__rc1       .equ    $E1
+__rs0       .equ    $10     ; llvm-mos stack pointer
+__rc0       .equ    $10
+__rc1       .equ    $11
 ;
-__rs1       .equ    $E2     ; argument/return register, caller saved.
-__rc2       .equ    $E2
-__rc3       .equ    $E3
+__rs1       .equ    $12     ; argument/return register, caller saved.
+__rc2       .equ    $12
+__rc3       .equ    $13
 ;
-__rs2       .equ    $E4     ; argument/return register, caller saved.
-__rc4       .equ    $E4
-__rc5       .equ    $E5
+__rs2       .equ    $14     ; argument/return register, caller saved.
+__rc4       .equ    $14
+__rc5       .equ    $15
 ;
-__rs3       .equ    $E6     ; argument/return register, caller saved.
-__rc6       .equ    $E6
-__rc7       .equ    $E7
+__rs3       .equ    $16     ; argument/return register, caller saved.
+__rc6       .equ    $16
+__rc7       .equ    $17
 ;
-__rs4       .equ    $E8     ; argument/return register, caller saved.
-__rc8       .equ    $E8
-__rc9       .equ    $E9
+__rs4       .equ    $18     ; argument/return register, caller saved.
+__rc8       .equ    $18
+__rc9       .equ    $19
 ;
-__rs5       .equ    $EA     ; argument/return register, caller saved.
-__rc10      .equ    $EA
-__rc11      .equ    $EB
+__rs5       .equ    $1A     ; argument/return register, caller saved.
+__rc10      .equ    $1A
+__rc11      .equ    $1B
 ;
-__rs6       .equ    $EC     ; argument/return register, caller saved.
-__rc12      .equ    $EC
-__rc13      .equ    $ED
+__rs6       .equ    $1C     ; argument/return register, caller saved.
+__rc12      .equ    $1C
+__rc13      .equ    $1D
 ;
-__rs7       .equ    $EE     ; argument/return register, caller saved.
-__rc14      .equ    $EE
-__rc15      .equ    $EF
+__rs7       .equ    $1E     ; argument/return register, caller saved.
+__rc14      .equ    $1E
+__rc15      .equ    $1F
 ;
-__rs8       .equ    $F0     ; temporary register, caller saved.
-__rc16      .equ    $F0
-__rc17      .equ    $F1
+__rs8       .equ    $E0     ; temporary register, caller saved.
+__rc16      .equ    $E0
+__rc17      .equ    $E1
 ;
-__rs9       .equ    $F2     ; temporary register, caller saved.
-__rc18      .equ    $F2
-__rc19      .equ    $F3
+__rs9       .equ    $E2     ; temporary register, caller saved.
+__rc18      .equ    $E2
+__rc19      .equ    $E3
 ;
-__rs10      .equ    $F4     ; callee-saved register.
-__rc20      .equ    $F4
-__rc21      .equ    $F5
+__rs10      .equ    $E4     ; callee-saved register.
+__rc20      .equ    $E4
+__rc21      .equ    $E5
 ;
-__rs11      .equ    $F6     ; callee-saved register.
-__rc22      .equ    $F6
-__rc23      .equ    $F7
+__rs11      .equ    $E6     ; callee-saved register.
+__rc22      .equ    $E6
+__rc23      .equ    $E7
 ;
-__rs12      .equ    $F8     ; callee-saved register.
-__rc24      .equ    $F8
-__rc25      .equ    $F9
+__rs12      .equ    $E8     ; callee-saved register.
+__rc24      .equ    $E8
+__rc25      .equ    $E9
 ;
-__rs13      .equ    $FA     ; callee-saved register.
-__rc26      .equ    $FA
-__rc27      .equ    $FB
+__rs13      .equ    $EA     ; callee-saved register.
+__rc26      .equ    $EA
+__rc27      .equ    $EB
 ;
-__rs14      .equ    $FC     ; callee-saved register.
-__rc28      .equ    $FC
-__rc29      .equ    $FD
+__rs14      .equ    $EC     ; callee-saved register.
+__rc28      .equ    $EC
+__rc29      .equ    $ED
 ;
-__rs15      .equ    $FE     ; callee-saved register.
-__rc30      .equ    $FE
-__rc31      .equ    $FF
+__rs15      .equ    $EE     ; callee-saved register.
+__rc30      .equ    $EE
+__rc31      .equ    $EF
