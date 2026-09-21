@@ -97,8 +97,8 @@ copy_all_jobs:
 ; Record the system time in milliseconds when we started processing jobs.
 ;
         jsr     systick
-        stx     START
-        sta     START+1
+        sta     START
+        stx     START+1
         sty     START+2
     .if CPU2
     .ifdef ONE_CPU_ONLY         ; For testing with only 1 CPU.
@@ -234,12 +234,10 @@ finished:
 ; Get the 24-bit elapsed time into VAR_x.
 ;
         jsr     systick
-        pha
-        txa
         sec
         sbc     START
         sta     VAR_x
-        pla
+        txa
         sbc     START+1
         sta     VAR_x+1
         tya

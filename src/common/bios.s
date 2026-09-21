@@ -362,16 +362,16 @@ do_break_jump:
         jmp     do_break
     .endif
 ;
-; Get the value of the system millisecond tick counter into Y:A:X
-; where Y is the high byte.
+; Get the value of the system millisecond tick counter into Y:X:A
+; where Y is the high byte and X is the low byte.
 ;
 ; The returned 24-bit value can time events up to about 4.66 hours.
 ;
 systick:
-        ldx     systick_val     ; Fetch the low byte.
-        lda     systick_val+1   ; Fetch the middle byte.
+        lda     systick_val     ; Fetch the low byte.
+        ldx     systick_val+1   ; Fetch the middle byte.
         ldy     systick_val+2   ; Fetch the high byte.
-        cpx     systick_val     ; Did the low byte change while doing this?
+        cmp     systick_val     ; Did the low byte change while doing this?
         bne     systick         ; If it did, fetch the value again.
         rts
 ;
