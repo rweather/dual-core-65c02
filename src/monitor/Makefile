@@ -31,10 +31,10 @@ all: $(TARGET)
 $(TARGET): $(TARGET_CPU1) $(TARGET_CPU2)
 	cat $(TARGET_CPU1) $(TARGET_CPU2) >$(TARGET)
 
-$(TARGET_CPU1): main.s $(COMMON_DIR)/bios.s $(SOURCE_DEPS)
+$(TARGET_CPU1): main.s $(COMMON_DIR)/bios.s $(COMMON_DIR)/llvm-regs.s $(SOURCE_DEPS)
 	$(VASM) $(VASM_OPTIONS) -DCPU1=1 -DCPU2=0 -L $(TARGET_CPU1_LIST) -o $(TARGET_CPU1) main.s
 
-$(TARGET_CPU2): main.s $(COMMON_DIR)/bios.s $(SOURCE_DEPS)
+$(TARGET_CPU2): main.s $(COMMON_DIR)/bios.s $(COMMON_DIR)/llvm-regs.s $(SOURCE_DEPS)
 	$(VASM) $(VASM_OPTIONS) -DCPU1=0 -DCPU2=1 -L $(TARGET_CPU2_LIST) -o $(TARGET_CPU2) main.s
 
 clean:

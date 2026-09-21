@@ -47,6 +47,7 @@ serial_buf  .equ    $7F00   ; Location of the serial buffer in memory.
     .if CPU1
         .include acia.s
     .endif
+        .include llvm-regs.s
 ;
         .org    $C000
 ;
