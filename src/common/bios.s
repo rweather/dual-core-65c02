@@ -51,17 +51,25 @@ serial_buf  .equ    $7F00   ; Location of the serial buffer in memory.
 ;
         .org    $C000
 ;
-; Jump table that user programs in RAM can use to access useful features
+; Jump table that user programs can use to access useful features
 ; without needing to know where they actually are in the ROM.
 ;
-        jmp     get_cpuid       ; $C000: Get the id of the current CPU.
-        jmp     mutex_lock      ; $C003: Lock the hardware mutex.
-        jmp     mutex_unlock    ; $C006: Unlock the hardware mutex.
-        jmp     mutex_try_lock  ; $C009: Try to lock the hardware mutex.
-        jmp     put_char        ; $C00C: Print a character on the ACIA (CPU1).
-        jmp     get_char        ; $C00F: Get a character from the ACIA (CPU1).
-        jmp     peek_char       ; $C012: Peek at the next character (CPU1).
-        jmp     systick         ; $C015: Get system millisecond tick counter.
+get_cpuid:
+        jmp     get_cpuid_      ; $C000: Get the id of the current CPU.
+mutex_lock:
+        jmp     mutex_lock_     ; $C003: Lock the hardware mutex.
+mutex_unlock:
+        jmp     mutex_unlock_   ; $C006: Unlock the hardware mutex.
+mutex_try_lock:
+        jmp     mutex_try_lock_ ; $C009: Try to lock the hardware mutex.
+put_char:
+        jmp     put_char_       ; $C00C: Print a character on the ACIA (CPU1).
+get_char:
+        jmp     get_char_       ; $C00F: Get a character from the ACIA (CPU1).
+peek_char:
+        jmp     peek_char_      ; $C012: Peek at the next character (CPU1).
+systick:
+        jmp     systick_        ; $C015: Get system millisecond tick counter.
         jmp     reserved        ; $C018: Reserved for future use.
         jmp     reserved        ; $C01B: Reserved for future use.
 ;
@@ -168,7 +176,7 @@ startup_warm:
 ; Get the identifier for the current CPU.  Returns A = 0 for CPU1 or
 ; A = 1 for CPU2.  Preserves X and Y.
 ;
-get_cpuid:
+get_cpuid_:
         lda     #CPU2
         rts
 ;
@@ -177,7 +185,7 @@ get_cpuid:
 ; If the mutex is already locked, this will return immediately.
 ; Recursive locking is not supported.
 ;
-mutex_lock:
+mutex_lock_:
         lda     #1
     .if CPU1
         sta     $8107               ; Request the mutex for CPU1.
@@ -196,7 +204,7 @@ mutex_lock_check:
 ;
 ; If the mutex is already unlocked, this will do nothing.
 ;
-mutex_unlock:
+mutex_unlock_:
     .if CPU1
         stz     $8107               ; Release the mutex for CPU1.
     .else
@@ -212,7 +220,7 @@ mutex_unlock:
 ; If the mutex is already locked, this will return success immediately.
 ; Recursive locking is not supported.
 ;
-mutex_try_lock:
+mutex_try_lock_:
         lda     #1
     .if CPU1
         sta     $8107               ; Request the mutex for CPU1.
@@ -256,7 +264,7 @@ acia_init:
 ;
 ; Print the character in A to the ACIA.  Preserves A, X, and Y.
 ;
-put_char:
+put_char_:
         phx
         sta     ACIA_DATA   ; Write the character to the serial port.
         ldx     #$FF        ; Delay to wait for the character to be sent.
@@ -270,7 +278,7 @@ put_char_delay:
 ; Carry is set if a character was received, or carry is cleared if no
 ; character is currently available.
 ;
-get_char:
+get_char_:
         phx
         ldx     serial_rd       ; Is there a character in the serial buffer?
         cpx     serial_wr
@@ -299,7 +307,7 @@ get_char_none:
 ; Peek to see if there is a character in the serial buffer.
 ; Carry set if there is, clear if not.  Preserves A, X, and Y.
 ;
-peek_char:
+peek_char_:
         phx
         ldx     serial_rd       ; Is there a character in the serial buffer?
         cpx     serial_wr
@@ -317,10 +325,10 @@ peek_char_none:
 ; Stub the put_char and get_char subroutines because CPU2 cannot
 ; directly access the ACIA.
 ;
-get_char:
-peek_char:
+get_char_:
+peek_char_:
         clc
-put_char:
+put_char_:
         rts
 ;
     .endif ; CPU2
@@ -368,12 +376,12 @@ do_break_jump:
 ;
 ; The returned 24-bit value can time events up to about 4.66 hours.
 ;
-systick:
+systick_:
         lda     systick_val     ; Fetch the low byte.
         ldx     systick_val+1   ; Fetch the middle byte.
         ldy     systick_val+2   ; Fetch the high byte.
         cmp     systick_val     ; Did the low byte change while doing this?
-        bne     systick         ; If it did, fetch the value again.
+        bne     systick_        ; If it did, fetch the value again.
         rts
 ;
 ; NMI handler for the system which handles the millisecond tick counter.
