@@ -31,7 +31,7 @@
 ; do_break      If BREAK_HANDLER is defined, "do_break" handles the BREAK.
 ;
 ; On a cold start, the zero page is cleared to zeroes.  The locations
-; $F8 to $FF are reserved for BIOS-related purposes.
+; $F0 to $FF are reserved for BIOS-related and kernel-related purposes.
 ;
 
 ;
@@ -55,7 +55,8 @@ serial_buf  .equ    $7F00   ; Location of the serial buffer in memory.
 ; without needing to know where they actually are in the ROM.
 ;
 get_cpuid:
-        jmp     get_cpuid_      ; $C000: Get the id of the current CPU.
+        lda     #CPU2           ; $C000: Get the id of the current CPU into A.
+        rts                     ; A = 0 for CPU1, A = 1 for CPU2.
 mutex_lock:
         jmp     mutex_lock_     ; $C003: Lock the hardware mutex.
 mutex_unlock:
@@ -172,13 +173,6 @@ startup_warm:
         jsr     hw_init
         cli
         jmp     (startup_vec)
-;
-; Get the identifier for the current CPU.  Returns A = 0 for CPU1 or
-; A = 1 for CPU2.  Preserves X and Y.
-;
-get_cpuid_:
-        lda     #CPU2
-        rts
 ;
 ; Lock the hardware mutex.  Destroys A.  Preserves X and Y.
 ;
