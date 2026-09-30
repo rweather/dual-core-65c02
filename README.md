@@ -6,10 +6,10 @@ dual core 65C02 computer.  The computer has two 65C02 microprocessors,
 sharing a common memory and I/O bus for symmetric multiprocessing (SMP),
 8-bit style.
 
-Here is what it looks like on a breadboard (PCB's are in progress).
-The two large 40-pin chips at the top are the CPU's.
+Here is what it looks like on a PCB.  The two large 40-pin chips at the
+top are the CPU's.
 
-<img alt="Breadboard Layout" src="images/dual-core-breadboard.jpg" width="860"/>
+<img alt="PCB Layout" src="images/dual-core-pcb.jpg" width="860"/>
 
 ## How did this happen?
 
@@ -134,6 +134,7 @@ that allow the 555 to be disconnected from one or both of the CPU's.
 ## Schematic and other technical information
 
 * [PDF of the schematic](schematics/DualCore6502Whole/PDF/DualCore6502Whole.pdf)
+* [Gerbers for the PCB](schematics/DualCore6502Whole/Gerber)
 * [Parts list](doc/parts-list.md)
 
 ## What can't it do?
@@ -143,10 +144,12 @@ external access to the bus is complicated.  Too complicated for my feeble brain.
 Maybe in the next version.
 
 In theory the W65C02S can go up to 14MHz.  While SRAM that is faster than
-70ns access time is possible, EEPROM chips in DIP form are typically 150ns.
+70ns access time is possible, AT28C256 EEPROM chips form are typically 150ns.
 In practice, this limits the maximum memory speed to about 4MHz.
-An alternative memory design with wait states may allow pushing the
-performance further.  Once again, my feeble brain isn't up to the task.
+AT27C256 EEPROM's can go down to 45ns but they are not pin-compatible and
+that still only gets us to 8MHz or so.  An alternative memory design with
+wait states may allow pushing the performance further.  Once again,
+my feeble brain isn't up to the task.
 
 Could we have more CPU's?  Four?  Eight?  In theory, yes.  But memory
 access times limit things.  The speed of the individual CPU's would need to be
