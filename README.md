@@ -11,6 +11,10 @@ top are the CPU's.
 
 <img alt="PCB Layout" src="images/dual-core-pcb.jpg" width="860"/>
 
+If you would like to build your own, I have
+[shared the design on PCBway](https://www.pcbway.com/project/shareproject/Dual_Core_65C02_Computer_47504aca.html).  Or contact me at the e-mail address
+below and I might still have some spare PCB's I can mail out.
+
 ## How did this happen?
 
 Steve Wozniak's design of the Apple II avoided video snow by alternating
