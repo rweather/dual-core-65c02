@@ -160,9 +160,8 @@ common RAM, ROM, and I/O.
 
 ## TODO
 
-* Lay out a PCB and make something more industrialized.
 * Machine monitor for loading programs into RAM via the serial port and
-debugging them.
+debugging them (partially done).
 * Devise a multi-core operating system to showcase the capabilities.
 
 ## License
