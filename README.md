@@ -125,7 +125,7 @@ be dialed in precisely.
 The default NMI handler in the BIOS increments a 24-bit millisecond
 tick counter which wraps around after 4 hours and 39 minutes.
 Call the `systick` subroutine to fetch the value of the tick counter
-safely into the Y:A:X register triple.
+safely into the Y:X:A register triple.
 
 NMI can interfere with foreground code and regular IRQ handlers,
 which may affect timing-critical code.  There are jumpers in the circuit
