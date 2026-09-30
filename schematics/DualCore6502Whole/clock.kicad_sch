@@ -4435,7 +4435,7 @@
 		)
 		(uuid "c3bfcd8e-5115-498f-8c10-7591daa096e6")
 	)
-	(text "MAIN_CLK (12MHz) is divided by 6 to create CPU1_CLK and CPU2_CLK (2MHz).\nAlso divided by 6 to generate bus enables CPU1_BUSEN and CPU2_BUSEN.\n\nCPU1 can access the common bus only when CPU1_BUSEN is high and\nCPU2 can access the common bus only when CPU2_BUSEN is high.\n\nBus enables are longer than clock pulses to allow the CPU's to set up the\nnext bus address prior to the rising edge and to maintain R/~{W} stability.\n\nBus enables may be stretched if mutual exclusion is in progress on the CPU,\nwhich is effected by disabling the RDY signal to the other CPU.\n\nCOMMON_CLK can be used to gate access to daughter chips on either clock."
+	(text "MAIN_CLK (12MHz) is divided by 6 to create CPU1_CLK and CPU2_CLK (2MHz).\nAlso divided by 6 to generate bus enables CPU1_BUSEN and CPU2_BUSEN.\n\nCPU1 can access the common bus only when CPU1_BUSEN is high and\nCPU2 can access the common bus only when CPU2_BUSEN is high.\n\nBus enables are longer than clock pulses to allow the CPU's to set up the\nnext bus address prior to the rising edge and to maintain R/~{W} stability.\n\nCOMMON_CLK can be used to gate access to daughter chips on either clock."
 		(exclude_from_sim no)
 		(at 173.736 135.382 0)
 		(effects
